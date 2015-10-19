@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>FOES-6 Interpreter</title>
+		<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<style>
+			textarea, #o {
+				font-family:monospace;
+				width:100%;
+			}
+		</style>
+		<script src="foes6parser.js"></script>
+	</head>
+	<body>
+		<div class='container'>
+			<h1>FOES-6 Interpreter - Firefox Only</h1>
+			<hr>
+			<h2>Code</h2>
+			<textarea id='c' class='form-control'></textarea>
+			<button id='r' class='btn btn-primary' onclick='eval(c.innerHTML)'>Run</button>
+			<br>
+			<h2>Output</h2>
+			<textarea id='i' class='form-control' readonly></textarea>
+		</div>
+	</body>
+</html>
