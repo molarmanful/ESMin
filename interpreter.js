@@ -16,11 +16,14 @@ var stack=[],//stack
 		e=eval,
 		m=Math,
 		L=length,
+		r=(i,j)=>(p(j=[...i].reverse().join``),j),
+		
 interpret=i=>{
 	stack=[];
 	i=document.getElementById('c').value
 		.replace(/([^\\])@/g,'$1()')
-		.replace(/([_$pgscPRile])(`[\s\S]?`)/g,'$1($2)')
+		.replace(/~>/g,'=()=>')
+		.replace(/([_$a-zA-Z]*)[“‘«⧘](.*?)[⧙”’»]/g,'$1(`$2`)');
 	if(!i.match(/\$[^{]/g))i+=';$()';
 	eval(i);
 }
