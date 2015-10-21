@@ -23,7 +23,10 @@ interpret=i=>{
 	i=document.getElementById('c').value
 		.replace(/([^\\])@/g,'$1()')
 		.replace(/~>/g,'=()=>')
-		.replace(/([_$a-zA-Z]*)[“‘«≤](.*?)[”’»≥]/g,'$1(`$2`)');
+		.replace(/([_$a-zA-Z]*)“(.*?)”/g,'$1(`$2`)')
+		.replace(/([_$a-zA-Z]*)‘(.*?)’/g,'$1(`$2`)')
+		.replace(/([_$a-zA-Z]*)«(.*?)»/g,'$1(`$2`)')
+		.replace(/([_$a-zA-Z]*)≤(.*?)≥/g,'$1(`$2`)');
 	if(!i.match(/\$[^{]/g))i+=';$()';
 	eval(i);
 }
