@@ -17,10 +17,11 @@ var interpret=i=>{
 		//other functions and builtins
 		i=i=>(i=i.split`¢`,eval(`if(${i[0]}){${i[1]}}else{${i[2]}}`)),//if/else conditional statements
 		l=i=>(i=i.split`¢`,eval(`for(${i[0]}){${i[1]}}`)),//loop
-		S=i=>[i=i!=[]._?document.getElementById('c').value[i]:document.getElementById('c').value,stack.push(i)][0],//get source code (chars)
+		S=i=>[i=i!=[]._?document.getElementById('c').value[i]:document.getElementById('c').value,stack.push(i)][0],//get source code chars
 		e=eval,
 		m=Math,
 		r=(i,j)=>(p(j=[...i].reverse().join``),j),
+		L=i=>i.length,//get length
 		
 		//syntax from esmin to es6
 		i=document.getElementById('c').value
