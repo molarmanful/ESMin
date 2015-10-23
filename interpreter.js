@@ -7,7 +7,7 @@ var interpret=i=>{
 		//stack functions
 		p=i=>stack.push(i),//push to stack
 		g=i=>i!=[]._?stack[i<0?stack.length+i:i]:stack[stack.length-1],//get item from stack
-		s=i=>stack.splice(i!=[]._?i:g()),//splice item from stack
+		s=i=>stack.splice(i!=[]._?i:stack.length-1),//splice item from stack
 		c=i=>stack=[],//clear stack
 			
 		//extra math stuff
@@ -26,14 +26,11 @@ var interpret=i=>{
 		i=document.getElementById('c').value
 			.replace(/([^\\])@/g,'$1()')
 			.replace(/~>/g,'=()=>')
+			.replace(/([pgs$])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
 			.replace(/([_$a-zA-Z]*)“(.*?)”?$/g,'$1(`$2`)')
-			.replace(/([_$a-zA-Z]*)«(.*?)»?$/g,'$1(`$2`)')
 			.replace(/([_$a-zA-Z]*)‘(.*?)’?$/g,'$1($2)')
-			.replace(/([_$a-zA-Z]*)≤(.*?)≥?$/g,'$1($2)')
-			.replace(/([_$a-zA-Z]*)\((.*?)\)?$/g,'$1($2)')
-			.replace(/([_$a-zA-Z]*)\[(.*?)\]?$/g,'$1[$2]')
-			.replace(/([_$a-zA-Z]*){(.*?)}?$/g,'$1{$2}')
-			.replace(/([^\\])∞/g,'Infinity')
+			.replace(/([^\\])∞/g,'$1Infinity')
+		  .replace(/…/g,'...')
 	if(!i.match(/\$[^{]/g))i+=';$()';
 	e(i);
 }
