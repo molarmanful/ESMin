@@ -24,8 +24,10 @@ var interpret=i=>{
 		L=i=>i.length,//get length
 		ś=(i,j=i.split(/([^\\])¢/g),x)=>(p(x=j[0].split(j[1])),j),//split
 		j=(i,k=i.split(/([^\\])¢/g),x)=>(p(x=k[0].join(k[1])),k),//join
-		m=(i,j=i.split(/([^\\])¢/g))=>eval(j[0]).map(eval(j[1]),//map
-			
+		m=(i,j=i.split(/([^\\])¢/g))=>eval(j[0]).map(eval(j[1]),eval(j[2])),//map
+		ř=(i,j=i.split(/([^\\])¢/g))=>eval(j[0]).replace(eval(j[1]),eval(j[2])),//replace
+		š=(i,j=i.split(/([^\\])¢/g))=>eval(j[0]).toString(eval(j[1])),//toString
+		
 		//syntax from esmin to es6
 		i=document.getElementById('c').value
 			.replace(/([^\\])@/g,'$1()')
