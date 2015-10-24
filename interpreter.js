@@ -22,23 +22,32 @@ var interpret=i=>{
 		M=Math,
 		r=(i,j)=>(p(j=[...i].reverse().join``),j),//reverse
 		L=i=>i.length,//get length
-		ś=(i,j=i.split(/([^\\])¢/g),x)=>(p(x=j[0].split(j[1])),j),//split
-		j=(i,k=i.split(/([^\\])¢/g),x)=>(p(x=k[0].join(k[1])),k),//join
-		m=(i,j=i.split(/([^\\])¢/g))=>eval(j[0]).map(eval(j[1]),eval(j[2])),//map
-		ř=(i,j=i.split(/([^\\])¢/g))=>eval(j[0]).replace(eval(j[1]),eval(j[2])),//replace
-		š=(i,j=i.split(/([^\\])¢/g))=>eval(j[0]).toString(eval(j[1])),//toString
+		ś=(i='g()¢',j=i.split(/([^\\])¢/g),x)=>(p(x=j[0].split(j[1])),x),//split
+		j=(i='g()¢',k=i.split(/([^\\])¢/g),x)=>(p(x=k[0].join(k[1])),x),//join
+		m=(i='g()¢',j=i.split(/([^\\])¢/g))=>eval(j[0]).map(eval(j[1])),//map
+		ř=(i='g()¢',j=i.split(/([^\\])¢/g),x)=>(p(x=eval(j[0]).replace(eval(j[1]),eval(j[2]))),x),//replace
+		š=(i='g()¢',j=i.split(/([^\\])¢/g),x)=>(p(x=eval(j[0]).toString(eval(j[1]))),x),//toString
 		
 		//syntax from esmin to es6
 		i=document.getElementById('c').value
 			.replace(/([^\\])@/g,'$1()')
 			.replace(/~>/g,'=()=>')
-			.replace(/([pgs$])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
-			.replace(/([_$a-zA-Z]*)“(.*?)”?$/g,'$1(`$2`)')
-			.replace(/([_$a-zA-Z]*)\((.*?)\)?$/g,'$1($2)')
-			.replace(/([_$a-zA-Z]*)\[(.*?)\]?$/g,'$1[$2]')
-			.replace(/([_$a-zA-Z]*){(.*?)}?$/g,'$1{$2}')
+			.replace(/([pgs$])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/gm,'$1($2)')
+	
+			.replace(/([_$a-zA-Z]*)“(.*)”(.*)?/gm,'$1(`$2`)')
+			.replace(/([_$a-zA-Z]*)“(.*)$/gm,'$1(`$2`)')
+	
+			.replace(/([_$a-zA-Z]*)\((.*)\)(.*)?/gm,'$1($2)')
+	    .replace(/([_$a-zA-Z]*)\((.*)$/gm,'$1($2)')
+	
+			.replace(/([_$a-zA-Z]*)\[(.*?)\](.*)?/gm,'$1[$2]')
+	    .replace(/([_$a-zA-Z]*)\[(.*?)$/gm,'$1[$2]')
+	
+			.replace(/([_$a-zA-Z]*){(.*?)}(.*)?/gm,'$1{$2}')
+	    .replace(/([_$a-zA-Z]*){(.*?)$/gm,'$1{$2}')
+	
 			.replace(/([^\\])∞/g,'$1Infinity')
 		  .replace(/…/g,'...');
 	if(!i.match(/\$[^{]/g))i+=';$()';
-	e(i);
+	eval(i);
 }
