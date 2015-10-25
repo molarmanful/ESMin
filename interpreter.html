@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>ESMin Interpreter</title>
 		<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<style>
@@ -17,7 +18,7 @@
 			<hr>
 			<h2>Code</h2>
 			<textarea id='c' class='form-control'></textarea>
-			<button id='r' class='btn btn-primary' onclick='interpret()'>Run</button>
+			<button id='r' class='btn btn-primary' onclick='interpret(document.getElementById("c").value)'>Run</button>
 		</div>
 	</body>
 </html>
