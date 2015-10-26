@@ -2,8 +2,8 @@ var interpret=c=>{
 	var Ξ=[],//stack
 			//I/O functions
 			î=i=>[i=prompt`Input:`,Ξ.push(i)][0],//input
-			ô=i=>alert(i!=[]._?i:Ξ),//output
-			ℹ=i=>[i=i!=[]._?c[i]:c,stack.push(i)][0],//source
+			ô=i=>alert(i!=[]._?i:JSON.stringify(Ξ)),//output
+			ℹ=i=>[i=i!=[]._?c[i]:c,Ξ.push(i)][0],//source
 
 
 			//stack functions
@@ -24,14 +24,11 @@ var interpret=c=>{
 			//syntax from esmin to es6
 			c=c
 				.replace(/⬮/g,'()')
-				.replace(/(.+)⤇/g,'($1)=>')
+				.replace(/⤇/g,'=>')
+				.replace(/⒵/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)')
 				.replace(/⇏/g,'=()=>')
-				.replace(/([ᵖᵍʳᶜô])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
-				.replace(/([_$a-zA-Z]*)“([^”]*?)$/gm,'$1(`$2`)')
-				.replace(/([_$a-zA-Z]*)‘([^’]*?)$/gm,'$1(\\`$2\\`)')
-				.replace(/([_$a-zA-Z]*)\(([^)]*?)$/gm,'$1($2)')
-				.replace(/([_$a-zA-Z]*)\[([^\]]*?)$/gm,'$1[$2]')
-				.replace(/([_$a-zA-Z]*){([^}]*?)$/gm,'$1{$2}')
+				.replace(/([ᵖᵍʳᶜôℹ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
+				.replace(/“(.*)”/g,'(`$1`)')
 				.replace(/…/g,'...')
 				.replace(/˖/g,'+=')
 				.replace(/˗/g,'-=')
@@ -43,5 +40,6 @@ var interpret=c=>{
 				.replace(/⅋/g,'&&')
 				.replace(/ǁ/g,'||')
 	if(!c.match(/ô/g))c+=';ô()';
+	document.getElementById('compiled').innerHTML=c;
 	eval(c);
 }
