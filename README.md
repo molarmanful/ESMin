@@ -17,3 +17,8 @@ Outputs the stack, which contains the input.
 ô(ℹ⬮)
 ```
 Outputs the source code. NOTE: This is **not** a true quine!
+
+```
+↺x=0;x⧺<100;)ᵖ(x)
+```
+Outputs all numbers 1-100.
