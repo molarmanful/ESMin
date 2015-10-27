@@ -9,7 +9,7 @@ Included is a parser, written in ES6. Language documentation will be added to th
 Outputs `Hello, world!`.
 
 ```
-î⬮
+î
 ```
 Outputs the stack, which contains the input.
 
@@ -19,6 +19,6 @@ Outputs the stack, which contains the input.
 Outputs the source code. NOTE: This is **not** a true quine!
 
 ```
-↺x=0;x⧺<100;)ᵖ(x)
+↺x=0;x⧺<100;)ᵖx
 ```
 Outputs all numbers 1-100.
