@@ -10,6 +10,9 @@
 				width:100%;
 				background-color: #5a5a5a!important
 			}
+			#cp {
+				height:12.5em;
+			}
 		</style>
 		<script src="interpreter.js"></script>
 	</head>
@@ -17,6 +20,18 @@
 		<div class='container'>
 			<h1>ESMin Interpreter - Firefox Only</h1>
 			<hr>
+			<h2>Char Palette</h2>
+			<textarea class='form-control' id='cp' readonly></textarea>
+			<script>
+				cp.value=`î ô ℹ
+Ξ ᵖ ᵍ ʳ ᶜ
+ī ü М Ϛ Ѧ П Ø Ĵ Σ
+⬮ ⇏ Ʀ “ ” ‘ ’ …
+˖ ⧺ ˗ ‡ × ÷ ٪
+¡ ≔ ≠ ≤ ≥ ⅋ ǁ
+↺
+² ³ ⁿ √ ∛`
+			</script>
 			<h2>Code</h2>
 			<textarea id='c' class='form-control'></textarea>
 			<button id='r' class='btn btn-primary' onclick='interpret(document.getElementById("c").value)'>Run</button>
