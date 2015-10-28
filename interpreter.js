@@ -29,12 +29,14 @@ var interpret=c=>{
 			ɼ=RegExp;
 
 	//syntax from esmin to es6
+	c=c
+		.replace(/î/g,'î()')
+	;
 	for(var i=0;i<100;i++)
 		c=c
 			.replace(/([ᵖᵍʳᶜôℹΣɘ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
 			.replace(/([ᵖᵍʳᶜôℹΣɘ])(.+)⦆/g,'$1($2)')
 			.replace(/[^\D\\].([\d]+)/g,'[$1]')
-			.replace(/î([^⬮(])/g,'î()$1')
 			.replace(/⬮/g,'()')
 			.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 			.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
