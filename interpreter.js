@@ -11,6 +11,9 @@ var interpret=c=>{
 			ᵍ=i=>i!=[]._?Ξ[i<0?Ξ.length+i:i]:Ξ[Ξ.length-1],
 			ʳ=(i=Ξ.length-1)=>Ξ.splice(i),
 			ᶜ=i=>Ξ=[],
+			
+			//extra functions
+			ɘ=i=>eval(unescape(escape(i).replace(/uD./g,''))),
 
 			//super-basic aliasing
 			ī=Infinity,
@@ -27,8 +30,8 @@ var interpret=c=>{
 	//syntax from esmin to es6
 	for(var i=0;i<100;i++)
 		c=c
-			.replace(/([ᵖᵍʳᶜôℹΣ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
-			.replace(/([ᵖᵍʳᶜôℹΣ])([^(])(.+)⦆/g,'$1($2$3)')
+			.replace(/([ᵖᵍʳᶜôℹΣɘ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
+			.replace(/([ᵖᵍʳᶜôℹΣɘ])([^(])(.+)⦆/g,'$1($2$3)')
 			.replace(/[^\D\\].([\d]+)/g,'[$1]')
 			.replace(/î([^⬮(])/g,'î()$1')
 			.replace(/⬮/g,'()')
