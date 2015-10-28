@@ -13,6 +13,7 @@ var interpret=c=>{
 			ᶜ=i=>Ξ=[],
 			
 			//extra functions
+			//compeval (encode:  z=function(b,c,a,f,e){c="";f=String.fromCharCode;for(a=0;b.length>a;a+=2)c+=f(55296+b[e="charCodeAt"](a))+f(56320+b[e](a+1));return c})
 			ɘ=i=>eval(unescape(escape(i).replace(/uD./g,''))),
 
 			//super-basic aliasing
