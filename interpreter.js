@@ -67,3 +67,5 @@ var interpret=c=>{
 	document.getElementById('compiled').innerHTML=c;
 	eval(c);
 }
+
+onload=function(){document.getElementById('c').value=decodeURIComponent((/\?c=(.+)/.exec(location.search)||[,""])[1])}
