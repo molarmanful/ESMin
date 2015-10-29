@@ -5,7 +5,6 @@ var Ξ=[],//stack
 		ô=i=>alert(i!=[]._?i:JSON.stringify(Ξ)),//output
 		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
 
-
 		//stack functions
 		ᵖ=(i=0)=>{Array.prototype.slice.call(arguments).map(x=>Ξ.push(x))},
 		ᵍ=i=>i!=[]._?Ξ[i<0?Ξ.length+i:i]:Ξ[Ξ.length-1],
