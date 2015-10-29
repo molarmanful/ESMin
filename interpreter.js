@@ -13,9 +13,8 @@ var interpret=c=>{
 			ᶜ=i=>Ξ=[],
 			
 			//extra functions
-			//decode (and eval) (encode:  z=function(b,c,a,f,e){c="";f=String.fromCharCode;for(a=0;b.length>a;a+=2)c+=f(55296+b[e="charCodeAt"](a))+f(56320+b[e](a+1));return c})
-			Ǝ=i=>eval(unescape(escape(i).replace(/uD./g,''))),
-			ɘ=i=unescape(escape(i).replace(/uD./g,'')),
+			Ǝ=i=>eval(LZString.decompress(i)), //decode
+			ɘ=i=LZString.decompress(i), //decodeval
 
 			//super-basic aliasing
 			ī=Infinity,
