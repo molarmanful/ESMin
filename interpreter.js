@@ -14,7 +14,7 @@ var interpret=c=>{
 			
 			//extra functions
 			Ǝ=i=>eval(LZString.decompress(i)), //decode
-			ɘ=i=LZString.decompress(i), //decodeval
+			ɘ=i=>LZString.decompress(i), //decodeval
 
 			//super-basic aliasing
 			ī=Infinity,
