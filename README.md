@@ -14,7 +14,7 @@ Outputs `Hello, world!`.
 Outputs the stack, which contains the input.
 
 ```
-ô(ℹ⬮)
+ôℹ⬮⦆
 ```
 Outputs the source code. NOTE: This is **not** a true quine!
 
