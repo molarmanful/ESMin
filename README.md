@@ -1,7 +1,7 @@
 # ESMin
-ESMin is a stack-based code-golfing language based on ES6. It aims to change the syntax rather than alias functions/methods.
+ESMin is a stack-based code-golfing language based on ES6. It aims to change the syntax so that most ES6 char combinations can be written with one char.
 
-Included is a parser, written in ES6. Language documentation will be added to the wiki; in the meantime, you can look at `interpreter.js` for an idea of the syntax.
+Included is a parser, written in ES6 for Firefox. Language documentation will be added to the wiki; in the meantime, you can look at `interpreter.js` for an idea of the syntax.
 # Quick Examples
 ```
 ô“Hello, world!”
@@ -22,3 +22,7 @@ Outputs the source code. NOTE: This is **not** a true quine!
 ↺x=0;x⧺<100;)ᵖx
 ```
 Outputs all numbers 1-100.
+```
+ô[…î].ć(⇏a^1).ø``⦆
+```
+Does binary negation.
