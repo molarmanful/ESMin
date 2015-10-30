@@ -1,7 +1,7 @@
 var Ξ=[],//stack
 		//I/O functions
 		î=i=>[i=prompt`Input:`,Ξ.push(i),i][0],//input
-		ô=i=>alert(i!=[]._?i:JSON.stringify(Ξ)),//output
+		ô=i=>alert(i!=[]._?i:Ξ),//output
 		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
 
 		//stack functions
