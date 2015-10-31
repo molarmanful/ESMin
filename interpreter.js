@@ -20,15 +20,16 @@ var Ξ=[],//stack
 		Ø=Object,
 		Ĵ=JSON,
 		ɼ=RegExp,
-		Ɗ=Date;
+		Ɗ=Date,
+		ɘ=i=>LZString.decompress(i);
 [Ϛ,Ѧ,П,Ø,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 [М,Ϛ,Ѧ,П,Ø,Ĵ,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
-	c=(asdf?LZString.decompress(c):c)
+	c=(asdf==0?ɘ(c):c)
 		.replace(/î/g,'î()')
-		.replace(/([ᵖᵍʳᶜôℹΣ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[A-Za-z]+)/g,'$1($2)')
-		.replace(/([ᵖᵍʳᶜôℹΣ])(.+)⦆/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[A-Za-z]+)/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘ])(.+)⦆/g,'$1($2)')
 		.replace(/([^\d\\\s])\.([\d]+)/g,'$1[$2]')
 		.replace(/⬮/g,'()')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
@@ -74,12 +75,8 @@ var Σ=(c,asdf=0)=>{
 		.replace(/√(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'Math.sqrt($1)')
 		.replace(/∛\((.+)\)/g,'Math.cbrt($1)')
 		.replace(/∛(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'Math.cbrt($1)')
-		.replace(/ɘ[“‘](.+)[”’]/g,(x,y)=>`\`${ɘ(y)}'}\``)
-		.replace(/Ǝ[“‘](.+)[”’]/g,(x,y)=>ɘ(y))
 	;
-	if(!c.match(/ô/g))c+=';ô()';
-	console.log(c);
-	eval(c);
+	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c),eval(c)
 }
 
 onload=function(){document.getElementById('c').value=decodeURIComponent((/\?c=(.+)/.exec(location.search)||[,""])[1])}
