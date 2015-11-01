@@ -1,6 +1,6 @@
 var Ξ=[],//stack
 		//I/O functions
-		ô=i=>document.getElementById('o').value=i!=[]._?i:(Ξ.shift(),Ξ.shift(),Ξ.join`\n`),//output
+		ô=i=>document.getElementById('o').value+=i!=[]._?i:(Ξ.shift(),Ξ.shift(),Ξ.join`\n`),//output
 		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
 
 		//stack functions
@@ -25,7 +25,7 @@ var Ξ=[],//stack
 [М,Ϛ,Ѧ,П,Ø,Ĵ,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
-	c=(asdf==0?ɘ(c):c)
+	c=c
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[A-Za-z]+)/g,'$1($2)')
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊ])(.+)⦆/g,'$1($2)')
 		.replace(/([^\d\\\s])\.([\d]+)/g,'$1[$2]')
