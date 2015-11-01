@@ -12,7 +12,7 @@ var Ξ=[],//stack
 		//super-basic aliasing
 		ī=Infinity,
 		ü=[]._,
-		М=Math,
+		М=math,
 		Ϛ=String,
 		Ѧ=Array,
 		П=Number,
