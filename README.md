@@ -24,4 +24,4 @@ Does binary negation.
 ```
 ô[…ï].ù⬮.ø``⦆
 ```
-Outputs inverse of input.
+Outputs reverse of input.
