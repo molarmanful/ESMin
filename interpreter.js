@@ -1,7 +1,6 @@
 var Ξ=[],//stack
 		//I/O functions
-		î=i=>[i=prompt`Input:`,Ξ.push(i),i][0],//input
-		ô=i=>alert(i!=[]._?i:Ξ.join`\n`),//output
+		ô=i=>document.getElementById('o').value=i!=[]._?i:(Ξ.shift(),Ξ.join`\n`),//output
 		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
 
 		//stack functions
@@ -27,11 +26,11 @@ var Ξ=[],//stack
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
 	c=(asdf==0?ɘ(c):c)
-		.replace(/î/g,'î()')
-		.replace(/([ᵖᵍʳᶜôℹΣɘ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[A-Za-z]+)/g,'$1($2)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘ])(.+)⦆/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[A-Za-z]+)/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊ])(.+)⦆/g,'$1($2)')
 		.replace(/([^\d\\\s])\.([\d]+)/g,'$1[$2]')
 		.replace(/⬮/g,'()')
+		.replace(/⬯/g,'(``)')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/↪/g,'($,_,ã)=>')
@@ -79,4 +78,4 @@ var Σ=(c,asdf=0)=>{
 	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c),eval(c)
 }
 
-onload=function(){document.getElementById('c').value=decodeURIComponent((/\?c=(.+)/.exec(location.search)||[,""])[1])}
+onload=function(){document.getElementById('c').value=decodeURIComponent((/c=(.+)/.exec(location.search)||[,""])[1]);document.getElementById('i').value=decodeURIComponent((/i=([^&]+)/.exec(location.search)||[,""])[1])}
