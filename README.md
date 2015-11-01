@@ -9,11 +9,6 @@ Included is a parser, written in ES6 for Firefox. Language documentation will be
 Outputs `Hello, world!`.
 
 ```
-î
-```
-Outputs the stack, which contains the input.
-
-```
 ℹ⬮
 ```
 Outputs the source code. NOTE: This is **not** a true quine!
