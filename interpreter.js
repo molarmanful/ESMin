@@ -61,6 +61,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/ǁ/g,'||')
 		.replace(/↺/g,'for(')
 		.replace(/Ʀ/g,'return ')
+		.replace(/ŋ/g,'new ')
 		.replace(/\((.+)\)²/g,'Math.pow($1,2)')
 		.replace(/\((.+)\)³/g,'Math.pow($1,3)')
 		.replace(/(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)²/g,'Math.pow($1,2)')
