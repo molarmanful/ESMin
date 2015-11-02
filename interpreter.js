@@ -1,6 +1,6 @@
 var Ξ=[],//stack
 		//I/O functions
-		ô=i=>document.getElementById('o').value+=i!=[]._?i:(Ξ.shift(),Ξ.shift(),Ξ.join`\n`),//output
+		ô=i=>document.getElementById('o').value+=i!=[]._?i:(Ξ.shift(),Ξ.join`\n`),//output
 		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
 
 		//stack functions
@@ -94,7 +94,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅝/g,'(5/8)')
 		.replace(/⅞/g,'(7/8)')
 	;
-	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c),eval(c)
+	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c);eval(c)
 }
 
 onload=function(){document.getElementById('c').value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);document.getElementById('i').value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);document.getElementById('e').checked=decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1])}
