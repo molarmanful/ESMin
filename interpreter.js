@@ -28,6 +28,7 @@ var Σ=(c,asdf=0)=>{
 	c=c
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊ])(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[A-Za-z]+)/g,'$1($2)')
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊ])(.+)⦆/g,'$1($2)')
+		.replace(/ï(\d+)/g,'ï[$1]')
 		.replace(/⬮/g,'()')
 		.replace(/⬯/g,'(``)')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
