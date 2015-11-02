@@ -13,7 +13,7 @@
 				background-color: #5a5a5a!important;
 			}
 			#cp,#c {
-				height:14em;
+				height:14em
 			}
 			#i,#o {
 				height:5em
@@ -21,7 +21,7 @@
 		</style>
 		<script src="interpreter.js"></script>
 	</head>
-	<body>
+	<body onload='document.getElementById("o").value=""'>
 		<div class='container'>
 			<h1>𝔼𝕊𝕄𝕚𝕟 Interpreter - Firefox Only</h1>
 			<hr>
@@ -49,8 +49,9 @@ cp.value=`î ï ô ℹ
 				<div class='col-sm-6'>
 					<h2>Input</h2>
 					<textarea id='i' class='form-control' wrap='off'></textarea>
-					<button id='r' class='btn btn-primary' onclick='document.getElementById("o").value="",Ξ=[î=document.getElementById("i").value.split`\n`.map(v=>isNaN(v)?v:+v),ï=document.getElementById("i").value];Σ(document.getElementById("c").value,1e4)'>Run</button>
-					<button id='p' class='btn btn-success' onclick="window.location.href='?i='+encodeURIComponent(document.getElementById('i').value)+'&c='+encodeURIComponent(document.getElementById('c').value)">Permalink</button>
+					<button id='r' class='btn btn-primary' onclick='document.getElementById("o").value="",Ξ=[ï=document.getElementById("e").checked?eval(document.getElementById("i").value):document.getElementById("i").value];Σ(document.getElementById("c").value,1e4)'>Run</button>
+					<button id='p' class='btn btn-success' onclick="window.location.href='?eval='+encodeURIComponent(document.getElementById('e').checked)+'&input='+encodeURIComponent(document.getElementById('i').value)+'&code='+encodeURIComponent(document.getElementById('c').value)">Permalink</button>
+					<label><input type='checkbox' id='e'> Eval input?</label>
 				</div>
 				<div class='col-sm-6'>
 					<h2>Output</h2>
