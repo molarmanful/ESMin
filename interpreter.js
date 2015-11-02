@@ -98,5 +98,3 @@ var Σ=(c,asdf=0)=>{
 	;
 	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c);eval(c)
 }
-
-onload=function(){document.getElementById('c').value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);document.getElementById('i').value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);document.getElementById('e').checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]))}
