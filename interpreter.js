@@ -75,7 +75,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/√(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'Math.sqrt($1)')
 		.replace(/∛\((.+)\)/g,'Math.cbrt($1)')
 		.replace(/∛(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'Math.cbrt($1)')
-		.replace(/ɘ\(`(.+)`\)/g,(x,y)=>`\`${ɘ(y)}\``)
+		.replace(/ɘ\(`(.+?)`\)/g,(x,y)=>`\`${ɘ(y)}\``)
 		.replace(/½/g,'0.5')
 		.replace(/¼/g,'0.25')
 		.replace(/¾/g,'0.75')
