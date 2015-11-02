@@ -43,7 +43,7 @@
 			}
 		</script>
 	</head>
-	<body onload='c.value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);i.value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);e.checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]));co.innerHTML=c.value.length+` chars, ${utf(c.value)} bytes, chars to bytes ratio = `+(c.value.length/utf(c.value)).toFixed(2);' >
+	<body onload='c.value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);i.value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);e.checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]));co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes ratio = "+(c.value.length/utf(c.value)).toFixed(2);' >
 		<div class='container'>
 			<h1>𝔼𝕊𝕄𝕚𝕟 Interpreter - Firefox Only</h1>
 			<hr>
@@ -64,7 +64,7 @@ cp.value=`ï ô ℹ
 				</div>
 				<div class='col-sm-8'>
 					<h2>Code <small id='co'></small></h2>
-					<textarea id='c' class='form-control' wrap='off' oninput='co.innerHTML=c.value.length+` chars, ${utf(c.value)} bytes, chars to bytes = `+c.value.length/utf(c.value)'></textarea>
+					<textarea id='c' class='form-control' wrap='off' oninput='co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes = "+c.value.length/utf(c.value)'></textarea>
 				</div>
 			</div>
 			<div class='row'>
