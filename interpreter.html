@@ -20,8 +20,30 @@
 			}
 		</style>
 		<script src="interpreter.js"></script>
+		<script>
+			function utf(s) {
+				var len = 0;
+				for (var i = 0; i < s.length; i++) {
+					var code = s.charCodeAt(i);
+					if (code <= 0x7f) {
+						len += 1;
+					} else if (code <= 0x7ff) {
+						len += 2;
+					} else if (code >= 0xd800 && code <= 0xdfff) {
+						// Surrogate pair: These take 4 bytes in UTF-8 and 2 chars in UCS-2
+						// (Assume next char is the other [valid] half and just skip it)
+						len += 4; i++;
+					} else if (code < 0xffff) {
+						len += 3;
+					} else {
+						len += 4;
+					}
+				}
+				return len;
+			}
+		</script>
 	</head>
-	<body>
+	<body onload='co.innerHTML=c.value.length+` chars, ${utf(c.value)} bytes, chars to bytes = `+c.value.length/utf(c.value)' >
 		<div class='container'>
 			<h1>𝔼𝕊𝕄𝕚𝕟 Interpreter - Firefox Only</h1>
 			<hr>
@@ -41,8 +63,8 @@ cp.value=`ï ô ℹ
 					</script>
 				</div>
 				<div class='col-sm-8'>
-					<h2>Code</h2>
-					<textarea id='c' class='form-control' wrap='off'></textarea>
+					<h2>Code <small id='co'></small></h2>
+					<textarea id='c' class='form-control' wrap='off' oninput='co.innerHTML=c.value.length+` chars, ${utf(c.value)} bytes, chars to bytes = `+c.value.length/utf(c.value)'></textarea>
 				</div>
 			</div>
 			<div class='row'>
