@@ -24,7 +24,7 @@ var Ξ=[],//stack
 		ɘ=i=>LZString.decompress(i);
 [Ϛ,Ѧ,П,Ø,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 [М,Ϛ,Ѧ,П,Ø,Ĵ,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
-[ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[ש+String.fromCharCode(y+248)]=v[x]));
+[ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v['ש'+String.fromCharCode(y+248)]=v[x]));
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
 	c=c
@@ -98,7 +98,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅜/g,'(3/8)')
 		.replace(/⅝/g,'(5/8)')
 		.replace(/⅞/g,'(7/8)')
-		.replace(/([`)/\]])(ש?[\u00f8-\u10ffff])/g,'$1["$2"]')
+		.replace(/([`)/\]])([\u00f8-\u10ffff])/g,'$1["$2"]')
 	;
 	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c);eval(c)
 }
