@@ -20,9 +20,10 @@ var Ξ=[],//stack
 		Ĵ=JSON,
 		ɼ=RegExp,
 		Ɗ=Date,
+		ש=window,
 		ɘ=i=>LZString.decompress(i);
 [Ϛ,Ѧ,П,Ø,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
-[М,Ϛ,Ѧ,П,Ø,Ĵ,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
+[М,Ϛ,Ѧ,П,Ø,Ĵ,ɼ,Ɗ,ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
 	c=c
