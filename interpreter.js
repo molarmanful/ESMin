@@ -6,7 +6,7 @@ var Ξ=[],//stack
 		//stack functions
 		ᵖ=(i=0)=>{Array.prototype.slice.call(arguments).map(x=>Ξ.push(x))},
 		ᵍ=i=>i!=[]._?Ξ[i<0?Ξ.length+i:i]:Ξ[Ξ.length-1],
-		ʳ=(i=Ξ.length-1)=>Ξ.splice(i),
+		ʳ=(i=Ξ.length-1)=>Ξ.splice(i,1),
 		ᶜ=i=>Ξ=[],
 
 		//super-basic aliasing
