@@ -12,6 +12,11 @@ var Ξ=[],//stack
 		//super-basic aliasing
 		ī=Infinity,
 		ü=[]._,
+		ℇ=2.718281828459045,
+		į=math.sqrt(-1),
+		ɸ=(1+math.sqrt(5))/2,
+		π=math.pi,
+		τ=math.pi*2,
 		М=math,
 		Ϛ=String,
 		Ѧ=Array,
