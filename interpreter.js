@@ -104,7 +104,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅜/g,'(3/8)')
 		.replace(/⅝/g,'(5/8)')
 		.replace(/⅞/g,'(7/8)')
-		.replace(/([`)/\]МϚѦПØĴɼƊȺï])([\u00f8-\u03cc])/g,'$1["$2"]')
+		.replace(/([)/\]МϚѦПØĴɼƊȺï])([\u00f8-\u03cc])/g,'$1["$2"]')
 	;
 	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c);eval(c)
 }
