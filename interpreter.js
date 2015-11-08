@@ -28,7 +28,8 @@ var Ξ=[],//stack
 		Ɗ=Date,
 		ש=window,
 		ß='toString',
-		ɘ=i=>LZString.decompress(i);
+		ɘ=i=>LZString.decompress(i),
+		ᴙ=i=>[...i].reverse().join``;
 [Ϛ,Ѧ,П,Ø,ɼ,Ɗ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 [М,Ϛ,Ѧ,П,Ø,Ĵ,ɼ,Ɗ,Ⱥ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 [ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v['ש'+String.fromCharCode(y+248)]=v[x]));
@@ -68,6 +69,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⎞/g,'/)')
 		.replace(/⦃/g,'${')
 		.replace(/…/g,'...')
+		.replace(/⟦/g,'[...')
 		.replace(/˖/g,'+=')
 		.replace(/⧺/g,'++')
 		.replace(/˗/g,'-=')
@@ -110,6 +112,10 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅞/g,'(7/8)')
 		.replace(/([)/\]МϚѦПØĴɼƊȺï])([\u00f8-\u03cc])/g,'$1["$2"]')
 		.replace(/ß/g,'[ß]')
+		.replace(/⌿/g,'/g')
+		.replace(/⍀/g,'/ig')
+		.replace(/⊨/g,'true')
+		.replace(/⊭/g,'false')
 	;
 	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c);eval(c)
 }
