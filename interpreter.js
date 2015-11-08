@@ -116,6 +116,9 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⍀/g,'/ig')
 		.replace(/⊨/g,'true')
 		.replace(/⊭/g,'false')
+		.replace(/«/g,'<<')
+		.replace(/»/g,'>>')
+		.replace(/⫸/g,'>>>')
 	;
 	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c);eval(c)
 }
