@@ -14,14 +14,14 @@ Outputs `Hello, world!`.
 Outputs the source code. NOTE: This is **not** a true quine!
 
 ```
-↺x=0;x⧺<100;)ᵖx
+↺x=0;x⧺<1ℍ;)ᵖx
 ```
 Outputs all numbers 1-100.
 ```
-ô[…ï]ć⇝a^1)ø⬯⦆
+ô⟦ï]ć⇝a^1)ø⬯⦆
 ```
 Does binary negation.
 ```
-ô[…ï]ù⬮ø``⦆
+ôᴙï⦆
 ```
 Outputs reverse of input.
