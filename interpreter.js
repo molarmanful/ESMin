@@ -36,7 +36,7 @@ var Ξ=[],//stack
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
 	c=c
-		.replace(/ɘ(.+)#)/g,(x,y)=>ɘ(y))
+		.replace(/ɘ(.+)#/g,(x,y)=>ɘ(y))
 		.replace(/ℍ/g,'00')
 		.replace(/𝕜/g,'000')
 		.replace(/𝕄/g,'000000')
