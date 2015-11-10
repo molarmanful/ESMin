@@ -52,7 +52,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⇀/g,'(($,_,ã)=>')
 		.replace(/§(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ℇįɸπτ])/g,'($1)')
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊᴙ\u00f8-\u03cc])([A-Za-z$_ãï]+)/g,'$1($2)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊᴙ\u00f8-\u03cc])([^(])/g,'$1($2')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊᴙ\u00f8-\u03cc])([^(\u00f8-\u03cc])/g,'$1($2')
 		.replace(/ï(\d+)/g,'ï[$1]')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
