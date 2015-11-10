@@ -82,7 +82,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅋/g,'&&')
 		.replace(/ǁ/g,'||')
 		.replace(/↺/g,'for(')
-		.replace(/([^МϚѦПØĴɼƊȺï\u00f8-\u03cc])Ʀ/g,'$1return ')
+		.replace(/([^МϚѦПØĴɼƊȺïᴙ\u00f8-\u03cc])Ʀ/g,'$1return ')
 		.replace(/ŋ/g,'new ')
 		.replace(/\((.+)\)²/g,'Math.pow($1,2)')
 		.replace(/\((.+)\)³/g,'Math.pow($1,3)')
