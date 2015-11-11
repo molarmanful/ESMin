@@ -13,6 +13,7 @@ var Ξ=[],//stack
 		ī=Infinity,
 		ü=[]._,
 		ℇ=math.e,
+		ε=Number.EPSILON,
 		į=math.sqrt(-1),
 		ɸ=(1+math.sqrt(5))/2,
 		π=math.pi,
@@ -51,7 +52,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⬯/g,'(``)')
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
-		.replace(/§(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ℇįɸπτ])/g,'($1)')
+		.replace(/§(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ℇεįɸπτ])/g,'($1)')
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊᴙξ\u00f8-\u03cc])([A-Za-z$_ãï]+)/g,'$1($2)')
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼƊᴙξ\u00f8-\u03cc])([^(\u00f8-\u03cc])/g,'$1($2')
 		.replace(/ï(\d+)/g,'ï[$1]')
@@ -83,7 +84,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅋/g,'&&')
 		.replace(/ǁ/g,'||')
 		.replace(/↺/g,'for(')
-		.replace(/([^МϚѦПØĴɼƊȺïᴙξ\u00f8-\u03cc])Ʀ/g,'$1return ')
+		.replace(/Ʀ/g,'$1return ')
 		.replace(/ŋ/g,'new ')
 		.replace(/\((.+)\)²/g,'Math.pow($1,2)')
 		.replace(/\((.+)\)³/g,'Math.pow($1,3)')
@@ -108,7 +109,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅜/g,'(3/8)')
 		.replace(/⅝/g,'(5/8)')
 		.replace(/⅞/g,'(7/8)')
-		.replace(/([)/\]МϚѦПØĴɼƊȺξï])([\u00f8-\u03cc])/g,'$1["$2"]')
+		.replace(/([)/\]МϚѦПØĴɼƊȺξεï])([\u00f8-\u03cc])/g,'$1["$2"]')
 		.replace(/ß/g,'[ß]')
 		.replace(/⌿/g,'/g')
 		.replace(/⍀/g,'/ig')
