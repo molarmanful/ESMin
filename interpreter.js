@@ -4,7 +4,7 @@ var Ξ=[],//stack
 		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
 
 		//stack functions
-		ᵖ=(i=0)=>{Array.prototype.slice.call(arguments).map(x=>Ξ.push(x))},
+		ᵖ=(i=0,...r)=>{Ξ.push(i,...r)},
 		ᵍ=i=>i!=[]._?Ξ[i<0?Ξ.length+i:i]:Ξ[Ξ.length-1],
 		ʳ=(i=Ξ.length-1)=>Ξ.splice(i,1),
 		ᶜ=i=>Ξ=[],
