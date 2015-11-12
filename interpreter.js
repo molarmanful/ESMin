@@ -10,11 +10,11 @@ var Ξ=[],//stack
 		ᶜ=i=>Ξ=[],
 
 		//super-basic aliasing
-		ī=Infinity,
-		ü=[]._,
+		ȉ=Infinity,
+		ߎ=[]._,
 		ℇ=math.e,
 		ε=Number.EPSILON,
-		į=math.sqrt(-1),
+		ȋ=math.sqrt(-1),
 		ɸ=(1+math.sqrt(5))/2,
 		π=math.pi,
 		τ=math.pi*2,
@@ -24,9 +24,9 @@ var Ξ=[],//stack
 		Ⱥ=_,
 		П=Number,
 		Ø=Object,
-		Ĵ=JSON,
+		ʝ=JSON,
 		ɼ=RegExp,
-		Ɗ=Date,
+		Ḍ=Date,
 		ש=window,
 		ß='toString',
 		ξ=s,
@@ -52,9 +52,9 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⬯/g,'(``)')
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
-		.replace(/§(-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ℇεįɸπτ])/g,'($1)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØȺɼƊᴙξ\u00f8-\u03cc])([A-Za-z$_ãï]+)/g,'$1($2)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼȺƊᴙξ\u00f8-\u03cc])([^(\u00f8-\u03cc])/g,'$1($2')
+		.replace(/§/g,'($1)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØȺɼƊᴙξ\u00f8-\u01ef])([A-Za-z$_ãï]+|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ℇεįɸπτ])/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼȺƊᴙξ\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
 		.replace(/ï(\d+)/g,'ï[$1]')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
@@ -82,9 +82,9 @@ var Σ=(c,asdf=0)=>{
 		.replace(/≤/g,'<=')
 		.replace(/≥/g,'>=')
 		.replace(/⅋/g,'&&')
-		.replace(/ǁ/g,'||')
+		.replace(/⋎/g,'||')
 		.replace(/↺/g,'for(')
-		.replace(/Ʀ/g,'$1return ')
+		.replace(/ᶉ/g,'return ')
 		.replace(/ŋ/g,'new ')
 		.replace(/\((.+)\)²/g,'Math.pow($1,2)')
 		.replace(/\((.+)\)³/g,'Math.pow($1,3)')
@@ -109,7 +109,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅜/g,'(3/8)')
 		.replace(/⅝/g,'(5/8)')
 		.replace(/⅞/g,'(7/8)')
-		.replace(/([)/\]МϚѦПØĴɼƊȺξεï])([\u00f8-\u03cc])/g,'$1["$2"]')
+		.replace(/([)/\]МϚѦПØĴɼƊȺξεï])([\u00f8-\u01ef])/g,'$1["$2"]')
 		.replace(/ß/g,'[ß]')
 		.replace(/⌿/g,'/g')
 		.replace(/⍀/g,'/ig')
