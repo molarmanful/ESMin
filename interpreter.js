@@ -32,8 +32,8 @@ var Ξ=[],//stack
 		ξ=s,
 		ɘ=i=>LZString.decompress(i),
 		ᴙ=i=>[...i].reverse().join``;
-[Ϛ,Ѧ,П,Ø,ɼ,Ɗ,ξ,Ⱥ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
-[М,Ϛ,Ѧ,П,Ø,Ĵ,ɼ,Ɗ,Ⱥ,ξ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
+[Ϛ,Ѧ,П,Ø,ɼ,Ḍ,ξ,Ⱥ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
+[М,Ϛ,Ѧ,П,Ø,ʝ,ɼ,Ḍ,Ⱥ,ξ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 [ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v['ש'+String.fromCharCode(y+248)]=v[x]));
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
@@ -53,8 +53,8 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
 		.replace(/§/g,'($1)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØȺɼƊᴙξ\u00f8-\u01ef])([A-Za-z$_ãï]+|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ℇεįɸπτ])/g,'$1($2)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼȺƊᴙξ\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØȺɼḌᴙξ\u00f8-\u01ef])([A-Za-z$_ãï]+|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ȉℇεȋɸπτ])/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼȺḌᴙξ\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
 		.replace(/ï(\d+)/g,'ï[$1]')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
@@ -109,7 +109,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅜/g,'(3/8)')
 		.replace(/⅝/g,'(5/8)')
 		.replace(/⅞/g,'(7/8)')
-		.replace(/([)/\]МϚѦПØĴɼƊȺξεï])([\u00f8-\u01ef])/g,'$1["$2"]')
+		.replace(/([)/\]МϚѦПØĴɼḌȺξεï])([\u00f8-\u01ef])/g,'$1["$2"]')
 		.replace(/ß/g,'[ß]')
 		.replace(/⌿/g,'/g')
 		.replace(/⍀/g,'/ig')
