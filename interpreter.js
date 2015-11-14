@@ -110,7 +110,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⅜/g,'(3/8)')
 		.replace(/⅝/g,'(5/8)')
 		.replace(/⅞/g,'(7/8)')
-		.replace(/[\u00f8-\u01ef]/g,'$1["$2"]')
+		.replace(/[\u00f8-\u01ef]/g,'["$1"]')
 		.replace(/ß/g,'[ß]')
 		.replace(/⌿/g,'/g')
 		.replace(/⍀/g,'/ig')
