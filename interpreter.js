@@ -1,6 +1,7 @@
 var Ξ=[],//stack
 		//I/O functions
-		ô=i=>document.getElementById('o').value+=i!=[]._?i:(Ξ.shift(),Ξ.join`\n`),//output
+		ï,
+		ô=i=>document.getElementById('o').value+=i!=[]._?i:Ξ.join`\n`,//output
 		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
 
 		//stack functions
