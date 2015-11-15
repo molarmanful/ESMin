@@ -54,7 +54,7 @@ var Σ=(c,asdf=0)=>{
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
 		.replace(/§/g,'($1)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØȺɼḌᴙξëß\u00f8-\u01ef])([A-Za-z$_ãï]+|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?|[ȉℇεȋɸπτ])/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØȺɼḌᴙξëß\u00f8-\u01ef])([A-Za-z$_ãïȉℇεȋɸπτ\u1e00-\u1eff]+|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)/g,'$1($2)')
 		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼȺḌᴙξëß\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
 		.replace(/ï(\d+)/g,'ï[$1]')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
