@@ -14,7 +14,7 @@ Outputs `Hello, world!`.
 Outputs the source code. NOTE: This is **not** a true quine!
 
 ```
-↺x=0;x⧺<1ℍ;)ᵖx
+↺;Ḁ<ṥ;Ḁ⧺)ᵖḀ
 ```
 Outputs all numbers 1-100.
 ```
