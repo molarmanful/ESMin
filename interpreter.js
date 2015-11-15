@@ -9,7 +9,7 @@ var Ξ=[],//stack
 		ʳ=(i=Ξ.length-1)=>Ξ.splice(i,1),
 		ᶜ=i=>Ξ=[],
 
-		//super-basic aliasing
+		//aliasing
 		ȉ=Infinity,
 		ߎ=[]._,
 		ℇ=math.e,
@@ -36,6 +36,7 @@ var Ξ=[],//stack
 [Ϛ,Ѧ,П,Ø,ɼ,Ḍ,ξ,Ⱥ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 [М,Ϛ,Ѧ,П,Ø,ʝ,ɼ,Ḍ,Ⱥ,ξ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 [ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v['ש'+String.fromCharCode(y+248)]=v[x]));
+[...`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`].map((x,y)=>{eval(`var ${v}=`+x)});
 var Σ=(c,asdf=0)=>{
 	//syntax from esmin to es6
 	c=c
