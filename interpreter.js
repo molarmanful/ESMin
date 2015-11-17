@@ -37,7 +37,7 @@ var Ξ=[],//stack
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`;
 [Ϛ,Ѧ,П,Ø,ɼ,Ḍ,ξ,Ѩ,Ɽ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 [М,Ϛ,Ѧ,П,Ø,ʝ,ɼ,Ḍ,Ѩ,ξ,ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
-var Σ=(c,asdf=0)=>{
+var Σ=c=>{
 	//syntax from esmin to es6
 	c=c
 		.replace(/ɘ(.+)#/g,(x,y)=>ɘ(y))
@@ -124,8 +124,8 @@ var Σ=(c,asdf=0)=>{
 		.replace(/»/g,'>>')
 		.replace(/⫸/g,'>>>')
 		.replace(/˜/g,'~~')
-	;console.log(c);
-	if(asdf==1e4&&!c.match(/ô/g)){
-		if(Ξ.length){c+=';ô()',eval(c);return}else{document.getElementById('o').value=eval(c);return}
-	}eval(c)
+	;
+	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
+	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),document.getElementById('o').value=eval(c);return}
+	else console.log(c),eval(c);
 }

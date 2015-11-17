@@ -18,10 +18,10 @@ Outputs the source code. NOTE: This is **not** a true quine!
 ```
 Outputs all numbers 1-100.
 ```
-ô⟦ï]ć⇝a^1)ø⬯)
+⟦ï]ć⇝a^1)ø⬯
 ```
 Does binary negation.
 ```
-ôᴙï)
+ᴙï
 ```
 Outputs reverse of input.
