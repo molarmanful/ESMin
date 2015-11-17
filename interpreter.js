@@ -26,6 +26,7 @@ var Ξ=[],//stack
 		Ø=Object,
 		ʝ=JSON,
 		ɼ=RegExp,
+		ɾ=XRegExp,
 		Ḍ=Date,
 		ש=window,
 		ß='toString',
