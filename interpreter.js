@@ -126,7 +126,6 @@ var Σ=(c,asdf=0)=>{
 		.replace(/˜/g,'~~')
 	;console.log(c);
 	if(asdf==1e4&&!c.match(/ô/g)){
-		if(Ξ.length){c+=';ô()',eval(c);return}
-		else return eval(c);
+		if(Ξ.length){c+=';ô()',eval(c);return}else{document.getElementById('o').value=eval(c);return}
 	}eval(c)
 }
