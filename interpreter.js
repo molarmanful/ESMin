@@ -124,6 +124,9 @@ var Σ=(c,asdf=0)=>{
 		.replace(/»/g,'>>')
 		.replace(/⫸/g,'>>>')
 		.replace(/˜/g,'~~')
-	;
-	if(asdf==1e4&&!c.match(/ô/g))c+=';ô()';console.log(c);eval(c)
+	;console.log(c);
+	if(asdf==1e4&&!c.match(/ô/g)){
+		if(Ξ.length){c+=';ô()',eval(c);return}
+		else return eval(c);
+	}eval(c)
 }
