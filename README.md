@@ -4,7 +4,7 @@
 Included is a parser, written in ES6 for Firefox. Language documentation will be added to the wiki; you can also look at `interpreter.js` for an idea of the syntax.
 ## Quick Examples
 ```
-ô`Hello, world!”
+`Hello, world!`
 ```
 Outputs `Hello, world!`.
 
