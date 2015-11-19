@@ -30,6 +30,7 @@ var Ξ=[],//stack
 		Ḍ=Date,
 		ש=window,
 		ß='toString',
+		Ꝉ='length',
 		ξ=s,
 		ᴙ=i=>[...i].reverse().join``,
 		ë=eval,
@@ -115,7 +116,12 @@ var Σ=c=>{
 		.replace(/ᶍ/g,'0x')
 		.replace(/Ⅹ/g,'10')
 		.replace(/([\u00f8-\u01ef])/g,'["$1"]')
-		.replace(/ß/g,'[ß]')
+		.replace(/([ßꝈ])/g,'[$1]')
+		.replace(/⑴/g,'$1')
+		.replace(/⑵/g,'$2')
+		.replace(/⑶/g,'$3')
+		.replace(/⊙/g,'(.)')
+		.replace(/⁅/g,'[^')
 		.replace(/⌿/g,'/g')
 		.replace(/⍀/g,'/ig')
 		.replace(/⊨/g,'true')
