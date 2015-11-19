@@ -35,8 +35,8 @@ var Ξ=[],//stack
 		ᴙ=i=>[...i].reverse().join``,
 		ë=eval,
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`;
-[Ϛ,Ѧ,П,Ø,ɼ,Ḍ,ξ,Ѩ,Ɽ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
-[М,Ϛ,Ѧ,П,Ø,ʝ,ɼ,Ḍ,Ѩ,ξ,ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
+[Ϛ,Ѧ,П,Ø,ɼ,Ḍ,ᶊ,Ѩ,Ɽ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
+[М,Ϛ,Ѧ,П,Ø,ʝ,ɼ,Ḍ,Ѩ,ᶊ,ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 var Σ=c=>{
 	//syntax from esmin to es6
 	c=c
@@ -55,8 +55,8 @@ var Σ=c=>{
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
 		.replace(/§/g,'($1)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØѨɼⱤḌᴙξëß\u00f8-\u01ef])(([A-Za-z$_ãïîíìȉʉℇεȋɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+)/g,'$1($2)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼⱤѨḌᴙξëß\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØѨɼⱤḌᴙᶊëß\u00f8-\u01ef])(([A-Za-z$_ãïîíìȉʉℇεȋɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+)/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼⱤѨḌᴙᶊëß\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
 		.replace(/([ïîíì])(\d+)/g,'$1[$2]')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
