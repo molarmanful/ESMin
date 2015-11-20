@@ -34,7 +34,7 @@ var Ξ=[],//stack
 		ß='toString',
 		Ꝉ='length',
 		ᶊ=s,
-		Ɱ=(i,s='',f,j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
+		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
 		ᴙ=i=>[...i].reverse().join``,
 		ë=eval,
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
