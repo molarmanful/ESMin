@@ -1,3 +1,5 @@
+[String,Array,Number,Object,RegExp,Date,s,_,XRegExp].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
+[math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 var Ξ=[],//stack
 		//I/O functions
 		ô=i=>document.getElementById('o').value+=i!=[]._?i:Ξ.join`\n`,//output
@@ -36,8 +38,6 @@ var Ξ=[],//stack
 		ë=eval,
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`,
 		;
-[Ϛ,Ѧ,П,Ø,ɼ,Ḍ,ᶊ,Ѩ,Ɽ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
-[М,Ϛ,Ѧ,П,Ø,ʝ,ɼ,Ḍ,Ѩ,ᶊ,ש].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 var Σ=c=>{
 	//syntax from esmin to es6
 	c=c
