@@ -34,6 +34,7 @@ var Ξ=[],//stack
 		ƒ=Function,
 		ß='toString',
 		Ꝉ='length',
+		ᶏ='apply',
 		ᶊ=s,
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
 		ᴙ=i=>[...i].reverse().join``,
@@ -59,8 +60,8 @@ var Σ=c=>{
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
 		.replace(/§/g,'($1)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØѨɼⱤƒḌⱮᴙᶊëß\u00f8-\u01ef])(([A-Za-z$_ãïîíìȉʉℇεȋɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+)/g,'$1($2)')
-		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼⱤѨḌƒⱮᴙᶊëß\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØѨɼⱤƒḌⱮᴙᶊëßᶏ\u00f8-\u01ef])(([A-Za-z$_ãïîíìȉʉℇεȋɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+)/g,'$1($2)')
+		.replace(/([ᵖᵍʳᶜôℹΣɘϚѦПØɼⱤѨḌƒⱮᴙᶊëßᶏ\u00f8-\u01ef])([^(\u00f8-\u01ef])/g,'$1($2')
 		.replace(/⎖(\d+)/g,'[$1]')
 		.replace(/([ïîíì])(\d+)/g,'$1[$2]')
 		.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
@@ -121,7 +122,7 @@ var Σ=c=>{
 		.replace(/ᶍ/g,'0x')
 		.replace(/Ⅹ/g,'10')
 		.replace(/([\u00f8-\u01ef])/g,'["$1"]')
-		.replace(/([ßꝈ])/g,'[$1]')
+		.replace(/([ßꝈᶏ])/g,'[$1]')
 		.replace(/⑴/g,'$1')
 		.replace(/⑵/g,'$2')
 		.replace(/⑶/g,'$3')
