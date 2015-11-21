@@ -53,7 +53,7 @@
 			}
 		</script>
 	</head>
-	<body onload='c.value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);document.getElementById("i").value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);e.checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]));co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes ratio = "+(c.value.length/utf(c.value)).toFixed(2);' >
+	<body onload='c.value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);document.getElementById("i").value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);E.checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]));co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes ratio = "+(c.value.length/utf(c.value)).toFixed(2);' >
 		<div class='container'>
 			<h1>𝔼𝕊𝕄𝕚𝕟 Interpreter - Firefox Only</h1>
 			<hr>
@@ -83,9 +83,9 @@ cp.value=`ï î í ì ô ℹ
 				<div class='col-sm-6'>
 					<h2>Input</h2>
 					<textarea id='i' class='form-control' wrap='off'></textarea>
-					<button id='r' class='btn btn-primary' onclick='o.value="",Ξ=[],ï=e.checked?eval(document.getElementById("i").value):document.getElementById("i").value,î=ï[0],í=ï[1],ì=ï[2],[...nchars].map((x,y)=>{eval(x+`=`+y)});Σ(c.value)'>Run</button>
-					<button id='p' class='btn btn-success' onclick="window.location.href='?eval='+encodeURIComponent(e.checked)+'&input='+encodeURIComponent(document.getElementById('i').value)+'&code='+encodeURIComponent(c.value)">Permalink</button>
-					<label><input type='checkbox' id='e'> Eval input?</label>
+					<button id='r' class='btn btn-primary' onclick='o.value="",Ξ=[],ï=E.checked?eval(document.getElementById("i").value):document.getElementById("i").value,î=ï[0],í=ï[1],ì=ï[2],[...nchars].map((x,y)=>{eval(x+`=`+y)});Σ(c.value)'>Run</button>
+					<button id='p' class='btn btn-success' onclick="window.location.href='?eval='+E.checked+'&input='+encodeURIComponent(document.getElementById('i').value)+'&code='+encodeURIComponent(c.value)">Permalink</button>
+					<label><input type='checkbox' id='E'> Eval input?</label>
 				</div>
 				<div class='col-sm-6'>
 					<h2>Output</h2>
