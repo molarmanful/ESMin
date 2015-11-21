@@ -50,7 +50,7 @@ var compress=i=>LZString.compress(shoco.c(i));
 var Σ=c=>{
 	//syntax from esmin to es6
 	c=c
-		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
+		.replace(/ɘ(.+)(#|@)/g,(x,y)=>shoco.d(LZString.decompress(y)))
 		.replace(/ℍ/g,'00')
 		.replace(/𝕜/g,'000')
 		.replace(/𝕄/g,'000000')
