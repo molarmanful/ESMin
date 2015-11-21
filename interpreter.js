@@ -2,8 +2,8 @@
 [math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 var Ξ=[],//stack
 		//I/O functions
-		ô=i=>document.getElementById('o').value+=i!=[]._?i:Ξ.join`\n`,//output
-		ℹ=i=>[i=i!=[]._?document.getElementById("c").value[i]:document.getElementById("c").value,Ξ.push(i)][0],//source
+		ô=i=>o.value+=i!=[]._?i:Ξ.join`\n`,//output
+		ℹ=i=>[i=i!=[]._?c.value[i]:c.value,Ξ.push(i)][0],//source
 
 		//stack functions
 		ᵖ=(i=0,...r)=>{Ξ.push(i,...r)},
@@ -149,6 +149,6 @@ var Σ=c=>{
 		.replace(/˜/g,'~~')
 	;
 	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
-	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),document.getElementById('o').value=eval(c);return}
+	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
 	else console.log(c),eval(c);
 }
