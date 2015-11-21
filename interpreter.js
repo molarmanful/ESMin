@@ -44,7 +44,7 @@ var Ξ=[],//stack
 
 //compression stuff
 shoco.c=i=>Array.prototype.map.call(shoco.compress(i),x=>String.fromCharCode(x)).join``;
-shoco.d=i=>shoco.decompress(Uint8Array((i.constructor==Array?i[0]:i).split``.map(x=>x.charCodeAt(0))));
+shoco.d=i=>shoco.decompress(new Uint8Array((i.constructor==Array?i[0]:i).split``.map(x=>x.charCodeAt(0))));
 var compress=i=>LZString.compress(shoco.c(i));
 
 var Σ=c=>{
