@@ -132,7 +132,7 @@ var Σ=c=>{
 		.replace(/ᶀ/g,'0b')
 		.replace(/ᶍ/g,'0x')
 		.replace(/Ⅹ/g,'10')
-		.replace(/([\u00f8-\u0236])/g,'["$1"]')
+		.replace(/([^.])([\u00f8-\u0236])/g,'["$1"]')
 		.replace(/([ßꝈᶏ])/g,'[$1]')
 		.replace(/⑴/g,'$1')
 		.replace(/⑵/g,'$2')
