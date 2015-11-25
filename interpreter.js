@@ -52,6 +52,9 @@ shoco.d=i=>shoco.decompress(new Uint8Array((i.constructor==Array?i[0]:i).split``
 var compress=i=>LZString.compress(shoco.c(i));
 
 var Σ=c=>{
+	var r='ᵖᵍʳôℹΣɘϚѦПØѨɼⱤƒḌⱮᴙᶊëßᶏ\u00f8-\u0236',
+			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff',
+			d='-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+';
 	//syntax from esmin to es6
 	c=c
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
@@ -73,8 +76,8 @@ var Σ=c=>{
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
 		.replace(/ª/g,'ᶏש,')
-		.replace(/([ᵖᵍʳôℹΣɘϚѦПØѨɼⱤƒḌⱮᴙᶊëßᶏ\u00f8-\u0236])(([A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+)/g,'$1($2)')
-		.replace(/([ᵖᵍʳôℹΣɘϚѦПØɼⱤѨḌƒⱮᴙᶊëßᶏ\u00f8-\u0236])([^(\u00f8-\u0236ßꝈᶏ¤])/g,'$1($2')
+		.replace(eval(`/([${r}])(([${n}]|${d})/g`),'$1($2)')
+		.replace(eval(`/([${r}])([^(\u00f8-\u0236ßꝈᶏ¤])/g`),'$1($2')
 		.replace(/¤/g,'')
 		.replace(/⎖(\d+)/g,'[$1]')
 		.replace(/([ïîíì])(\d+)/g,'$1[$2]')
@@ -90,7 +93,7 @@ var Σ=c=>{
 		.replace(/⎞/g,'/)')
 		.replace(/⦃/g,'${')
 		.replace(/…/g,'...')
-		.replace(/⟬(([A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+)/g,'[...$1]')
+		.replace(eval(`/⟬(([${n}]|${d})/g`),'[...$1]')
 		.replace(/⟦/g,'[...')
 		.replace(/˖/g,'+=')
 		.replace(/⧺/g,'++')
@@ -110,11 +113,11 @@ var Σ=c=>{
 		.replace(/ᶉ/g,'return ')
 		.replace(/ŋ/g,'new ')
 		.replace(/ᕠ/g,'this')
-		.replace(/(⦅.+|(([A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))²/g,'Math.pow($1,2)')
-		.replace(/(⦅.+|(([A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))³/g,'Math.pow($1,3)')
-		.replace(/(⦅.+|(([A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))ⁿ(.+⦆|(([A-Za-z$_ãïîíìȉʉℇεȋɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))/g,'Math.pow($1,$4)')
-		.replace(/√(.+⦆|(([A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))/g,'Math.sqrt($1)')
-		.replace(/∛(.+⦆|(([A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))/g,'Math.cbrt($1)')
+		.replace(eval(`/(⦅.+|(([${n}]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))²/g`),'Math.pow($1,2)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d}))³/g`,'Math.pow($1,3)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d}))ⁿ(.+⦆|(([${n}]|${d}))/g`),'Math.pow($1,$4)')
+		.replace(eval(`/√(.+⦆|(([${n}]|${d}))/g`),'Math.sqrt($1)')
+		.replace(eval(`/∛(.+⦆|(([${n}]|${d}))/g`),'Math.cbrt($1)')
 		.replace(/[⦅⦆]/g,'')
 		.replace(/½/g,'.5')
 		.replace(/¼/g,'.25')
