@@ -55,7 +55,7 @@ var Σ=c=>{
 	//syntax from esmin to es6
 	c=c
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
-		.replace(/э(.+)#/g,(x,y)=>shoco.d(y))
+		.replace(/э(.+)#/gm,(x,y)=>shoco.d(y))
 		.replace(/Э(.+)#/g,(x,y)=>LZString.decompress(y))
 		.replace(/ℍ/g,'00')
 		.replace(/𝕜/g,'000')
