@@ -99,7 +99,7 @@ var Σ=c=>{
 		.replace(/…/g,'...')
 		.replace(eval(`/⟬([${n}]+)/g`),'[...$1]')
 		.replace(/⟦/g,'[...')
-		.replace(eval(`/⟨(([${n}]|\d)+)/g`),'[$1]')
+		.replace(eval(`/⟨(([${n}]|\\d)+)/g`),'[$1]')
 		.replace(/˖/g,'+=')
 		.replace(/⧺/g,'++')
 		.replace(/˗/g,'-=')
