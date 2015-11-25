@@ -54,7 +54,7 @@ var compress=i=>LZString.compress(shoco.c(i));
 var Σ=c=>{
 	var r='ᵖᵍʳôℹΣɘϚѦПØѨɼⱤƒḌⱮᴙᶊëßᶏ\u00f8-\u0236',
 			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff',
-			d='-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?';
+			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	//syntax from esmin to es6
 	c=c
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
