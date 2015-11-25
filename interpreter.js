@@ -114,7 +114,7 @@ var Σ=c=>{
 		.replace(/ŋ/g,'new ')
 		.replace(/ᕠ/g,'this')
 		.replace(eval(`/(⦅.+|(([${n}]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))²/g`),'Math.pow($1,2)')
-		.replace(eval(`/(⦅.+|(([${n}]|${d}))³/g`,'Math.pow($1,3)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d}))³/g`),'Math.pow($1,3)')
 		.replace(eval(`/(⦅.+|(([${n}]|${d}))ⁿ(.+⦆|(([${n}]|${d}))/g`),'Math.pow($1,$4)')
 		.replace(eval(`/√(.+⦆|(([${n}]|${d}))/g`),'Math.sqrt($1)')
 		.replace(eval(`/∛(.+⦆|(([${n}]|${d}))/g`),'Math.cbrt($1)')
