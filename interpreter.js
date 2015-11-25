@@ -54,7 +54,7 @@ var compress=i=>LZString.compress(shoco.c(i));
 var Σ=c=>{
 	var r='ᵖᵍʳôℹΣɘϚѦПØѨɼⱤƒḌⱮᴙᶊëßᶏ\u00f8-\u0236',
 			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\u1e00-\u1eff',
-			d='-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+';
+			d='-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?';
 	//syntax from esmin to es6
 	c=c
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
@@ -80,7 +80,7 @@ var Σ=c=>{
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
 		.replace(/ª/g,'ᶏש,')
-		.replace(eval(`/([${r}])(([${n}]|${d})/g`),'$1($2)')
+		.replace(eval(`/([${r}])(([${n}]|${d})+)/g`),'$1($2)')
 		.replace(eval(`/([${r}])([^(\u00f8-\u0236ßꝈᶏ¤])/g`),'$1($2')
 		.replace(/¤/g,'')
 		.replace(/⎖(\d+)/g,'[$1]')
@@ -118,11 +118,11 @@ var Σ=c=>{
 		.replace(/ᶉ/g,'return ')
 		.replace(/ŋ/g,'new ')
 		.replace(/ᕠ/g,'this')
-		.replace(eval(`/(⦅.+|(([${n}]|-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?)+))²/g`),'Math.pow($1,2)')
-		.replace(eval(`/(⦅.+|(([${n}]|${d}))³/g`),'Math.pow($1,3)')
-		.replace(eval(`/(⦅.+|(([${n}]|${d}))ⁿ(.+⦆|(([${n}]|${d}))/g`),'Math.pow($1,$4)')
-		.replace(eval(`/√(.+⦆|(([${n}]|${d}))/g`),'Math.sqrt($1)')
-		.replace(eval(`/∛(.+⦆|(([${n}]|${d}))/g`),'Math.cbrt($1)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d})+))²/g`),'Math.pow($1,2)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d})+))³/g`),'Math.pow($1,3)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d})+)ⁿ(.+⦆|(([${n}]|${d}))/g`),'Math.pow($1,$4)')
+		.replace(eval(`/√(.+⦆|(([${n}]|${d})+)/g`),'Math.sqrt($1)')
+		.replace(eval(`/∛(.+⦆|(([${n}]|${d})+)/g`),'Math.cbrt($1)')
 		.replace(/[⦅⦆]/g,'')
 		.replace(/½/g,'.5')
 		.replace(/¼/g,'.25')
