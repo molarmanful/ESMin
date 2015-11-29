@@ -18,7 +18,7 @@ Outputs the source code. NOTE: This is **not** a true quine!
 ```
 Outputs all numbers 1-100.
 ```
-⟦ï]ć⇝a^1)ø⬯
+Ɱ(ï,⇏a^1)
 ```
 Does binary negation.
 ```
