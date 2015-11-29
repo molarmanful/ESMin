@@ -42,7 +42,7 @@ var Ξ=[],//stack
 		ᶊ=s,
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
 		ᴙ=i=>[...i].reverse().join``,
-		Մ=(i,r,o,t)=>(t=i.replace(r,o),t!=i?ṟ(t,r,o):t),
+		Մ=(i,r,o,t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
 		ᛪ='0x',
