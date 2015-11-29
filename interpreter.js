@@ -117,6 +117,7 @@ var Σ=c=>{
 		.replace(/⅋/g,'&&')
 		.replace(/⋎/g,'||')
 		.replace(/↺/g,'for(')
+		.replace(/ⱳ/g,'with(')
 		.replace(/ᶉ/g,'return ')
 		.replace(/ₙ/g,'new ')
 		.replace(/ᕠ/g,'this')
