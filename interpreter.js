@@ -57,7 +57,7 @@ var Σ=c=>{
 			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	//syntax from esmin to es6
-	c=c
+	c=babel.transform(c
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
 		.replace(/э([^]+)#/gm,(x,y)=>shoco.d(y))
 		.replace(/Э(.+)#/g,(x,y)=>LZString.decompress(y))
@@ -166,7 +166,7 @@ var Σ=c=>{
 		.replace(/»/g,'>>')
 		.replace(/⫸/g,'>>>')
 		.replace(/˜/g,'~~')
-	;
+	).code;
 	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
 	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
 	else console.log(c),eval(c);

@@ -11,7 +11,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/xregexp/2.0.0/xregexp-all-min.js"></script>
 		<script src="https://rawgit.com/Ed-von-Schleck/shoco/master/shoco.js"></script>
 		<script src="https://rawgit.com/numbers/numbers.js/master/src/numbers.min.js"></script>
-		<script src="interpreter.js"></script>
+		<script src="https://babeljs.io/scripts/babel.js"></script>
+		<script src="interpreter-comp.js"></script>
 		<style>
 			@font-face {
 				font-family:'dvsm';
@@ -56,7 +57,7 @@
 	</head>
 	<body onload='c.value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);document.getElementById("i").value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);E.checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]));co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes ratio = "+(c.value.length/utf(c.value)).toFixed(2);' >
 		<div class='container'>
-			<h1>𝔼𝕊𝕄𝕚𝕟 Interpreter - Firefox Only</h1>
+			<h1>𝔼𝕊𝕄𝕚𝕟 Interpreter</h1>
 			<hr>
 			<div class='row'>
 				<div class='col-sm-4'>
