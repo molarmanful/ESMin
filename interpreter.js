@@ -166,7 +166,7 @@ var Σ=c=>{
 		.replace(/»/g,'>>')
 		.replace(/⫸/g,'>>>')
 		.replace(/˜/g,'~~')
-	).code;
+	,{loose:true}).code;
 	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
 	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
 	else console.log(c),eval(c);
