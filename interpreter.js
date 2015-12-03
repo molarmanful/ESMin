@@ -43,6 +43,7 @@ var Ξ=[],//stack
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
 		ᴙ=i=>[...i].reverse().join``;
 String.prototype.ċ=(x,y='')=>this.replace(x,y);
+String.prototype.Մ=(r,o='',t)=>(t=this.replace(r,o),t!=this?t.Մ(r,o):t);
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
