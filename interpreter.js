@@ -78,6 +78,7 @@ var Σ=c=>{
 		.replace(/⨝/g,'ø⬯')
 		.replace(/ⓑ/g,'ß2')
 		.replace(/ⓜ/g,'ć⇀')
+		.replace(/Ⓐ(.+)/g,'⟦Ѧ($1)]')
 		.replace(/⬮/g,'()')
 		.replace(/⬯/g,'(``)')
 		.replace(/⬭/g,'(` `)')
