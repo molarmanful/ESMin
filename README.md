@@ -26,6 +26,6 @@ Does binary negation.
 ```
 Outputs reverse of input.
 ```
-Մ(ï,/{}⌿,⬯)≔⬯
+!ïė`{}”
 ```
 Checks if a string of curly brackets (ex:`{}{{}}`) is balanced.
