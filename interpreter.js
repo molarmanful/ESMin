@@ -50,6 +50,8 @@ var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ᛪ='0x',
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 		;
+var subparen=e=>{for(var r=0,n=0,t=0;t<e.length;t++)"("==e[t]&&r++,")"==e[t]&&(r--,n=Math.min(n,r));return 0>n&&(e="(".repeat(-n)+e,r-=n),r>0&&(e+=")".repeat(r)),e},
+    fixParens=e=>{for(var a="",r="next",n="",s="",t="",c=0,b=0;b<e.length;b++)switch(n=e[b],r){case"next":";"==n?(a+=subparen(s)+n,s=""):"["==n?(r="array",c=0):"{"==n?(r="brackets",c=0):s+=n;break;case"array":"["==n?c++:"]"==n&&c--,0>c?(s+="["+fixParens(t)+"]",t="",r="next"):t+=n;break;case"brackets":"{"==n?c++:"}"==n&&c--,0>c?(s+="{"+t+"}",t="",r="next"):t+=n}return a+=subparen(s)}
 
 //compression stuff
 shoco.c=i=>Array.prototype.map.call(shoco.compress(i),x=>String.fromCharCode(x)).join``;
@@ -61,7 +63,7 @@ var Σ=c=>{
 			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	//syntax from esmin to es6
-	c=c
+	c=fixParens(c
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
 		.replace(/э([^]+)#/gm,(x,y)=>shoco.d(y))
 		.replace(/Э(.+)#/g,(x,y)=>LZString.decompress(y))
@@ -176,7 +178,7 @@ var Σ=c=>{
 		.replace(/»/g,'>>')
 		.replace(/⫸/g,'>>>')
 		.replace(/˜/g,'~~')
-	;
+	);
 	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
 	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
 	else console.log(c),eval(c);
