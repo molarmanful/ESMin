@@ -41,9 +41,9 @@ var Ξ=[],//stack
 		ᶏ='apply',
 		ᶊ=s,
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
-		ᴙ=i=>[...i].reverse().join``,
-		String.prototype.ċ=(x,y='')=>this.replace(x,y),
-		Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
+		ᴙ=i=>[...i].reverse().join``;
+String.prototype.ċ=(x,y='')=>this.replace(x,y);
+var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
 		ᛪ='0x',
