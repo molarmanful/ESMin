@@ -9,8 +9,8 @@ math.import(numbers,{wrap:true,silent:true});
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 //object-based function aliasing
 [math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
-//function alias helper: use as `alias(Array,\`map\`)`
-//
+//function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
+// 
 //---
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 
@@ -40,6 +40,7 @@ var Ξ=[],
 
 		//MORE ALIASES
 		//---
+		// 
 		//CONSTANTS
 		ị=Infinity,
 		ʉ=[]._,
@@ -52,10 +53,8 @@ var Ξ=[],
 		//BUILT-IN OBJECTS
 		М=math,
 		Ϛ=String,
-		//*(underscore.string)*
 		ᶊ=s,
 		Ѧ=Array,
-		//*(lodash)*
 		Ѩ=_,
 		П=Number,
 		Ø=Object,
@@ -69,15 +68,15 @@ var Ξ=[],
 		ß='toString',
 		Ꝉ='length',
 		ᶏ='apply',
-		//*(general-purpose map)*
+		//-general-purpose map
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
-		//*(string/number reverse)*
+		//-string/number reverse
 		ᴙ=i=>[...''+i].reverse().join``;
-//*(improved replace function)*
+//-improved replace function
 String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
-//*(recursive replace)*
+//-recursive replace
 String.prototype.ė=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
-//*(recursive replace (prefix-style))*
+//-recursive replace (prefix-style)
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
@@ -261,10 +260,10 @@ var Σ=c=>{
 	
 	//OUTPUT
 	//---
-	//implicit (stack) output
+	//-implicit (stack) output
 	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
-	//implicit output
+	//-implicit output
 	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
-	//explicit output
+	//-explicit output
 	else console.log(c),eval(c);
 }
