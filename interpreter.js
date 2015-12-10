@@ -1,6 +1,9 @@
-//Welcome to the annotated source code of the interpreter for [𝔼𝕊𝕄𝕚𝕟](https://github.com/molarmanful/ESMin), a wonderful JavaScript ES6 golfing language created by Molarmanful!
+//Welcome to the annotated source code of the interpreter for [𝔼𝕊𝕄𝕚𝕟](https://github.com/molarmanful/ESMin), a wonderful JavaScript ES6 golfing language created by [@molarmanful](https://github.com/molarmanful)!
 //This will serve as documentation for those who want to learn the language.
 // 
+//---
+// 
+//Let's get started!
 //---
 
 //put the numbers.js library in the math object
@@ -11,13 +14,9 @@ math.import(numbers,{wrap:true,silent:true});
 //object-based function aliasing
 [math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 //function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
-// 
-//---
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 
 //stack representation
-// 
-//---
 var Ξ=[],
 		//I/O FUNCTIONS
 		//---
@@ -146,7 +145,8 @@ var Σ=c=>{
 		.replace(/␤/g,'\n')
 		.replace(/␉/g,'\t')
 		.replace(/␠/g,'\s')
-		.replace(/⍘(.)/g,'(`$1`)')//one-char string; can be used as function argument
+		//one-char string; can be used as function argument
+		.replace(/⍘(.)/g,'(`$1`)')
 		//PARENTHETICAL ARROW FUNCTIONS
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
