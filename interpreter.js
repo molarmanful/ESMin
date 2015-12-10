@@ -1,9 +1,8 @@
 //Welcome to the annotated source code for 𝔼𝕊𝕄𝕚𝕟, a wonderful JavaScript golfing language created by Molarmanful!
 //
+//
 //This will serve as documentation for those who want to learn the language.
 //---
-//
-//
 
 //this is where the numbers.js library ends up
 math.import(numbers,{wrap:true,silent:true});
@@ -12,19 +11,21 @@ math.import(numbers,{wrap:true,silent:true});
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 //object-based function aliasing
 [math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
-//function alias helper: use as `alias(Array,'map')`
+//function alias helper: use as `alias(Array,"map")`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 
 var Ξ=[],//stack representation
 		
 		//I/O FUNCTIONS
-		//not shown: ï = input, î = ï[0], í = ï[1], ì = ï[2]
+		//---
+		//not shown: `ï = input, î = ï[0], í = ï[1], ì = ï[2]`
 		//output
 		ô=i=>o.value+=i!=[]._?i:Ξ.join`\n`,
 		//source
 		ℹ=i=>[i=i!=[]._?c.value[i]:c.value,Ξ.push(i)][0],
 
 		//STACK FUNCTIONS
+		//---
 		//push
 		ᵖ=(i=0,...r)=>{Ξ.push(i,...r)},
 		//get
@@ -35,6 +36,7 @@ var Ξ=[],//stack representation
 		ᶜ=i=>Ξ=[],
 
 		//MORE ALIASES
+		//---
 		ị=Infinity,
 		//undefined
 		ʉ=[]._,
@@ -85,6 +87,7 @@ shoco.d=i=>shoco.decompress(new Uint8Array((i.constructor==Array?i[0]:i).split``
 var compress=i=>LZString.compress(shoco.c(i));
 
 //TIME TO INTERPRET!
+//---
 var Σ=c=>{
 	var 
 	    //functions
@@ -95,6 +98,7 @@ var Σ=c=>{
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	
 	//TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
+	//---
 	//fix parentheses after 1st-stage transpilation
 	c=fixParens(c
 		//COMPRESSION
@@ -139,7 +143,8 @@ var Σ=c=>{
 		//PARENTHETICAL ARROW FUNCTIONS
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
-		.replace(/ª/g,'ᶏש,')//.apply(window,
+		//.apply(window,
+		.replace(/ª/g,'ᶏש,')
 		//AUTO-ADD PARENTHESES
 		.replace(eval(`/([${r}])(([${n}]|${d})+)/g`),'$1($2)')
 		.replace(eval(`/([${r}])([^(\u00f8-\u0236ßꝈᶏ¤])/g`),'$1($2')
@@ -249,7 +254,11 @@ var Σ=c=>{
 		.replace(/([^\\])@/g,'$1)');
 	
 	//OUTPUT
-	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}//implicit (stack) output
-	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}//implicit output
-	else console.log(c),eval(c);//explicit output
+	//---
+	//implicit (stack) output
+	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
+	//implicit output
+	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
+	//explicit output
+	else console.log(c),eval(c);
 }
