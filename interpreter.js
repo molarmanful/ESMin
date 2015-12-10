@@ -212,7 +212,7 @@ var Σ=c=>{
 		.replace(/¾/g,'.75')
 		.replace(/⅐/g,'(1/7)')
 		.replace(/⅑/g,'(1/9)')
-		.replace(/⅒/g,'0.1')
+		.replace(/⅒/g,'.1')
 		.replace(/⅓/g,'(1/3)')
 		.replace(/⅔/g,'(2/3)')
 		.replace(/⅕/g,'.2')
