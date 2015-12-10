@@ -1,6 +1,4 @@
 //Welcome to the annotated source code for 𝔼𝕊𝕄𝕚𝕟, a wonderful JavaScript ES6 golfing language created by Molarmanful!
-//
-//
 //This will serve as documentation for those who want to learn the language.
 //---
 
@@ -11,34 +9,36 @@ math.import(numbers,{wrap:true,silent:true});
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 //object-based function aliasing
 [math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
-//function alias helper: use as `alias(Array,"map")`
+//function alias helper: use as `alias(Array,/*METHOD NAME STRING*/)`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
-
-var Ξ=[],//stack representation
+//---
+//stack representation
+var Ξ=[],
 		
 		//I/O FUNCTIONS
 		//---
-		//not shown: `ï = input, î = ï[0], í = ï[1], ì = ï[2]`
-		//output
+		//*not shown: `ï = input, î = ï[0], í = ï[1], ì = ï[2]`*
+		
+		//-output
 		ô=i=>o.value+=i!=[]._?i:Ξ.join`\n`,
-		//source
+		//---
+		//get source code
 		ℹ=i=>[i=i!=[]._?c.value[i]:c.value,Ξ.push(i)][0],
 
 		//STACK FUNCTIONS
 		//---
-		//push
+		//-push
 		ᵖ=(i=0,...r)=>{Ξ.push(i,...r)},
-		//get
+		//-get
 		ᵍ=i=>i!=[]._?Ξ[i<0?Ξ.length+i:i]:Ξ[Ξ.length-1],
-		//remove
+		//-remove
 		ʳ=(i=Ξ.length-1)=>Ξ.splice(i,1),
-		//clear
+		//-clear
 		ᶜ=i=>Ξ=[],
 
 		//MORE ALIASES
 		//---
 		ị=Infinity,
-		//undefined
 		ʉ=[]._,
 		ℇ=math.e,
 		ε=Number.EPSILON,
@@ -48,10 +48,10 @@ var Ξ=[],//stack representation
 		τ=math.pi*2,
 		М=math,
 		Ϛ=String,
-		//underscore.string
+		//*(underscore.string)*
 		ᶊ=s,
 		Ѧ=Array,
-		//lodash
+		//*(lodash)*
 		Ѩ=_,
 		П=Number,
 		Ø=Object,
@@ -64,26 +64,28 @@ var Ξ=[],//stack representation
 		ß='toString',
 		Ꝉ='length',
 		ᶏ='apply',
-		//general-purpose map
+		//*(general-purpose map)*
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
-		//string/number reverse
+		//*(string/number reverse)*
 		ᴙ=i=>[...''+i].reverse().join``;
-//improved replace function
+//*(improved replace function)*
 String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
-//recursive replace
+//*(recursive replace)*
 String.prototype.ė=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
-//recursive replace (prefix-style)
+//*(recursive replace (prefix-style))*
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
 		ᛪ='0x',
+		//---
 		//number aliases for 0-256; get number alias using nchars[5]
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 		;
+//---
 //fix parentheses functions - borrowed from Japt (Thanks!)
 var subparen=e=>{for(var r=0,n=0,t=0;t<e.length;t++)"("==e[t]&&r++,")"==e[t]&&(r--,n=Math.min(n,r));return 0>n&&(e="(".repeat(-n)+e,r-=n),r>0&&(e+=")".repeat(r)),e},
     fixParens=e=>{for(var a="",r="next",n="",s="",t="",c=0,b=0;b<e.length;b++)switch(n=e[b],r){case"next":";"==n?(a+=subparen(s)+n,s=""):"["==n?(r="array",c=0):"{"==n?(r="brackets",c=0):s+=n;break;case"array":"["==n?c++:"]"==n&&c--,0>c?(s+="["+fixParens(t)+"]",t="",r="next"):t+=n;break;case"brackets":"{"==n?c++:"}"==n&&c--,0>c?(s+="{"+t+"}",t="",r="next"):t+=n}return a+=subparen(s)}
-
+//---
 //compression functions
 shoco.c=i=>Array.prototype.map.call(shoco.compress(i),x=>String.fromCharCode(x)).join``;
 shoco.d=i=>shoco.decompress(new Uint8Array((i.constructor==Array?i[0]:i).split``.map(x=>x.charCodeAt(0))));
@@ -93,11 +95,11 @@ var compress=i=>LZString.compress(shoco.c(i));
 //---
 var Σ=c=>{
 	var 
-	    //functions
+	    //-functions
 	    r='ᵖᵍʳôℹΣɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
-			//these don't need surrounding parens
+			//-these don't need surrounding parens
 			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
-			//real numbers regex
+			//-real numbers regex
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	
 	//TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
@@ -105,11 +107,11 @@ var Σ=c=>{
 	//fix parentheses after 1st-stage transpilation
 	c=fixParens(c
 		//COMPRESSION
-		//mixed compression
+		//-mixed compression
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
-		//shoco compression
+		//-shoco compression
 		.replace(/э([^]+)#/gm,(x,y)=>shoco.d(y))
-		//LZString compression
+		//-LZString compression
 		.replace(/Э(.+)#/g,(x,y)=>LZString.decompress(y))
 		//zero series aliases
 		.replace(/ℍ/g,'00')
