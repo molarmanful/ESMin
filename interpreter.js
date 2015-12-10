@@ -68,9 +68,12 @@ var Ξ=[],//stack representation
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
 		//string/number reverse
 		ᴙ=i=>[...''+i].reverse().join``;
-String.prototype.ċ=function(x,y=''){return this.replace(x,y)};//improved replace function
-String.prototype.ė=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};//recursive replace
-var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),//recursive replace (prefix-style)
+//improved replace function
+String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
+//recursive replace
+String.prototype.ė=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
+//recursive replace (prefix-style)
+var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
 		ᛪ='0x',
