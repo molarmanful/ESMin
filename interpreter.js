@@ -1,5 +1,9 @@
-//Welcome to the annotated source code for 𝔼𝕊𝕄𝕚𝕟, a wonderful JavaScript golfing language!
+//Welcome to the annotated source code for 𝔼𝕊𝕄𝕚𝕟, a wonderful JavaScript golfing language created by Molarmanful!
+//
 //This will serve as documentation for those who want to learn the language.
+//---
+//
+//
 
 //this is where the numbers.js library ends up
 math.import(numbers,{wrap:true,silent:true});
@@ -8,7 +12,7 @@ math.import(numbers,{wrap:true,silent:true});
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 //object-based function aliasing
 [math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
-//function alias helper: use as alias(Array,'map')
+//function alias helper: use as `alias(Array,'map')`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 
 var Ξ=[],//stack representation
