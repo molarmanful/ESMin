@@ -1,4 +1,4 @@
-//Welcome to the annotated source code for 𝔼𝕊𝕄𝕚𝕟, a wonderful JavaScript golfing language created by Molarmanful!
+//Welcome to the annotated source code for 𝔼𝕊𝕄𝕚𝕟, a wonderful JavaScript ES6 golfing language created by Molarmanful!
 //
 //
 //This will serve as documentation for those who want to learn the language.
