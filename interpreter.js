@@ -1,8 +1,9 @@
-//Welcome to the annotated source code for [𝔼𝕊𝕄𝕚𝕟](https://github.com/molarmanful/ESMin), a wonderful JavaScript ES6 golfing language created by Molarmanful!
+//Welcome to the annotated source code of the interpreter for [𝔼𝕊𝕄𝕚𝕟](https://github.com/molarmanful/ESMin), a wonderful JavaScript ES6 golfing language created by Molarmanful!
 //This will serve as documentation for those who want to learn the language.
+// 
 //---
 
-//this is where the numbers.js library ends up
+//put the numbers.js library in the math object
 math.import(numbers,{wrap:true,silent:true});
 
 //prototype-based function aliasing
@@ -15,6 +16,7 @@ math.import(numbers,{wrap:true,silent:true});
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 
 //stack representation
+// 
 //---
 var Ξ=[],
 		//I/O FUNCTIONS
@@ -29,13 +31,13 @@ var Ξ=[],
 
 		//STACK FUNCTIONS
 		//---
-		//-push
+		//- push
 		ᵖ=(i=0,...r)=>{Ξ.push(i,...r)},
-		//-get
+		//- get
 		ᵍ=i=>i!=[]._?Ξ[i<0?Ξ.length+i:i]:Ξ[Ξ.length-1],
-		//-remove
+		//- remove
 		ʳ=(i=Ξ.length-1)=>Ξ.splice(i,1),
-		//-clear
+		//- clear
 		ᶜ=i=>Ξ=[],
 
 		//MORE ALIASES
@@ -82,7 +84,7 @@ var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		Յ='0b',
 		ᛪ='0x',
 		//NUMBERS
-		//aliases for 0-256; get number alias using nchars[5]
+		//aliases for 0-256; get number alias using `nchars[NUMBER]`
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 		;
 //---
@@ -106,7 +108,7 @@ var Σ=c=>{
 			//-real numbers regex
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	
-	//##TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
+	//TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
 	//fix parentheses after 1st-stage transpilation
 	c=fixParens(c
 		//COMPRESSION
@@ -260,10 +262,10 @@ var Σ=c=>{
 	
 	//OUTPUT
 	//---
-	//-implicit (stack) output
+	//- implicit (stack) output
 	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
-	//-implicit output
+	//- implicit output
 	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
-	//-explicit output
+	//- explicit output
 	else console.log(c),eval(c);
 }
