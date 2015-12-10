@@ -102,18 +102,14 @@ var Σ=c=>{
 			//-real numbers regex
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	
-	//TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
-	//---
+	//##TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
 	//fix parentheses after 1st-stage transpilation
 	c=fixParens(c
 		//COMPRESSION
-		//-mixed compression
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
-		//-shoco compression
 		.replace(/э([^]+)#/gm,(x,y)=>shoco.d(y))
-		//-LZString compression
 		.replace(/Э(.+)#/g,(x,y)=>LZString.decompress(y))
-		//zero series aliases
+		//ZEROES
 		.replace(/ℍ/g,'00')
 		.replace(/𝕜/g,'000')
 		.replace(/𝕄/g,'000000')
