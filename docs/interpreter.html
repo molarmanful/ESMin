@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>interpreter.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>interpreter.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Welcome to the annotated source code of the interpreter for <a href="https://github.com/molarmanful/ESMin">𝔼𝕊𝕄𝕚𝕟</a>, a wonderful JavaScript ES6 golfing language created by Molarmanful!
+This will serve as documentation for those who want to learn the language.</p>
+<hr>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>put the numbers.js library in the math object</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>math.import(numbers,{wrap:<span class="hljs-literal">true</span>,silent:<span class="hljs-literal">true</span>});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>prototype-based function aliasing</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>[<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">RegExp</span>,<span class="hljs-built_in">Date</span>,s,_,XRegExp,<span class="hljs-built_in">Function</span>].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v).map((x,y)=&gt;v.prototype[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v.prototype[x]));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>object-based function aliasing</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>[math,<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">JSON</span>,<span class="hljs-built_in">RegExp</span>,<span class="hljs-built_in">Date</span>,_,s,<span class="hljs-built_in">window</span>,<span class="hljs-built_in">Function</span>].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v).map((x,y)=&gt;v[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v[x]));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>function alias helper: use as <code>alias(Array,METHOD_NAME_STRING)</code></p>
+<hr>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> alias=(v,w)=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v).map((x,y)=&gt;v[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]==v[w]?<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>):<span class="hljs-number">0</span>).join<span class="hljs-string">``</span>.replace(<span class="hljs-regexp">/0/g</span>,<span class="hljs-string">''</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>stack representation</p>
+<hr>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Ξ=[],</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <h2 id="i-o-functions">I/O FUNCTIONS</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p><em>not shown: <code>ï = input, î = ï[0], í = ï[1], ì = ï[2]</code></em></p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>-output</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ô=i=&gt;o.value+=i!=[]._?i:Ξ.join<span class="hljs-string">`\n`</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <hr>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>get source code</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ℹ=i=&gt;[i=i!=[]._?c.value[i]:c.value,Ξ.push(i)][<span class="hljs-number">0</span>],</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <h2 id="stack-functions">STACK FUNCTIONS</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <ul>
+<li>push</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ᵖ=(i=<span class="hljs-number">0</span>,...r)=&gt;{Ξ.push(i,...r)},</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <ul>
+<li>get</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ᵍ=i=&gt;i!=[]._?Ξ[i&lt;<span class="hljs-number">0</span>?Ξ.length+i:i]:Ξ[Ξ.length<span class="hljs-number">-1</span>],</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <ul>
+<li>remove</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ʳ=(i=Ξ.length<span class="hljs-number">-1</span>)=&gt;Ξ.splice(i,<span class="hljs-number">1</span>),</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <ul>
+<li>clear</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ᶜ=i=&gt;Ξ=[],</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <h2 id="more-aliases">MORE ALIASES</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>CONSTANTS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ị=<span class="hljs-literal">Infinity</span>,
+		ʉ=[]._,
+		ℇ=math.e,
+		ε=<span class="hljs-built_in">Number</span>.EPSILON,
+		ᴉ=math.sqrt(<span class="hljs-number">-1</span>),
+		ɸ=(<span class="hljs-number">1</span>+math.sqrt(<span class="hljs-number">5</span>))/<span class="hljs-number">2</span>,
+		π=math.pi,
+		τ=math.pi*<span class="hljs-number">2</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>BUILT-IN OBJECTS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		М=math,
+		Ϛ=<span class="hljs-built_in">String</span>,
+		ᶊ=s,
+		Ѧ=<span class="hljs-built_in">Array</span>,
+		Ѩ=_,
+		П=<span class="hljs-built_in">Number</span>,
+		Ø=<span class="hljs-built_in">Object</span>,
+		ʝ=<span class="hljs-built_in">JSON</span>,
+		ɼ=<span class="hljs-built_in">RegExp</span>,
+		Ɽ=XRegExp,
+		ᶁ=<span class="hljs-built_in">Date</span>,
+		ש=<span class="hljs-built_in">window</span>,
+		ᶂ=<span class="hljs-built_in">Function</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>FUNCTIONS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ß=<span class="hljs-string">'toString'</span>,
+		Ꝉ=<span class="hljs-string">'length'</span>,
+		ᶏ=<span class="hljs-string">'apply'</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>-general-purpose map</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		Ɱ=(i,f,s=<span class="hljs-string">''</span>,j=<span class="hljs-string">''</span>)=&gt;<span class="hljs-keyword">typeof</span> i==<span class="hljs-string">'object'</span>?i.map(f):<span class="hljs-keyword">typeof</span> i==<span class="hljs-string">'string'</span>?i.split(s).map(f).join(j):<span class="hljs-built_in">eval</span>((<span class="hljs-string">''</span>+i).split(s).map(f).join(j)),</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>-string/number reverse</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		ᴙ=i=&gt;[...<span class="hljs-string">''</span>+i].reverse().join<span class="hljs-string">``</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <p>-improved replace function</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ċ=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,y=''</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.replace(x,y)};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <p>-recursive replace</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ė=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">r,o='',t</span>)</span>{t=<span class="hljs-keyword">this</span>.replace(r,o);<span class="hljs-keyword">return</span> t!=<span class="hljs-keyword">this</span>?t.ė(r,o):t};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <p>-recursive replace (prefix-style)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Մ=(i,r,o=<span class="hljs-string">''</span>,t)=&gt;(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
+		ë=<span class="hljs-built_in">eval</span>,
+		Յ=<span class="hljs-string">'0b'</span>,
+		ᛪ=<span class="hljs-string">'0x'</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <p>NUMBERS
+aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		nchars=<span class="hljs-string">`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`</span>
+		;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <hr>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <p>fix parentheses functions - borrowed from Japt (Thanks!)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> subparen=e=&gt;{<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> r=<span class="hljs-number">0</span>,n=<span class="hljs-number">0</span>,t=<span class="hljs-number">0</span>;t&lt;e.length;t++)<span class="hljs-string">"("</span>==e[t]&amp;&amp;r++,<span class="hljs-string">")"</span>==e[t]&amp;&amp;(r--,n=<span class="hljs-built_in">Math</span>.min(n,r));<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>&gt;n&amp;&amp;(e=<span class="hljs-string">"("</span>.repeat(-n)+e,r-=n),r&gt;<span class="hljs-number">0</span>&amp;&amp;(e+=<span class="hljs-string">")"</span>.repeat(r)),e},
+    fixParens=e=&gt;{<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> a=<span class="hljs-string">""</span>,r=<span class="hljs-string">"next"</span>,n=<span class="hljs-string">""</span>,s=<span class="hljs-string">""</span>,t=<span class="hljs-string">""</span>,c=<span class="hljs-number">0</span>,b=<span class="hljs-number">0</span>;b&lt;e.length;b++)<span class="hljs-keyword">switch</span>(n=e[b],r){<span class="hljs-keyword">case</span><span class="hljs-string">"next"</span>:<span class="hljs-string">";"</span>==n?(a+=subparen(s)+n,s=<span class="hljs-string">""</span>):<span class="hljs-string">"["</span>==n?(r=<span class="hljs-string">"array"</span>,c=<span class="hljs-number">0</span>):<span class="hljs-string">"{"</span>==n?(r=<span class="hljs-string">"brackets"</span>,c=<span class="hljs-number">0</span>):s+=n;<span class="hljs-keyword">break</span>;<span class="hljs-keyword">case</span><span class="hljs-string">"array"</span>:<span class="hljs-string">"["</span>==n?c++:<span class="hljs-string">"]"</span>==n&amp;&amp;c--,<span class="hljs-number">0</span>&gt;c?(s+=<span class="hljs-string">"["</span>+fixParens(t)+<span class="hljs-string">"]"</span>,t=<span class="hljs-string">""</span>,r=<span class="hljs-string">"next"</span>):t+=n;<span class="hljs-keyword">break</span>;<span class="hljs-keyword">case</span><span class="hljs-string">"brackets"</span>:<span class="hljs-string">"{"</span>==n?c++:<span class="hljs-string">"}"</span>==n&amp;&amp;c--,<span class="hljs-number">0</span>&gt;c?(s+=<span class="hljs-string">"{"</span>+t+<span class="hljs-string">"}"</span>,t=<span class="hljs-string">""</span>,r=<span class="hljs-string">"next"</span>):t+=n}<span class="hljs-keyword">return</span> a+=subparen(s)}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <hr>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <p>compression functions</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>shoco.c=i=&gt;<span class="hljs-built_in">Array</span>.prototype.map.call(shoco.compress(i),x=&gt;<span class="hljs-built_in">String</span>.fromCharCode(x)).join<span class="hljs-string">``</span>;
+shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>((i.constructor==<span class="hljs-built_in">Array</span>?i[<span class="hljs-number">0</span>]:i).split<span class="hljs-string">``</span>.map(x=&gt;x.charCodeAt(<span class="hljs-number">0</span>))));
+<span class="hljs-keyword">var</span> compress=i=&gt;LZString.compress(shoco.c(i));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <h2 id="time-to-interpret-">TIME TO INTERPRET!</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-35">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-35">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Σ=c=&gt;{
+	<span class="hljs-keyword">var</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-36">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-36">&#182;</a>
+              </div>
+              <p>-functions</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	    r=<span class="hljs-string">'ᵖᵍʳôℹΣɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236'</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-37">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-37">&#182;</a>
+              </div>
+              <p>-these don’t need surrounding parens</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			n=<span class="hljs-string">'A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff'</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-38">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-38">&#182;</a>
+              </div>
+              <p>-real numbers regex</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			d=<span class="hljs-string">'-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-39">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-39">&#182;</a>
+              </div>
+              <p>TRANSPILE 𝔼𝕊𝕄𝕚𝕟 =&gt; ES6
+fix parentheses after 1st-stage transpilation</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	c=fixParens(c</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-40">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-40">&#182;</a>
+              </div>
+              <p>COMPRESSION</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ɘ(.+)#/g</span>,(x,y)=&gt;shoco.d(LZString.decompress(y)))
+		.replace(<span class="hljs-regexp">/э([^]+)#/gm</span>,(x,y)=&gt;shoco.d(y))
+		.replace(<span class="hljs-regexp">/Э(.+)#/g</span>,(x,y)=&gt;LZString.decompress(y))</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-41">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-41">&#182;</a>
+              </div>
+              <p>ZEROES</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ℍ/g</span>,<span class="hljs-string">'00'</span>)
+		.replace(<span class="hljs-regexp">/𝕜/g</span>,<span class="hljs-string">'000'</span>)
+		.replace(<span class="hljs-regexp">/𝕄/g</span>,<span class="hljs-string">'000000'</span>)
+		.replace(<span class="hljs-regexp">/𝔾/g</span>,<span class="hljs-string">'000000000'</span>)
+		.replace(<span class="hljs-regexp">/𝕋/g</span>,<span class="hljs-string">'000000000000'</span>)
+		.replace(<span class="hljs-regexp">/ℙ/g</span>,<span class="hljs-string">'000000000000000'</span>)
+		.replace(<span class="hljs-regexp">/𝔼/g</span>,<span class="hljs-string">'000000000000000000'</span>)
+		.replace(<span class="hljs-regexp">/ℤ/g</span>,<span class="hljs-string">'000000000000000000000'</span>)
+		.replace(<span class="hljs-regexp">/𝕐/g</span>,<span class="hljs-string">'000000000000000000000000'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-42">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-42">&#182;</a>
+              </div>
+              <p>(``)+ =&gt; good for string coercion</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⊕/g</span>,<span class="hljs-string">'⬯+'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-43">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-43">&#182;</a>
+              </div>
+              <p>.join(``)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨝/g</span>,<span class="hljs-string">'ø⬯'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-44">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-44">&#182;</a>
+              </div>
+              <p>.toString(2)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓑ/g</span>,<span class="hljs-string">'ß2'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-45">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-45">&#182;</a>
+              </div>
+              <p>.map(($,_,ã)=&gt;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓜ/g</span>,<span class="hljs-string">'ć⇀'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-46">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-46">&#182;</a>
+              </div>
+              <p>.split(``)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓢ/g</span>,<span class="hljs-string">'Č⬯'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-47">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-47">&#182;</a>
+              </div>
+              <p>[…Array(n)]</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/Ⓐ(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'⟦Ѧ($1)]'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-48">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-48">&#182;</a>
+              </div>
+              <p>function argument aliases</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⬮/g</span>,<span class="hljs-string">'()'</span>)
+		.replace(<span class="hljs-regexp">/⬯/g</span>,<span class="hljs-string">'(``)'</span>)
+		.replace(<span class="hljs-regexp">/⬭/g</span>,<span class="hljs-string">'(` `)'</span>)
+		.replace(<span class="hljs-regexp">/⬬/g</span>,<span class="hljs-string">'(`\n`)'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-49">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-49">&#182;</a>
+              </div>
+              <p>whitespace aliases - also useful for regex</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/␤/g</span>,<span class="hljs-string">'\n'</span>)
+		.replace(<span class="hljs-regexp">/␉/g</span>,<span class="hljs-string">'\t'</span>)
+		.replace(<span class="hljs-regexp">/␠/g</span>,<span class="hljs-string">'\s'</span>)
+		.replace(<span class="hljs-regexp">/⍘(.)/g</span>,<span class="hljs-string">'(`$1`)'</span>)<span class="hljs-comment">//one-char string; can be used as function argument</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-50">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-50">&#182;</a>
+              </div>
+              <p>PARENTHETICAL ARROW FUNCTIONS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⇝/g</span>,<span class="hljs-string">'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=&gt;'</span>)
+		.replace(<span class="hljs-regexp">/⇀/g</span>,<span class="hljs-string">'(($,_,ã)=&gt;'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-51">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-51">&#182;</a>
+              </div>
+              <p>.apply(window,</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ª/g</span>,<span class="hljs-string">'ᶏש,'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-52">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-52">&#182;</a>
+              </div>
+              <p>AUTO-ADD PARENTHESES</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/([<span class="hljs-subst">${r}</span>])(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'$1($2)'</span>)
+		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/([<span class="hljs-subst">${r}</span>])([^(\u00f8-\u0236ßꝈᶏ¤])/g`</span>),<span class="hljs-string">'$1($2'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-53">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-53">&#182;</a>
+              </div>
+              <p>prevents object from turning into a function</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/¤/g</span>,<span class="hljs-string">''</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-54">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-54">&#182;</a>
+              </div>
+              <p>AUTO-ADD BRACKETS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⎖(([<span class="hljs-subst">${n}</span>]|\\d)+)/g`</span>),<span class="hljs-string">'[$1]'</span>)
+		.replace(<span class="hljs-regexp">/([ïîíì])(\d+)/g</span>,<span class="hljs-string">'$1[$2]'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-55">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-55">&#182;</a>
+              </div>
+              <p>MORE ARROW FUNCTIONS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⇏/g</span>,<span class="hljs-string">'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=&gt;'</span>)
+		.replace(<span class="hljs-regexp">/↛/g</span>,<span class="hljs-string">'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=&gt;'</span>)
+		.replace(<span class="hljs-regexp">/↪/g</span>,<span class="hljs-string">'($,_,ã)=&gt;'</span>)
+		.replace(<span class="hljs-regexp">/⤤/g</span>,<span class="hljs-string">'=($,_,ã)=&gt;'</span>)
+		.replace(<span class="hljs-regexp">/→/g</span>,<span class="hljs-string">'=&gt;'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-56">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-56">&#182;</a>
+              </div>
+              <p>PARENTHESES</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/”/g</span>,<span class="hljs-string">'`)'</span>)
+		.replace(<span class="hljs-regexp">/‘/g</span>,<span class="hljs-string">'\\`'</span>)
+		.replace(<span class="hljs-regexp">/’/g</span>,<span class="hljs-string">'\\`)'</span>)
+		.replace(<span class="hljs-regexp">/⸩/g</span>,<span class="hljs-string">'))'</span>)
+		.replace(<span class="hljs-regexp">/⎞/g</span>,<span class="hljs-string">'/)'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-57">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-57">&#182;</a>
+              </div>
+              <p>template string start</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⦃/g</span>,<span class="hljs-string">'${'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-58">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-58">&#182;</a>
+              </div>
+              <p>SPREAD OPERATORS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/…/g</span>,<span class="hljs-string">'...'</span>)
+		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⟬([<span class="hljs-subst">${n}</span>]+)/g`</span>),<span class="hljs-string">'[...$1]'</span>)
+		.replace(<span class="hljs-regexp">/⟦/g</span>,<span class="hljs-string">'[...'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-59">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-59">&#182;</a>
+              </div>
+              <p>MATH ASSIGNMENT OPERATORS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/˖/g</span>,<span class="hljs-string">'+='</span>)
+		.replace(<span class="hljs-regexp">/⧺/g</span>,<span class="hljs-string">'++'</span>)
+		.replace(<span class="hljs-regexp">/˗/g</span>,<span class="hljs-string">'-='</span>)
+		.replace(<span class="hljs-regexp">/‡/g</span>,<span class="hljs-string">'--'</span>)
+		.replace(<span class="hljs-regexp">/×/g</span>,<span class="hljs-string">'*='</span>)
+		.replace(<span class="hljs-regexp">/÷/g</span>,<span class="hljs-string">'/='</span>)
+		.replace(<span class="hljs-regexp">/٪/g</span>,<span class="hljs-string">'%='</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-60">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-60">&#182;</a>
+              </div>
+              <p>LOGIC</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/‼/g</span>,<span class="hljs-string">'!!'</span>)
+		.replace(<span class="hljs-regexp">/≔/g</span>,<span class="hljs-string">'=='</span>)
+		.replace(<span class="hljs-regexp">/≠/g</span>,<span class="hljs-string">'!='</span>)
+		.replace(<span class="hljs-regexp">/≤/g</span>,<span class="hljs-string">'&lt;='</span>)
+		.replace(<span class="hljs-regexp">/≥/g</span>,<span class="hljs-string">'&gt;='</span>)
+		.replace(<span class="hljs-regexp">/⅋/g</span>,<span class="hljs-string">'&amp;&amp;'</span>)
+		.replace(<span class="hljs-regexp">/⋎/g</span>,<span class="hljs-string">'||'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-61">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-61">&#182;</a>
+              </div>
+              <p>more keywords</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⱳ/g</span>,<span class="hljs-string">'with('</span>)
+		.replace(<span class="hljs-regexp">/ᶉ/g</span>,<span class="hljs-string">'return '</span>)
+		.replace(<span class="hljs-regexp">/ₙ/g</span>,<span class="hljs-string">'new '</span>)
+		.replace(<span class="hljs-regexp">/ᕠ/g</span>,<span class="hljs-string">'this'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-62">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-62">&#182;</a>
+              </div>
+              <p>EXPONENTS/ROOTS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/(⦅.+|(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+))²/g`</span>),<span class="hljs-string">'Math.pow($1,2)'</span>)
+		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/(⦅.+|(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+))³/g`</span>),<span class="hljs-string">'Math.pow($1,3)'</span>)
+		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/(⦅.+|(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+))ⁿ(.+⦆|(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+))/g`</span>),<span class="hljs-string">'Math.pow($1,$4)'</span>)
+		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/√(.+⦆|(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+))/g`</span>),<span class="hljs-string">'Math.sqrt($1)'</span>)
+		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/∛(.+⦆|(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+))/g`</span>),<span class="hljs-string">'Math.cbrt($1)'</span>)
+		.replace(<span class="hljs-regexp">/[⦅⦆]/g</span>,<span class="hljs-string">''</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-63">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-63">&#182;</a>
+              </div>
+              <p>FRACTIONS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/½/g</span>,<span class="hljs-string">'.5'</span>)
+		.replace(<span class="hljs-regexp">/¼/g</span>,<span class="hljs-string">'.25'</span>)
+		.replace(<span class="hljs-regexp">/¾/g</span>,<span class="hljs-string">'.75'</span>)
+		.replace(<span class="hljs-regexp">/⅐/g</span>,<span class="hljs-string">'(1/7)'</span>)
+		.replace(<span class="hljs-regexp">/⅑/g</span>,<span class="hljs-string">'(1/9)'</span>)
+		.replace(<span class="hljs-regexp">/⅒/g</span>,<span class="hljs-string">'0.1'</span>)
+		.replace(<span class="hljs-regexp">/⅓/g</span>,<span class="hljs-string">'(1/3)'</span>)
+		.replace(<span class="hljs-regexp">/⅔/g</span>,<span class="hljs-string">'(2/3)'</span>)
+		.replace(<span class="hljs-regexp">/⅕/g</span>,<span class="hljs-string">'.2'</span>)
+		.replace(<span class="hljs-regexp">/⅖/g</span>,<span class="hljs-string">'.4'</span>)
+		.replace(<span class="hljs-regexp">/⅗/g</span>,<span class="hljs-string">'.6'</span>)
+		.replace(<span class="hljs-regexp">/⅘/g</span>,<span class="hljs-string">'.8'</span>)
+		.replace(<span class="hljs-regexp">/⅙/g</span>,<span class="hljs-string">'(1/6)'</span>)
+		.replace(<span class="hljs-regexp">/⅚/g</span>,<span class="hljs-string">'(5/6)'</span>)
+		.replace(<span class="hljs-regexp">/⅛/g</span>,<span class="hljs-string">'(1/8)'</span>)
+		.replace(<span class="hljs-regexp">/⅜/g</span>,<span class="hljs-string">'(3/8)'</span>)
+		.replace(<span class="hljs-regexp">/⅝/g</span>,<span class="hljs-string">'(5/8)'</span>)
+		.replace(<span class="hljs-regexp">/⅞/g</span>,<span class="hljs-string">'(7/8)'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-64">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-64">&#182;</a>
+              </div>
+              <p>BINARY/HEX PREFIXES</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ᶀ/g</span>,<span class="hljs-string">'0b'</span>)
+		.replace(<span class="hljs-regexp">/ᶍ/g</span>,<span class="hljs-string">'0x'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-65">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-65">&#182;</a>
+              </div>
+              <p>alias for 10; can be used with zeroes series</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/Ⅹ/g</span>,<span class="hljs-string">'10'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-66">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-66">&#182;</a>
+              </div>
+              <p>AUTO-FORMAT FUNCTION NAMES</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/([^.])([\u00f8-\u0236])/g</span>,<span class="hljs-string">'$1["$2"]'</span>)
+		.replace(<span class="hljs-regexp">/([ßꝈᶏ])/g</span>,<span class="hljs-string">'[$1]'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-67">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-67">&#182;</a>
+              </div>
+              <p>REGEX</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⑴/g</span>,<span class="hljs-string">'$1'</span>)
+		.replace(<span class="hljs-regexp">/⑵/g</span>,<span class="hljs-string">'$2'</span>)
+		.replace(<span class="hljs-regexp">/⑶/g</span>,<span class="hljs-string">'$3'</span>)
+		.replace(<span class="hljs-regexp">/⊙/g</span>,<span class="hljs-string">'(.)'</span>)
+		.replace(<span class="hljs-regexp">/⁅/g</span>,<span class="hljs-string">'[^'</span>)
+		.replace(<span class="hljs-regexp">/α/g</span>,<span class="hljs-string">'a-z'</span>)
+		.replace(<span class="hljs-regexp">/𝚨/g</span>,<span class="hljs-string">'A-Z'</span>)
+		.replace(<span class="hljs-regexp">/𐄫/g</span>,<span class="hljs-string">'0-9'</span>)
+		.replace(<span class="hljs-regexp">/ᶌ/g</span>,<span class="hljs-string">'aeiou'</span>)
+		.replace(<span class="hljs-regexp">/⌿/g</span>,<span class="hljs-string">'/g'</span>)
+		.replace(<span class="hljs-regexp">/⍀/g</span>,<span class="hljs-string">'/ig'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-68">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-68">&#182;</a>
+              </div>
+              <p>some more keywords</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⊨/g</span>,<span class="hljs-string">'true'</span>)
+		.replace(<span class="hljs-regexp">/⊭/g</span>,<span class="hljs-string">'false'</span>)
+		.replace(<span class="hljs-regexp">/␀/g</span>,<span class="hljs-string">'null'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-69">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-69">&#182;</a>
+              </div>
+              <p>BITSHIFTS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/«/g</span>,<span class="hljs-string">'&lt;&lt;'</span>)
+		.replace(<span class="hljs-regexp">/»/g</span>,<span class="hljs-string">'&gt;&gt;'</span>)
+		.replace(<span class="hljs-regexp">/⫸/g</span>,<span class="hljs-string">'&gt;&gt;&gt;'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-70">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-70">&#182;</a>
+              </div>
+              <p>bitwise rounding</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/˜/g</span>,<span class="hljs-string">'~~'</span>)
+	)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-71">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-71">&#182;</a>
+              </div>
+              <p>FOR LOOP (@ = end parentheses)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/↺/g</span>,<span class="hljs-string">'for('</span>)
+		.replace(<span class="hljs-regexp">/([^\\])@/g</span>,<span class="hljs-string">'$1)'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-72">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-72">&#182;</a>
+              </div>
+              <h2 id="output">OUTPUT</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-73">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-73">&#182;</a>
+              </div>
+              <ul>
+<li>implicit (stack) output</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	<span class="hljs-keyword">if</span>(!c.match(<span class="hljs-regexp">/ô/g</span>)&amp;&amp;c.match(<span class="hljs-regexp">/ᵖ/g</span>)){c+=<span class="hljs-string">';ô()'</span>,<span class="hljs-built_in">console</span>.log(c),<span class="hljs-built_in">eval</span>(c);<span class="hljs-keyword">return</span>}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-74">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-74">&#182;</a>
+              </div>
+              <ul>
+<li>implicit output</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(Ξ.length&lt;<span class="hljs-number">1</span>&amp;&amp;!c.match(<span class="hljs-regexp">/ô/g</span>)){<span class="hljs-built_in">console</span>.log(c),o.value=<span class="hljs-built_in">eval</span>(c);<span class="hljs-keyword">return</span>}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-75">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-75">&#182;</a>
+              </div>
+              <ul>
+<li>explicit output</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">console</span>.log(c),<span class="hljs-built_in">eval</span>(c);
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
