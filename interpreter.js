@@ -10,8 +10,9 @@ math.import(numbers,{wrap:true,silent:true});
 //object-based function aliasing
 [math,String,Array,Number,Object,JSON,RegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 //function alias helper: use as `alias(Array,/*METHOD NAME STRING*/)`
-var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 //---
+var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
+
 //stack representation
 var Ξ=[],
 		
@@ -38,6 +39,7 @@ var Ξ=[],
 
 		//MORE ALIASES
 		//---
+		//CONSTANTS
 		ị=Infinity,
 		ʉ=[]._,
 		ℇ=math.e,
@@ -46,6 +48,7 @@ var Ξ=[],
 		ɸ=(1+math.sqrt(5))/2,
 		π=math.pi,
 		τ=math.pi*2,
+		//BUILT-IN OBJECTS
 		М=math,
 		Ϛ=String,
 		//*(underscore.string)*
@@ -61,6 +64,7 @@ var Ξ=[],
 		ᶁ=Date,
 		ש=window,
 		ᶂ=Function,
+		//FUNCTIONS
 		ß='toString',
 		Ꝉ='length',
 		ᶏ='apply',
@@ -68,6 +72,7 @@ var Ξ=[],
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
 		//*(string/number reverse)*
 		ᴙ=i=>[...''+i].reverse().join``;
+//---
 //*(improved replace function)*
 String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
 //*(recursive replace)*
@@ -121,7 +126,7 @@ var Σ=c=>{
 		.replace(/𝕐/g,'000000000000000000000000')
 		//(``)+ => good for string coercion
 		.replace(/⊕/g,'⬯+')
-		//.join()
+		//.join(``)
 		.replace(/⨝/g,'ø⬯')
 		//.toString(2)
 		.replace(/ⓑ/g,'ß2')
