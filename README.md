@@ -1,4 +1,4 @@
-# 𝔼𝕊𝕄𝕚𝕟
+![𝔼𝕊𝕄𝕚𝕟](esmin.png)
 𝔼𝕊𝕄𝕚𝕟 (**ES**6 **Min**ified) is a hybrid code-golfing language based on JavaScript ES6. It aims to change the syntax so that most ES6 char combinations can be written with one char.
 
 ## The Creation Story of 𝔼𝕊𝕄𝕚𝕟
