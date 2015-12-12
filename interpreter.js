@@ -150,6 +150,8 @@ var Σ=c=>{
 		//PARENTHETICAL ARROW FUNCTIONS
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 		.replace(/⇀/g,'(($,_,ã)=>')
+		//PARENTHETICAL ARGUMENT PARSER
+		.replace(/⎛/g,'(⁽')
 		//.apply(window,
 		.replace(/ª/g,'ᶏש,')
 		//AUTO-ADD PARENTHESES
@@ -166,6 +168,11 @@ var Σ=c=>{
 		.replace(/↪/g,'($,_,ã)=>')
 		.replace(/⤤/g,'=($,_,ã)=>')
 		.replace(/→/g,'=>')
+		//ARGUMENT PARSER: turns `⁽abc 5` into `(a,b,c,5)`.
+		.replace(/⎝/g,`=⁽`)
+		.replace(eval(`/⁽(([${n}]|${d}| )+)/g`),(x,y)=>`(${y.split(/\s|/g)})`)
+		//array shorthand
+		.replace(eval(`/⟨(([${n}]|${d}| )+)/g`),(x,y)=>`[${y.split(/\s|/g)}]`)
 		//PARENTHESES
 		.replace(/”/g,'`)')
 		.replace(/‘/g,'\\`')
@@ -202,7 +209,7 @@ var Σ=c=>{
 		//EXPONENTS/ROOTS
 		.replace(eval(`/(⦅.+|(([${n}]|${d})+))²/g`),'Math.pow($1,2)')
 		.replace(eval(`/(⦅.+|(([${n}]|${d})+))³/g`),'Math.pow($1,3)')
-		.replace(eval(`/(⦅.+|(([${n}]|${d})+))ⁿ(.+⦆|(([${n}]|${d})+))/g`),'Math.pow($1,$4)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d})+))ⁿ(.+⦆|(([${n}]|${d}|\s)+))/g`),'Math.pow($1,$4)')
 		.replace(eval(`/√(.+⦆|(([${n}]|${d})+))/g`),'Math.sqrt($1)')
 		.replace(eval(`/∛(.+⦆|(([${n}]|${d})+))/g`),'Math.cbrt($1)')
 		.replace(/[⦅⦆]/g,'')
