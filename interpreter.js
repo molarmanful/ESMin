@@ -149,9 +149,12 @@ var Σ=c=>{
 		.replace(/⍘(.)/g,'(`$1`)')
 		//PARENTHETICAL ARROW FUNCTIONS
 		.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
+		//ARGUMENT PARSER: turns `⁽abc 5` into `(a,b,c,5)`.
+		.replace(/⎝/g,`=⁽`)
 		.replace(/⇀/g,'(($,_,ã)=>')
 		//PARENTHETICAL ARGUMENT PARSER
 		.replace(/⎛/g,'(⁽')
+    .replace(eval(`/⁽(([${n}]|${d}| )+)/g`),(x,y)=>`(${y.split(/\s|/g)})`)
 		//.apply(window,
 		.replace(/ª/g,'ᶏש,')
 		//AUTO-ADD PARENTHESES
@@ -168,9 +171,6 @@ var Σ=c=>{
 		.replace(/↪/g,'($,_,ã)=>')
 		.replace(/⤤/g,'=($,_,ã)=>')
 		.replace(/→/g,'=>')
-		//ARGUMENT PARSER: turns `⁽abc 5` into `(a,b,c,5)`.
-		.replace(/⎝/g,`=⁽`)
-		.replace(eval(`/⁽(([${n}]|${d}| )+)/g`),(x,y)=>`(${y.split(/\s|/g)})`)
 		//array shorthand
 		.replace(eval(`/⟨(([${n}]|${d}| )+)/g`),(x,y)=>`[${y.split(/\s|/g)}]`)
 		//PARENTHESES

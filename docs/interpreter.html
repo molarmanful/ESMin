@@ -798,8 +798,7 @@ fix parentheses after 1st-stage transpilation</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⇝/g</span>,<span class="hljs-string">'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=&gt;'</span>)
-		.replace(<span class="hljs-regexp">/⇀/g</span>,<span class="hljs-string">'(($,_,ã)=&gt;'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⇝/g</span>,<span class="hljs-string">'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=&gt;'</span>)</pre></div></div>
             
         </li>
         
@@ -810,11 +809,12 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-51">&#182;</a>
               </div>
-              <p>PARENTHETICAL ARGUMENT PARSER</p>
+              <p>ARGUMENT PARSER: turns <code>⁽abc 5</code> into <code>(a,b,c,5)</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⎛/g</span>,<span class="hljs-string">'(⁽'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⎝/g</span>,<span class="hljs-string">`=⁽`</span>)
+		.replace(<span class="hljs-regexp">/⇀/g</span>,<span class="hljs-string">'(($,_,ã)=&gt;'</span>)</pre></div></div>
             
         </li>
         
@@ -825,11 +825,12 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-52">&#182;</a>
               </div>
-              <p>.apply(window,</p>
+              <p>PARENTHETICAL ARGUMENT PARSER</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ª/g</span>,<span class="hljs-string">'ᶏש,'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⎛/g</span>,<span class="hljs-string">'(⁽'</span>)
+    .replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⁽(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>| )+)/g`</span>),(x,y)=&gt;<span class="hljs-string">`(<span class="hljs-subst">${y.split(/\s|/g)}</span>)`</span>)</pre></div></div>
             
         </li>
         
@@ -839,6 +840,21 @@ fix parentheses after 1st-stage transpilation</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-53">&#182;</a>
+              </div>
+              <p>.apply(window,</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ª/g</span>,<span class="hljs-string">'ᶏש,'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-54">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-54">&#182;</a>
               </div>
               <p>AUTO-ADD PARENTHESES</p>
 
@@ -850,11 +866,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-54">
+        <li id="section-55">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-54">&#182;</a>
+                <a class="pilcrow" href="#section-55">&#182;</a>
               </div>
               <p>prevents object from turning into a function</p>
 
@@ -865,11 +881,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-55">
+        <li id="section-56">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-55">&#182;</a>
+                <a class="pilcrow" href="#section-56">&#182;</a>
               </div>
               <p>AUTO-ADD BRACKETS</p>
 
@@ -881,11 +897,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-56">
+        <li id="section-57">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-56">&#182;</a>
+                <a class="pilcrow" href="#section-57">&#182;</a>
               </div>
               <p>MORE ARROW FUNCTIONS</p>
 
@@ -896,22 +912,6 @@ fix parentheses after 1st-stage transpilation</p>
 		.replace(<span class="hljs-regexp">/↪/g</span>,<span class="hljs-string">'($,_,ã)=&gt;'</span>)
 		.replace(<span class="hljs-regexp">/⤤/g</span>,<span class="hljs-string">'=($,_,ã)=&gt;'</span>)
 		.replace(<span class="hljs-regexp">/→/g</span>,<span class="hljs-string">'=&gt;'</span>)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-57">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-57">&#182;</a>
-              </div>
-              <p>ARGUMENT PARSER: turns <code>⁽abc 5</code> into <code>(a,b,c,5)</code>.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⎝/g</span>,<span class="hljs-string">`=⁽`</span>)
-		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⁽(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>| )+)/g`</span>),(x,y)=&gt;<span class="hljs-string">`(<span class="hljs-subst">${y.split(/\s|/g)}</span>)`</span>)</pre></div></div>
             
         </li>
         
