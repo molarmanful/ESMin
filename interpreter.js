@@ -144,8 +144,8 @@ var Σ=c=>{
 		.replace(/⨴/g,'МƷ')
 		//`_.range`
 		.replace(/⩥/g,'ѨŃ')
-		//`math.random()`
-							.replace(/⸮/g,'Мƨ⬮')
+		//`math.random`
+							.replace(/⸮/g,'Мƨ')
 		//function argument aliases
 		.replace(/⬮/g,'()')
 		.replace(/⬯/g,'(``)')
