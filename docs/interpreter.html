@@ -386,7 +386,7 @@ This will serve as documentation for those who want to learn the language.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-24">&#182;</a>
               </div>
-              <p>-string/number reverse</p>
+              <p>-general-purpose reverse</p>
 
             </div>
             
@@ -420,7 +420,7 @@ This will serve as documentation for those who want to learn the language.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ė=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">r,o='',t</span>)</span>{t=<span class="hljs-keyword">this</span>.replace(r,o);<span class="hljs-keyword">return</span> t!=<span class="hljs-keyword">this</span>?t.ė(r,o):t};</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ė=<span class="hljs-built_in">String</span>.prototype.rreplace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">r,o='',t</span>)</span>{t=<span class="hljs-keyword">this</span>.replace(r,o);<span class="hljs-keyword">return</span> t!=<span class="hljs-keyword">this</span>?t.ė(r,o):t};</pre></div></div>
             
         </li>
         
@@ -654,7 +654,7 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-41">&#182;</a>
               </div>
-              <p>(``)+ =&gt; good for string coercion</p>
+              <p><code>(\</code>`)+` - good for string coercion</p>
 
             </div>
             
@@ -669,7 +669,7 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-42">&#182;</a>
               </div>
-              <p>.join(``)</p>
+              <p><code>.join(\</code>`)`</p>
 
             </div>
             
@@ -684,7 +684,7 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-43">&#182;</a>
               </div>
-              <p>.toString(2)</p>
+              <p><code>.toString(2)</code></p>
 
             </div>
             
@@ -699,11 +699,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-44">&#182;</a>
               </div>
-              <p>.map(($,_,ã)=&gt;</p>
+              <p><code>.toString(16)</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓜ/g</span>,<span class="hljs-string">'ć⇀'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓧ/g</span>,<span class="hljs-string">'ß16'</span>)</pre></div></div>
             
         </li>
         
@@ -714,11 +714,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
-              <p>.split(``)</p>
+              <p><code>.map(($,_,ã)=&gt;</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓢ/g</span>,<span class="hljs-string">'Č⬯'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓜ/g</span>,<span class="hljs-string">'ć⇀'</span>)</pre></div></div>
             
         </li>
         
@@ -729,11 +729,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
-              <p>[…Array(n)]</p>
+              <p><code>.split(\</code>`)`</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/Ⓐ(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'⟦Ѧ($1)]'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓢ/g</span>,<span class="hljs-string">'Č⬯'</span>)</pre></div></div>
             
         </li>
         
@@ -743,6 +743,66 @@ fix parentheses after 1st-stage transpilation</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-47">&#182;</a>
+              </div>
+              <p><code>[...Array(n)]</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/Ⓐ(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'⟦Ѧ($1)]'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-48">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-48">&#182;</a>
+              </div>
+              <p><code>math.sum</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨭/g</span>,<span class="hljs-string">'Мƺ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-49">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-49">&#182;</a>
+              </div>
+              <p><code>math.prod</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨴/g</span>,<span class="hljs-string">'МƷ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-50">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-50">&#182;</a>
+              </div>
+              <p><code>_.range</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⩥/g</span>,<span class="hljs-string">'ѨŃ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-51">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-51">&#182;</a>
               </div>
               <p>function argument aliases</p>
 
@@ -756,11 +816,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-48">
+        <li id="section-52">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-48">&#182;</a>
+                <a class="pilcrow" href="#section-52">&#182;</a>
               </div>
               <p>whitespace aliases - also useful for regex</p>
 
@@ -773,11 +833,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-49">
+        <li id="section-53">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-49">&#182;</a>
+                <a class="pilcrow" href="#section-53">&#182;</a>
               </div>
               <p>one-char string; can be used as function argument</p>
 
@@ -788,11 +848,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-50">
+        <li id="section-54">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-50">&#182;</a>
+                <a class="pilcrow" href="#section-54">&#182;</a>
               </div>
               <p>PARENTHETICAL ARROW FUNCTIONS</p>
 
@@ -804,11 +864,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-51">
+        <li id="section-55">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-51">&#182;</a>
+                <a class="pilcrow" href="#section-55">&#182;</a>
               </div>
               <p>ARGUMENT PARSER: turns <code>⁽abc 5</code> into <code>(a,b,c,5)</code>.</p>
 
@@ -819,11 +879,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-52">
+        <li id="section-56">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-52">&#182;</a>
+                <a class="pilcrow" href="#section-56">&#182;</a>
               </div>
               <p>PARENTHETICAL ARGUMENT PARSER</p>
 
@@ -835,11 +895,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-53">
+        <li id="section-57">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-53">&#182;</a>
+                <a class="pilcrow" href="#section-57">&#182;</a>
               </div>
               <p>.apply(window,</p>
 
@@ -850,11 +910,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-54">
+        <li id="section-58">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-54">&#182;</a>
+                <a class="pilcrow" href="#section-58">&#182;</a>
               </div>
               <p>AUTO-ADD PARENTHESES</p>
 
@@ -866,11 +926,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-55">
+        <li id="section-59">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-55">&#182;</a>
+                <a class="pilcrow" href="#section-59">&#182;</a>
               </div>
               <p>prevents object from turning into a function</p>
 
@@ -881,11 +941,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-56">
+        <li id="section-60">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-56">&#182;</a>
+                <a class="pilcrow" href="#section-60">&#182;</a>
               </div>
               <p>AUTO-ADD BRACKETS</p>
 
@@ -897,11 +957,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-57">
+        <li id="section-61">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-57">&#182;</a>
+                <a class="pilcrow" href="#section-61">&#182;</a>
               </div>
               <p>MORE ARROW FUNCTIONS</p>
 
@@ -916,11 +976,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-58">
+        <li id="section-62">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-58">&#182;</a>
+                <a class="pilcrow" href="#section-62">&#182;</a>
               </div>
               <p>array shorthand</p>
 
@@ -931,11 +991,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-59">
+        <li id="section-63">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-59">&#182;</a>
+                <a class="pilcrow" href="#section-63">&#182;</a>
               </div>
               <p>PARENTHESES</p>
 
@@ -950,11 +1010,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-60">
+        <li id="section-64">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-60">&#182;</a>
+                <a class="pilcrow" href="#section-64">&#182;</a>
               </div>
               <p>template string start</p>
 
@@ -965,11 +1025,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-61">
+        <li id="section-65">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-61">&#182;</a>
+                <a class="pilcrow" href="#section-65">&#182;</a>
               </div>
               <p>SPREAD OPERATORS</p>
 
@@ -982,11 +1042,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-62">
+        <li id="section-66">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-62">&#182;</a>
+                <a class="pilcrow" href="#section-66">&#182;</a>
               </div>
               <p>MATH ASSIGNMENT OPERATORS</p>
 
@@ -1003,11 +1063,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-63">
+        <li id="section-67">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-63">&#182;</a>
+                <a class="pilcrow" href="#section-67">&#182;</a>
               </div>
               <p>LOGIC</p>
 
@@ -1024,11 +1084,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-64">
+        <li id="section-68">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-64">&#182;</a>
+                <a class="pilcrow" href="#section-68">&#182;</a>
               </div>
               <p>more keywords</p>
 
@@ -1042,11 +1102,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-65">
+        <li id="section-69">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-65">&#182;</a>
+                <a class="pilcrow" href="#section-69">&#182;</a>
               </div>
               <p>EXPONENTS/ROOTS</p>
 
@@ -1062,11 +1122,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-66">
+        <li id="section-70">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-66">&#182;</a>
+                <a class="pilcrow" href="#section-70">&#182;</a>
               </div>
               <p>FRACTIONS</p>
 
@@ -1094,11 +1154,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-67">
+        <li id="section-71">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-67">&#182;</a>
+                <a class="pilcrow" href="#section-71">&#182;</a>
               </div>
               <p>BINARY/HEX PREFIXES</p>
 
@@ -1110,11 +1170,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-68">
+        <li id="section-72">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-68">&#182;</a>
+                <a class="pilcrow" href="#section-72">&#182;</a>
               </div>
               <p>alias for 10; can be used with zeroes series</p>
 
@@ -1125,11 +1185,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-69">
+        <li id="section-73">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-69">&#182;</a>
+                <a class="pilcrow" href="#section-73">&#182;</a>
               </div>
               <p>AUTO-FORMAT FUNCTION NAMES</p>
 
@@ -1141,11 +1201,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-70">
+        <li id="section-74">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-70">&#182;</a>
+                <a class="pilcrow" href="#section-74">&#182;</a>
               </div>
               <p>REGEX</p>
 
@@ -1166,11 +1226,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-71">
+        <li id="section-75">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-71">&#182;</a>
+                <a class="pilcrow" href="#section-75">&#182;</a>
               </div>
               <p>some more keywords</p>
 
@@ -1183,11 +1243,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-72">
+        <li id="section-76">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-72">&#182;</a>
+                <a class="pilcrow" href="#section-76">&#182;</a>
               </div>
               <p>BITSHIFTS</p>
 
@@ -1200,11 +1260,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-73">
+        <li id="section-77">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-73">&#182;</a>
+                <a class="pilcrow" href="#section-77">&#182;</a>
               </div>
               <p>bitwise rounding</p>
 
@@ -1216,11 +1276,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-74">
+        <li id="section-78">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-74">&#182;</a>
+                <a class="pilcrow" href="#section-78">&#182;</a>
               </div>
               <p>FOR LOOP (@ = end parentheses)</p>
 
@@ -1232,11 +1292,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-75">
+        <li id="section-79">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-75">&#182;</a>
+                <a class="pilcrow" href="#section-79">&#182;</a>
               </div>
               <h2 id="output">OUTPUT</h2>
 
@@ -1245,11 +1305,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-76">
+        <li id="section-80">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-76">&#182;</a>
+                <a class="pilcrow" href="#section-80">&#182;</a>
               </div>
               <ul>
 <li>implicit (stack) output</li>
@@ -1262,11 +1322,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-77">
+        <li id="section-81">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-77">&#182;</a>
+                <a class="pilcrow" href="#section-81">&#182;</a>
               </div>
               <ul>
 <li>implicit output</li>
@@ -1279,11 +1339,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-78">
+        <li id="section-82">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-78">&#182;</a>
+                <a class="pilcrow" href="#section-82">&#182;</a>
               </div>
               <ul>
 <li>explicit output</li>

@@ -71,12 +71,12 @@ var Ξ=[],
 		ᶏ='apply',
 		//-general-purpose map
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
-		//-string/number reverse
+		//-general-purpose reverse
 		ᴙ=i=>[...''+i].reverse().join``;
 //-improved replace function
 String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
 //-recursive replace
-String.prototype.ė=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
+String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
 //-recursive replace (prefix-style)
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
@@ -124,18 +124,26 @@ var Σ=c=>{
 		.replace(/𝔼/g,'000000000000000000')
 		.replace(/ℤ/g,'000000000000000000000')
 		.replace(/𝕐/g,'000000000000000000000000')
-		//(``)+ => good for string coercion
+		//`(\`\`)+` - good for string coercion
 		.replace(/⊕/g,'⬯+')
-		//.join(``)
+		//`.join(\`\`)`
 		.replace(/⨝/g,'ø⬯')
-		//.toString(2)
+		//`.toString(2)`
 		.replace(/ⓑ/g,'ß2')
-		//.map(($,_,ã)=>
+		//`.toString(16)`
+		.replace(/ⓧ/g,'ß16')
+		//`.map(($,_,ã)=>`
 		.replace(/ⓜ/g,'ć⇀')
-		//.split(``)
+		//`.split(\`\`)`
 		.replace(/ⓢ/g,'Č⬯')
-		//[...Array(n)]
+		//`[...Array(n)]`
 		.replace(eval(`/Ⓐ(([${n}]|${d})+)/g`),'⟦Ѧ($1)]')
+		//`math.sum`
+		.replace(/⨭/g,'Мƺ')
+		//`math.prod`
+		.replace(/⨴/g,'МƷ')
+		//`_.range`
+		.replace(/⩥/g,'ѨŃ')
 		//function argument aliases
 		.replace(/⬮/g,'()')
 		.replace(/⬯/g,'(``)')
