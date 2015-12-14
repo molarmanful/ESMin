@@ -101,7 +101,7 @@ var compress=i=>LZString.compress(shoco.c(i));
 var Σ=c=>{
 	var 
 	    //-functions
-	    r='ᵖᵍʳôℹΣɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
+	    r='ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
 			//-these don't need surrounding parens
 			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			//-real numbers regex
@@ -146,6 +146,10 @@ var Σ=c=>{
 		.replace(/⩥/g,'ѨŃ')
 		//`math.random`
 		.replace(/⸮/g,'Мƨ')
+		//`math.randomInt`
+		.replace(/⁇/g,'МƩ')
+		//`math.pickRandom`
+		.replace(/⁉/g,'МƧ')
 		//function argument aliases
 		.replace(/⬮/g,'()')
 		.replace(/⬯/g,'(``)')
