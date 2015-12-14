@@ -124,9 +124,9 @@ var Σ=c=>{
 		.replace(/𝔼/g,'000000000000000000')
 		.replace(/ℤ/g,'000000000000000000000')
 		.replace(/𝕐/g,'000000000000000000000000')
-		//`(\`\`)+` - good for string coercion
+		//`('')+` - good for string coercion
 		.replace(/⊕/g,'⬯+')
-		//`.join(\`\`)`
+		//`.join('')`
 		.replace(/⨝/g,'ø⬯')
 		//`.toString(2)`
 		.replace(/ⓑ/g,'ß2')
@@ -134,7 +134,7 @@ var Σ=c=>{
 		.replace(/ⓧ/g,'ß16')
 		//`.map(($,_,ã)=>`
 		.replace(/ⓜ/g,'ć⇀')
-		//`.split(\`\`)`
+		//`.split('')`
 		.replace(/ⓢ/g,'Č⬯')
 		//`[...Array(n)]`
 		.replace(eval(`/Ⓐ(([${n}]|${d})+)/g`),'⟦Ѧ($1)]')
