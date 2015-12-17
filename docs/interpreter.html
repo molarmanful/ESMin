@@ -405,7 +405,7 @@ This will serve as documentation for those who want to learn the language.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ċ=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,y=''</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.replace(x,y)};</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ċ=<span class="hljs-built_in">String</span>.prototype.replace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,y=''</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.replace(x,y)};</pre></div></div>
             
         </li>
         
@@ -431,14 +431,11 @@ This will serve as documentation for those who want to learn the language.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-27">&#182;</a>
               </div>
-              <p>-recursive replace (prefix-style)</p>
+              <p>-repeat</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Մ=(i,r,o=<span class="hljs-string">''</span>,t)=&gt;(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
-		ë=<span class="hljs-built_in">eval</span>,
-		Յ=<span class="hljs-string">'0b'</span>,
-		ᛪ=<span class="hljs-string">'0x'</span>,</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.Ę=<span class="hljs-built_in">String</span>.prototype.repeat;</pre></div></div>
             
         </li>
         
@@ -448,6 +445,24 @@ This will serve as documentation for those who want to learn the language.</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <p>-recursive replace (prefix-style)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Մ=(i,r,o=<span class="hljs-string">''</span>,t)=&gt;(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
+		ë=<span class="hljs-built_in">eval</span>,
+		Յ=<span class="hljs-string">'0b'</span>,
+		փ=<span class="hljs-string">'0x'</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
               </div>
               <p>NUMBERS
 aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
@@ -460,11 +475,11 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
         </li>
         
         
-        <li id="section-29">
+        <li id="section-30">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-29">&#182;</a>
+                <a class="pilcrow" href="#section-30">&#182;</a>
               </div>
               <hr>
 
@@ -473,11 +488,11 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
         </li>
         
         
-        <li id="section-30">
+        <li id="section-31">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-30">&#182;</a>
+                <a class="pilcrow" href="#section-31">&#182;</a>
               </div>
               <p>fix parentheses functions - borrowed from Japt (Thanks!)</p>
 
@@ -489,11 +504,11 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
         </li>
         
         
-        <li id="section-31">
+        <li id="section-32">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-31">&#182;</a>
+                <a class="pilcrow" href="#section-32">&#182;</a>
               </div>
               <hr>
 
@@ -502,11 +517,11 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
         </li>
         
         
-        <li id="section-32">
+        <li id="section-33">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-32">&#182;</a>
+                <a class="pilcrow" href="#section-33">&#182;</a>
               </div>
               <p>compression functions</p>
 
@@ -519,30 +534,15 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-33">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-33">&#182;</a>
-              </div>
-              <h2 id="time-to-interpret-">TIME TO INTERPRET!</h2>
-
-            </div>
-            
-        </li>
-        
-        
         <li id="section-34">
             <div class="annotation">
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-34">&#182;</a>
               </div>
-              
+              <h2 id="time-to-interpret-">TIME TO INTERPRET!</h2>
+
             </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Σ=c=&gt;{
-	<span class="hljs-keyword">var</span></pre></div></div>
             
         </li>
         
@@ -553,11 +553,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-35">&#182;</a>
               </div>
-              <p>-functions</p>
-
+              
             </div>
             
-            <div class="content"><div class='highlight'><pre>	    r=<span class="hljs-string">'ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236'</span>,</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Σ=c=&gt;{
+	<span class="hljs-keyword">var</span></pre></div></div>
             
         </li>
         
@@ -568,11 +568,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-36">&#182;</a>
               </div>
-              <p>-these don’t need surrounding parens</p>
+              <p>-functions</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			n=<span class="hljs-string">'A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff'</span>,</pre></div></div>
+            <div class="content"><div class='highlight'><pre>	    r=<span class="hljs-string">'ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236'</span>,</pre></div></div>
             
         </li>
         
@@ -583,11 +583,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-37">&#182;</a>
               </div>
-              <p>-real numbers regex</p>
+              <p>-these don’t need surrounding parens</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			d=<span class="hljs-string">'-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?'</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>			n=<span class="hljs-string">'A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff'</span>,</pre></div></div>
             
         </li>
         
@@ -597,6 +597,21 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-38">&#182;</a>
+              </div>
+              <p>-real numbers regex</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			d=<span class="hljs-string">'-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-39">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-39">&#182;</a>
               </div>
               <p>TRANSPILE 𝔼𝕊𝕄𝕚𝕟 =&gt; ES6
 fix parentheses after 1st-stage transpilation</p>
@@ -608,11 +623,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-39">
+        <li id="section-40">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-39">&#182;</a>
+                <a class="pilcrow" href="#section-40">&#182;</a>
               </div>
               <p>COMPRESSION</p>
 
@@ -625,11 +640,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-40">
+        <li id="section-41">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-40">&#182;</a>
+                <a class="pilcrow" href="#section-41">&#182;</a>
               </div>
               <p>ZEROES</p>
 
@@ -648,11 +663,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-41">
+        <li id="section-42">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-41">&#182;</a>
+                <a class="pilcrow" href="#section-42">&#182;</a>
               </div>
               <p><code>(&#39;&#39;)+</code> - good for string coercion</p>
 
@@ -663,11 +678,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-42">
+        <li id="section-43">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-42">&#182;</a>
+                <a class="pilcrow" href="#section-43">&#182;</a>
               </div>
               <p><code>.join(&#39;&#39;)</code></p>
 
@@ -678,11 +693,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-43">
+        <li id="section-44">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-43">&#182;</a>
+                <a class="pilcrow" href="#section-44">&#182;</a>
               </div>
               <p><code>.toString(2)</code></p>
 
@@ -693,11 +708,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-44">
+        <li id="section-45">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-44">&#182;</a>
+                <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
               <p><code>.toString(16)</code></p>
 
@@ -708,32 +723,17 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-45">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-45">&#182;</a>
-              </div>
-              <p><code>.map(($,_,ã)=&gt;</code></p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓜ/g</span>,<span class="hljs-string">'ć⇀'</span>)</pre></div></div>
-            
-        </li>
-        
-        
         <li id="section-46">
             <div class="annotation">
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
-              <p><code>.split(&#39;&#39;)</code></p>
+              <p><code>String.fromCharCode</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓢ/g</span>,<span class="hljs-string">'Č⬯'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/Ⓒ/g</span>,<span class="hljs-string">'ϚĎ'</span>)</pre></div></div>
             
         </li>
         
@@ -744,11 +744,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-47">&#182;</a>
               </div>
-              <p><code>[...Array(n)]</code></p>
+              <p><code>.filter(($,_,ã)=&gt;</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/Ⓐ(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'⟦Ѧ($1)]'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓕ/g</span>,<span class="hljs-string">'Ă⇀'</span>)</pre></div></div>
             
         </li>
         
@@ -759,11 +759,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-48">&#182;</a>
               </div>
-              <p><code>math.sum</code></p>
+              <p><code>.map(($,_,ã)=&gt;</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨭/g</span>,<span class="hljs-string">'Мƺ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓜ/g</span>,<span class="hljs-string">'ć⇀'</span>)</pre></div></div>
             
         </li>
         
@@ -774,11 +774,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-49">&#182;</a>
               </div>
-              <p><code>math.prod</code></p>
+              <p><code>.reduce(($,_,ã)=&gt;</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨴/g</span>,<span class="hljs-string">'МƷ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓡ/g</span>,<span class="hljs-string">'Ċ⇀'</span>)</pre></div></div>
             
         </li>
         
@@ -789,11 +789,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-50">&#182;</a>
               </div>
-              <p><code>_.range</code></p>
+              <p><code>.every(($,_,ã)=&gt;</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⩥/g</span>,<span class="hljs-string">'ѨŃ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓔ/g</span>,<span class="hljs-string">'Ĉ⇀'</span>)</pre></div></div>
             
         </li>
         
@@ -804,11 +804,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-51">&#182;</a>
               </div>
-              <p><code>math.random</code></p>
+              <p><code>.some(($,_,ã)=&gt;</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⸮/g</span>,<span class="hljs-string">'Мƨ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/Ⓢ/g</span>,<span class="hljs-string">'ĉ⇀'</span>)</pre></div></div>
             
         </li>
         
@@ -819,11 +819,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-52">&#182;</a>
               </div>
-              <p><code>math.randomInt</code></p>
+              <p><code>.split(&#39;&#39;)</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁇/g</span>,<span class="hljs-string">'МƩ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/ⓢ/g</span>,<span class="hljs-string">'Č⬯'</span>)</pre></div></div>
             
         </li>
         
@@ -834,11 +834,11 @@ fix parentheses after 1st-stage transpilation</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-53">&#182;</a>
               </div>
-              <p><code>math.pickRandom</code></p>
+              <p><code>[...Array(n)]</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁉/g</span>,<span class="hljs-string">'МƧ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/Ⓐ(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'⟦Ѧ($1)]'</span>)</pre></div></div>
             
         </li>
         
@@ -848,6 +848,96 @@ fix parentheses after 1st-stage transpilation</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-54">&#182;</a>
+              </div>
+              <p><code>math.sum</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨭/g</span>,<span class="hljs-string">'Мƺ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-55">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-55">&#182;</a>
+              </div>
+              <p><code>math.prod</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨴/g</span>,<span class="hljs-string">'МƷ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-56">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-56">&#182;</a>
+              </div>
+              <p><code>_.range</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⩥/g</span>,<span class="hljs-string">'ѨŃ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-57">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-57">&#182;</a>
+              </div>
+              <p><code>math.random</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⸮/g</span>,<span class="hljs-string">'Мƨ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-58">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-58">&#182;</a>
+              </div>
+              <p><code>math.randomInt</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁇/g</span>,<span class="hljs-string">'МƩ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-59">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-59">&#182;</a>
+              </div>
+              <p><code>math.pickRandom</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁉/g</span>,<span class="hljs-string">'МƧ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-60">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-60">&#182;</a>
               </div>
               <p>function argument aliases</p>
 
@@ -861,11 +951,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-55">
+        <li id="section-61">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-55">&#182;</a>
+                <a class="pilcrow" href="#section-61">&#182;</a>
               </div>
               <p>whitespace aliases - also useful for regex</p>
 
@@ -878,11 +968,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-56">
+        <li id="section-62">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-56">&#182;</a>
+                <a class="pilcrow" href="#section-62">&#182;</a>
               </div>
               <p>one-char string; can be used as function argument</p>
 
@@ -893,11 +983,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-57">
+        <li id="section-63">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-57">&#182;</a>
+                <a class="pilcrow" href="#section-63">&#182;</a>
               </div>
               <p>PARENTHETICAL ARROW FUNCTIONS</p>
 
@@ -909,11 +999,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-58">
+        <li id="section-64">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-58">&#182;</a>
+                <a class="pilcrow" href="#section-64">&#182;</a>
               </div>
               <p>ARGUMENT PARSER: turns <code>⁽abc 5</code> into <code>(a,b,c,5)</code>.</p>
 
@@ -924,11 +1014,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-59">
+        <li id="section-65">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-59">&#182;</a>
+                <a class="pilcrow" href="#section-65">&#182;</a>
               </div>
               <p>PARENTHETICAL ARGUMENT PARSER</p>
 
@@ -940,11 +1030,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-60">
+        <li id="section-66">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-60">&#182;</a>
+                <a class="pilcrow" href="#section-66">&#182;</a>
               </div>
               <p>.apply(window,</p>
 
@@ -955,11 +1045,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-61">
+        <li id="section-67">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-61">&#182;</a>
+                <a class="pilcrow" href="#section-67">&#182;</a>
               </div>
               <p>AUTO-ADD PARENTHESES</p>
 
@@ -971,11 +1061,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-62">
+        <li id="section-68">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-62">&#182;</a>
+                <a class="pilcrow" href="#section-68">&#182;</a>
               </div>
               <p>prevents object from turning into a function</p>
 
@@ -986,11 +1076,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-63">
+        <li id="section-69">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-63">&#182;</a>
+                <a class="pilcrow" href="#section-69">&#182;</a>
               </div>
               <p>AUTO-ADD BRACKETS</p>
 
@@ -1002,11 +1092,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-64">
+        <li id="section-70">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-64">&#182;</a>
+                <a class="pilcrow" href="#section-70">&#182;</a>
               </div>
               <p>MORE ARROW FUNCTIONS</p>
 
@@ -1021,11 +1111,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-65">
+        <li id="section-71">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-65">&#182;</a>
+                <a class="pilcrow" href="#section-71">&#182;</a>
               </div>
               <p>array shorthand</p>
 
@@ -1036,11 +1126,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-66">
+        <li id="section-72">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-66">&#182;</a>
+                <a class="pilcrow" href="#section-72">&#182;</a>
               </div>
               <p>PARENTHESES</p>
 
@@ -1056,11 +1146,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-67">
+        <li id="section-73">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-67">&#182;</a>
+                <a class="pilcrow" href="#section-73">&#182;</a>
               </div>
               <p>template string start</p>
 
@@ -1071,11 +1161,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-68">
+        <li id="section-74">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-68">&#182;</a>
+                <a class="pilcrow" href="#section-74">&#182;</a>
               </div>
               <p>SPREAD OPERATORS</p>
 
@@ -1088,11 +1178,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-69">
+        <li id="section-75">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-69">&#182;</a>
+                <a class="pilcrow" href="#section-75">&#182;</a>
               </div>
               <p>ASSIGNMENT OPERATORS</p>
 
@@ -1115,11 +1205,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-70">
+        <li id="section-76">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-70">&#182;</a>
+                <a class="pilcrow" href="#section-76">&#182;</a>
               </div>
               <p>LOGIC</p>
 
@@ -1136,11 +1226,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-71">
+        <li id="section-77">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-71">&#182;</a>
+                <a class="pilcrow" href="#section-77">&#182;</a>
               </div>
               <p>more keywords</p>
 
@@ -1153,11 +1243,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-72">
+        <li id="section-78">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-72">&#182;</a>
+                <a class="pilcrow" href="#section-78">&#182;</a>
               </div>
               <p>EXPONENTS/ROOTS</p>
 
@@ -1173,11 +1263,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-73">
+        <li id="section-79">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-73">&#182;</a>
+                <a class="pilcrow" href="#section-79">&#182;</a>
               </div>
               <p>FRACTIONS</p>
 
@@ -1197,19 +1287,19 @@ fix parentheses after 1st-stage transpilation</p>
 		.replace(<span class="hljs-regexp">/⅘/g</span>,<span class="hljs-string">'.8'</span>)
 		.replace(<span class="hljs-regexp">/⅙/g</span>,<span class="hljs-string">'(1/6)'</span>)
 		.replace(<span class="hljs-regexp">/⅚/g</span>,<span class="hljs-string">'(5/6)'</span>)
-		.replace(<span class="hljs-regexp">/⅛/g</span>,<span class="hljs-string">'(1/8)'</span>)
-		.replace(<span class="hljs-regexp">/⅜/g</span>,<span class="hljs-string">'(3/8)'</span>)
-		.replace(<span class="hljs-regexp">/⅝/g</span>,<span class="hljs-string">'(5/8)'</span>)
-		.replace(<span class="hljs-regexp">/⅞/g</span>,<span class="hljs-string">'(7/8)'</span>)</pre></div></div>
+		.replace(<span class="hljs-regexp">/⅛/g</span>,<span class="hljs-string">'.125'</span>)
+		.replace(<span class="hljs-regexp">/⅜/g</span>,<span class="hljs-string">'.375'</span>)
+		.replace(<span class="hljs-regexp">/⅝/g</span>,<span class="hljs-string">'.625'</span>)
+		.replace(<span class="hljs-regexp">/⅞/g</span>,<span class="hljs-string">'.875'</span>)</pre></div></div>
             
         </li>
         
         
-        <li id="section-74">
+        <li id="section-80">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-74">&#182;</a>
+                <a class="pilcrow" href="#section-80">&#182;</a>
               </div>
               <p>BINARY/HEX PREFIXES</p>
 
@@ -1221,11 +1311,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-75">
+        <li id="section-81">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-75">&#182;</a>
+                <a class="pilcrow" href="#section-81">&#182;</a>
               </div>
               <p>alias for 10; can be used with zeroes series</p>
 
@@ -1236,11 +1326,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-76">
+        <li id="section-82">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-76">&#182;</a>
+                <a class="pilcrow" href="#section-82">&#182;</a>
               </div>
               <p>AUTO-FORMAT FUNCTION NAMES</p>
 
@@ -1252,11 +1342,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-77">
+        <li id="section-83">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-77">&#182;</a>
+                <a class="pilcrow" href="#section-83">&#182;</a>
               </div>
               <p>REGEX</p>
 
@@ -1277,11 +1367,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-78">
+        <li id="section-84">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-78">&#182;</a>
+                <a class="pilcrow" href="#section-84">&#182;</a>
               </div>
               <p>some more keywords</p>
 
@@ -1294,11 +1384,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-79">
+        <li id="section-85">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-79">&#182;</a>
+                <a class="pilcrow" href="#section-85">&#182;</a>
               </div>
               <p>BITSHIFTS</p>
 
@@ -1311,11 +1401,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-80">
+        <li id="section-86">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-80">&#182;</a>
+                <a class="pilcrow" href="#section-86">&#182;</a>
               </div>
               <p>bitwise rounding</p>
 
@@ -1328,11 +1418,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-81">
+        <li id="section-87">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-81">&#182;</a>
+                <a class="pilcrow" href="#section-87">&#182;</a>
               </div>
               <p>FOR LOOP (@ = end parentheses)</p>
 
@@ -1344,11 +1434,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-82">
+        <li id="section-88">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-82">&#182;</a>
+                <a class="pilcrow" href="#section-88">&#182;</a>
               </div>
               <h2 id="output">OUTPUT</h2>
 
@@ -1357,11 +1447,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-83">
+        <li id="section-89">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-83">&#182;</a>
+                <a class="pilcrow" href="#section-89">&#182;</a>
               </div>
               <ul>
 <li>implicit (stack) output</li>
@@ -1374,11 +1464,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-84">
+        <li id="section-90">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-84">&#182;</a>
+                <a class="pilcrow" href="#section-90">&#182;</a>
               </div>
               <ul>
 <li>implicit output</li>
@@ -1391,11 +1481,11 @@ fix parentheses after 1st-stage transpilation</p>
         </li>
         
         
-        <li id="section-85">
+        <li id="section-91">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-85">&#182;</a>
+                <a class="pilcrow" href="#section-91">&#182;</a>
               </div>
               <ul>
 <li>explicit output</li>

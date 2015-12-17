@@ -74,14 +74,16 @@ var Ξ=[],
 		//-general-purpose reverse
 		ᴙ=i=>[...''+i].reverse().join``;
 //-improved replace function
-String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
+String.prototype.ċ=String.prototype.replace=function(x,y=''){return this.replace(x,y)};
 //-recursive replace
 String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
+//-repeat
+String.prototype.Ę=String.prototype.repeat;
 //-recursive replace (prefix-style)
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
-		ᛪ='0x',
+		փ='0x',
 		//NUMBERS
 		//aliases for 0-256; get number alias using `nchars[NUMBER]`
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
@@ -132,8 +134,18 @@ var Σ=c=>{
 		.replace(/ⓑ/g,'ß2')
 		//`.toString(16)`
 		.replace(/ⓧ/g,'ß16')
+		//`String.fromCharCode`
+		.replace(/Ⓒ/g,'ϚĎ')
+		//`.filter(($,_,ã)=>`
+		.replace(/ⓕ/g,'Ă⇀')
 		//`.map(($,_,ã)=>`
 		.replace(/ⓜ/g,'ć⇀')
+		//`.reduce(($,_,ã)=>`
+		.replace(/ⓡ/g,'Ċ⇀')
+		//`.every(($,_,ã)=>`
+		.replace(/ⓔ/g,'Ĉ⇀')
+		//`.some(($,_,ã)=>`
+		.replace(/Ⓢ/g,'ĉ⇀')
 		//`.split('')`
 		.replace(/ⓢ/g,'Č⬯')
 		//`[...Array(n)]`
