@@ -199,7 +199,7 @@ var Σ=c=>{
 		.replace(/…/g,'...')
 		.replace(eval(`/⟬([${n}]+)/g`),'[...$1]')
 		.replace(/⟦/g,'[...')
-		//MATH ASSIGNMENT OPERATORS
+		//ASSIGNMENT OPERATORS
 		.replace(/˖/g,'+=')
 		.replace(/⧺/g,'++')
 		.replace(/˗/g,'-=')
@@ -207,6 +207,12 @@ var Σ=c=>{
 		.replace(/×/g,'*=')
 		.replace(/÷/g,'/=')
 		.replace(/٪/g,'%=')
+		.replace(/≪/g,'<<=')
+		.replace(/≫/g,'>>=')
+		.replace(/⋙/g,'>>>=')
+		.replace(/∧/g,'&=')
+		.replace(/⊻/g,'^=')
+		.replace(/∨/g,'|=')
 		//LOGIC
 		.replace(/‼/g,'!!')
 		.replace(/≔/g,'==')
