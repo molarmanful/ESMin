@@ -20,7 +20,10 @@
 				background-color: #5a5a5a!important;
 			}
 			#cp,#c {
-				height:20em
+				height:10em
+			}
+			.cp {
+				z-index:100
 			}
 			#i,#o {
 				height:5em
@@ -54,23 +57,24 @@
 			<h1>𝔼𝕊𝕄𝕚𝕟 Interpreter (Firefox Only)</h1>
 			<hr>
 			<div class='row'>
-				<div class='col-sm-4'>
+				<div class='cp col-sm-4'>
 					<h2>Char Palette</h2>
 					<textarea class='form-control' id='cp' wrap='off' readonly></textarea>
 					<script>
-cp.value=`ï î í ì ô ℹ
-Ⅹ ℍ 𝕜 𝕄 𝔾 𝕋 ℙ 𝔼 ℤ 𝕐
-Ξ ᵖ ᵍ ʳ ᶜ
-ị ʉ ℇ ᴉ ɸ π τ ⊨ ⊭ ᕠ
-М Ϛ Ѧ П Ø ʝ ɘ э Э ɼ Ɽ ᶂ ᶁ ש Ѩ ß Ꝉ ᶏ ª ᴙ ᶊ ε ë Ɱ Մ ⨝ Յ փ
-⬮ ⬯ ⬭ ⬬ ⊕ ⍘ ¤ ₙ ᶉ ” ‘ ’ … ⦃ ⸩ ⁽ ⎛ ⎝ ⎞ ⦅ ⦆ ⌿ ⍀ ⟨ ⟦ ⟬ ⁅ ⦌
-ⓑ ⓧ Ⓒ ⨭ ⨴ ⸮ ⁇ ⁉ ⩥ ⓜ Ⓐ ⓢ ⓕ ⓡ ⓔ Ⓢ
-⇏ ↛ ↪ ⤤ ⇝ ⇀ →
-⑴ ⑵ ⑶ ⊙ ⎖ α 𝚨 𐄫 ᶌ ␤ ␉
-˖ ⧺ ⨢ ˗ ‡ ∸ × ÷ ٪ « ≪ » ≫ ⫸ ⋙ ˜
-‼ ≔ ≠ ≤ ≥ ⅋ ∧ ⋎ ∨ ⊻
-↺ ↻
-² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ᶀ ᶍ`
+cp.value=`InOut: ï î í ì ô ℹ
+Zeros: Ⅹ ℍ 𝕜 𝕄 𝔾 𝕋 ℙ 𝔼 ℤ 𝕐
+Stack: Ξ ᵖ ᵍ ʳ ᶜ
+Const: ị ʉ ℇ ᴉ ɸ π τ ⊨ ⊭ ᕠ
+Built: М Ϛ Ѧ П Ø ʝ ɘ э Э ɼ Ɽ ᶂ ᶁ ש Ѩ ß Ꝉ ᶏ ª ᴙ ᶊ ε ë Ɱ Մ ⨝ Յ փ 
+Basic: ⬮ ⬯ ⬭ ⬬ ⊕ ⍘ ¤ ₙ ᶉ … ⦃
+Paren: ⸩ ⁽ ⎛ ⎝ ⎞ ⦅ ⦆ ⌿ ⍀ ⟨ ⟦ ⟬ ⁅ ⦌ ” ‘ ’
+Funcs: ⓑ ⓧ Ⓒ ⨭ ⨴ ⸮ ⁇ ⁉ ⩥ ⓜ Ⓐ ⓢ ⓕ ⓡ ⓔ Ⓢ
+Arrow: ⇏ ↛ ↪ ⤤ ⇝ ⇀ →
+Regex: ⑴ ⑵ ⑶ ⊙ ⎖ α 𝚨 𐄫 ᶌ ␤ ␉
+Opers: ˖ ⧺ ⨢ ˗ ‡ ∸ × ÷ ٪ « ≪ » ≫ ⫸ ⋙ ˜
+Logic: ‼ ≔ ≠ ≤ ≥ ⅋ ∧ ⋎ ∨ ⊻
+Loops: ↺ ↻
+Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ᶀ ᶍ`
 					</script>
 				</div>
 				<div class='col-sm-8'>
