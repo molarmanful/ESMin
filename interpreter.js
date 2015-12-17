@@ -193,6 +193,7 @@ var Σ=c=>{
 		.replace(/’/g,'\\`)')
 		.replace(/⸩/g,'))')
 		.replace(/⎞/g,'/)')
+		.replace(/⦌/g,'])')
 		//template string start
 		.replace(/⦃/g,'${')
 		//SPREAD OPERATORS
@@ -247,10 +248,10 @@ var Σ=c=>{
 		.replace(/⅘/g,'.8')
 		.replace(/⅙/g,'(1/6)')
 		.replace(/⅚/g,'(5/6)')
-		.replace(/⅛/g,'(1/8)')
-		.replace(/⅜/g,'(3/8)')
-		.replace(/⅝/g,'(5/8)')
-		.replace(/⅞/g,'(7/8)')
+		.replace(/⅛/g,'.125')
+		.replace(/⅜/g,'.375')
+		.replace(/⅝/g,'.625')
+		.replace(/⅞/g,'.875')
 		//BINARY/HEX PREFIXES
 		.replace(/ᶀ/g,'0b')
 		.replace(/ᶍ/g,'0x')
