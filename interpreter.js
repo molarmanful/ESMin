@@ -69,17 +69,17 @@ var Ξ=[],
 		ß='toString',
 		Ꝉ='length',
 		ᶏ='apply',
-		//-general-purpose map
+		//- general-purpose map
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
-		//-general-purpose reverse
+		//- general-purpose reverse
 		ᴙ=i=>[...''+i].reverse().join``;
 //-improved replace function
 String.prototype.ċ=String.prototype.replace=function(x,y=''){return this.replace(x,y)};
-//-recursive replace
+//- recursive replace
 String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
-//-repeat
+//- repeat
 String.prototype.Ę=String.prototype.repeat;
-//-recursive replace (prefix-style)
+//- recursive replace (prefix-style)
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
 		Յ='0b',
@@ -102,14 +102,15 @@ var compress=i=>LZString.compress(shoco.c(i));
 //---
 var Σ=c=>{
 	var 
-	    //-functions
+	    //- functions
 	    r='ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
-			//-these don't need surrounding parens
+			//- these don't need surrounding parens
 			n='A-Za-z$_ãïîíìịʉℇεᴉɸπτ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
-			//-real numbers regex
+			//- real numbers regex
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 	
 	//TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
+	//
 	//fix parentheses after 1st-stage transpilation
 	c=fixParens(c
 		//COMPRESSION
