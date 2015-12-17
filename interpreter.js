@@ -222,7 +222,6 @@ var Σ=c=>{
 		.replace(/⅋/g,'&&')
 		.replace(/⋎/g,'||')
 		//more keywords
-		.replace(/ⱳ/g,'with(')
 		.replace(/ᶉ/g,'return ')
 		.replace(/ₙ/g,'new ')
 		.replace(/ᕠ/g,'this')
@@ -282,6 +281,7 @@ var Σ=c=>{
 		.replace(/⫸/g,'>>>')
 		//bitwise rounding
 		.replace(/˜/g,'~~')
+		.replace(/↻/g,'while(')
 	)
 		//FOR LOOP (@ = end parentheses)
 		.replace(/↺/g,'for(')
