@@ -117,6 +117,8 @@ var Σ=c=>{
 		.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
 		.replace(/э([^]+)#/gm,(x,y)=>shoco.d(y))
 		.replace(/Э(.+)#/g,(x,y)=>LZString.decompress(y))
+		//alias for 10; can be used with zeroes series
+		.replace(/Ⅹ/g,'10')
 		//ZEROES
 		.replace(/ℍ/g,'00')
 		.replace(/𝕜/g,'000')
@@ -268,8 +270,6 @@ var Σ=c=>{
 		//BINARY/HEX PREFIXES
 		.replace(/ᶀ/g,'0b')
 		.replace(/ᶍ/g,'0x')
-		//alias for 10; can be used with zeroes series
-		.replace(/Ⅹ/g,'10')
 		//AUTO-FORMAT FUNCTION NAMES
 		.replace(/([^.])([\u00f8-\u0236])/g,'$1["$2"]')
 		.replace(/([ßꝈᶏ])/g,'[$1]')
