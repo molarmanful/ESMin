@@ -426,7 +426,7 @@ This will serve as documentation for those who want to learn the language.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ė=<span class="hljs-built_in">String</span>.prototype.rreplace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">r,o='',t</span>)</span>{t=<span class="hljs-keyword">this</span>.replace(r,o);<span class="hljs-keyword">return</span> t!=<span class="hljs-keyword">this</span>?t.ė(r,o):t};</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ė=<span class="hljs-built_in">String</span>.prototype.rreplace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">r,o='',t</span>)</span>{t=<span class="hljs-keyword">this</span>.replace(r,o);<span class="hljs-keyword">return</span> t!=<span class="hljs-keyword">this</span>?t.rreplace(r,o):t};</pre></div></div>
             
         </li>
         
@@ -1368,7 +1368,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⑴/g</span>,<span class="hljs-string">'$1'</span>)
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⩄/g</span>,<span class="hljs-string">'$&amp;'</span>)
+		.replace(<span class="hljs-regexp">/﹩/g</span>,<span class="hljs-string">'$$'</span>)
+		.replace(<span class="hljs-regexp">/❛/g</span>,<span class="hljs-string">'$`'</span>)
+		.replace(<span class="hljs-regexp">/❜/g</span>,<span class="hljs-string">"$'"</span>)
+		.replace(<span class="hljs-regexp">/⑴/g</span>,<span class="hljs-string">'$1'</span>)
 		.replace(<span class="hljs-regexp">/⑵/g</span>,<span class="hljs-string">'$2'</span>)
 		.replace(<span class="hljs-regexp">/⑶/g</span>,<span class="hljs-string">'$3'</span>)
 		.replace(<span class="hljs-regexp">/⊙/g</span>,<span class="hljs-string">'(.)'</span>)
@@ -1378,7 +1382,8 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
 		.replace(<span class="hljs-regexp">/𐄫/g</span>,<span class="hljs-string">'0-9'</span>)
 		.replace(<span class="hljs-regexp">/ᶌ/g</span>,<span class="hljs-string">'aeiou'</span>)
 		.replace(<span class="hljs-regexp">/⌿/g</span>,<span class="hljs-string">'/g'</span>)
-		.replace(<span class="hljs-regexp">/⍀/g</span>,<span class="hljs-string">'/ig'</span>)</pre></div></div>
+		.replace(<span class="hljs-regexp">/⍀/g</span>,<span class="hljs-string">'/ig'</span>)
+		.replace(<span class="hljs-regexp">/⑊/g</span>,<span class="hljs-string">'\\'</span>)</pre></div></div>
             
         </li>
         

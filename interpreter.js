@@ -76,7 +76,7 @@ var Ξ=[],
 //-improved replace function
 String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
 //- recursive replace
-String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.ė(r,o):t};
+String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.rreplace(r,o):t};
 //- repeat
 String.prototype.Ę=String.prototype.repeat;
 //- recursive replace (prefix-style)
@@ -274,6 +274,10 @@ var Σ=c=>{
 		.replace(/([^.])([\u00f8-\u0236])/g,'$1["$2"]')
 		.replace(/([ßꝈᶏ])/g,'[$1]')
 		//REGEX
+		.replace(/⩄/g,'$&')
+		.replace(/﹩/g,'$$')
+		.replace(/❛/g,'$`')
+		.replace(/❜/g,"$'")
 		.replace(/⑴/g,'$1')
 		.replace(/⑵/g,'$2')
 		.replace(/⑶/g,'$3')
@@ -285,6 +289,7 @@ var Σ=c=>{
 		.replace(/ᶌ/g,'aeiou')
 		.replace(/⌿/g,'/g')
 		.replace(/⍀/g,'/ig')
+		.replace(/⑊/g,'\\')
 		//some more keywords
 		.replace(/⊨/g,'true')
 		.replace(/⊭/g,'false')
