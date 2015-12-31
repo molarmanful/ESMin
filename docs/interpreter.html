@@ -461,7 +461,8 @@ This will serve as documentation for those who want to learn the language.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-built_in">Array</span>.prototype.ć=<span class="hljs-built_in">Array</span>.prototype.map;
-<span class="hljs-built_in">Array</span>.prototype.Ă=<span class="hljs-built_in">Array</span>.prototype.filter;</pre></div></div>
+<span class="hljs-built_in">Array</span>.prototype.Ă=<span class="hljs-built_in">Array</span>.prototype.filter;
+<span class="hljs-built_in">Array</span>.prototype.Ć=<span class="hljs-built_in">Array</span>.prototype.find;</pre></div></div>
             
         </li>
         
@@ -883,11 +884,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-55">&#182;</a>
               </div>
-              <p><code>[...Array(n)]</code></p>
+              <p><code>.find(($,_,ã)=&gt;</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/Ⓐ(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'⟦Ѧ($1)]'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/Ⓕ/g</span>,<span class="hljs-string">'Ć⬯'</span>)</pre></div></div>
             
         </li>
         
@@ -898,11 +899,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-56">&#182;</a>
               </div>
-              <p><code>math.sum</code></p>
+              <p><code>[...Array(n)]</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨭/g</span>,<span class="hljs-string">'Мƺ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/Ⓐ(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>)+)/g`</span>),<span class="hljs-string">'⟦Ѧ($1)]'</span>)</pre></div></div>
             
         </li>
         
@@ -913,11 +914,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-57">&#182;</a>
               </div>
-              <p><code>math.prod</code></p>
+              <p><code>math.sum</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨴/g</span>,<span class="hljs-string">'МƷ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨭/g</span>,<span class="hljs-string">'Мƺ'</span>)</pre></div></div>
             
         </li>
         
@@ -928,11 +929,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-58">&#182;</a>
               </div>
-              <p><code>_.range</code></p>
+              <p><code>math.prod</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⩥/g</span>,<span class="hljs-string">'ѨŃ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⨴/g</span>,<span class="hljs-string">'МƷ'</span>)</pre></div></div>
             
         </li>
         
@@ -943,11 +944,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-59">&#182;</a>
               </div>
-              <p><code>math.random</code></p>
+              <p><code>_.range</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⸮/g</span>,<span class="hljs-string">'Мƨ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⩥/g</span>,<span class="hljs-string">'ѨŃ'</span>)</pre></div></div>
             
         </li>
         
@@ -958,11 +959,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-60">&#182;</a>
               </div>
-              <p><code>math.randomInt</code></p>
+              <p><code>math.random</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁇/g</span>,<span class="hljs-string">'МƩ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⸮/g</span>,<span class="hljs-string">'Мƨ'</span>)</pre></div></div>
             
         </li>
         
@@ -973,11 +974,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-61">&#182;</a>
               </div>
-              <p><code>math.pickRandom</code></p>
+              <p><code>math.randomInt</code></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁉/g</span>,<span class="hljs-string">'МƧ'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁇/g</span>,<span class="hljs-string">'МƩ'</span>)</pre></div></div>
             
         </li>
         
@@ -987,6 +988,21 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-62">&#182;</a>
+              </div>
+              <p><code>math.pickRandom</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⁉/g</span>,<span class="hljs-string">'МƧ'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-63">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-63">&#182;</a>
               </div>
               <p>function argument aliases</p>
 
@@ -1000,11 +1016,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-63">
+        <li id="section-64">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-63">&#182;</a>
+                <a class="pilcrow" href="#section-64">&#182;</a>
               </div>
               <p>whitespace aliases - also useful for regex</p>
 
@@ -1017,11 +1033,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-64">
+        <li id="section-65">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-64">&#182;</a>
+                <a class="pilcrow" href="#section-65">&#182;</a>
               </div>
               <p>one-char string; can be used as function argument</p>
 
@@ -1032,11 +1048,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-65">
+        <li id="section-66">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-65">&#182;</a>
+                <a class="pilcrow" href="#section-66">&#182;</a>
               </div>
               <p>PARENTHETICAL ARROW FUNCTIONS</p>
 
@@ -1048,11 +1064,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-66">
+        <li id="section-67">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-66">&#182;</a>
+                <a class="pilcrow" href="#section-67">&#182;</a>
               </div>
               <p>ARGUMENT PARSER: turns <code>⁽abc 5</code> into <code>(a,b,c,5)</code>.</p>
 
@@ -1063,11 +1079,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-67">
+        <li id="section-68">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-67">&#182;</a>
+                <a class="pilcrow" href="#section-68">&#182;</a>
               </div>
               <p>PARENTHETICAL ARGUMENT PARSER</p>
 
@@ -1079,11 +1095,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-68">
+        <li id="section-69">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-68">&#182;</a>
+                <a class="pilcrow" href="#section-69">&#182;</a>
               </div>
               <p>.apply(window,</p>
 
@@ -1094,11 +1110,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-69">
+        <li id="section-70">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-69">&#182;</a>
+                <a class="pilcrow" href="#section-70">&#182;</a>
               </div>
               <p>AUTO-ADD PARENTHESES</p>
 
@@ -1110,11 +1126,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-70">
+        <li id="section-71">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-70">&#182;</a>
+                <a class="pilcrow" href="#section-71">&#182;</a>
               </div>
               <p>prevents object from turning into a function</p>
 
@@ -1125,11 +1141,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-71">
+        <li id="section-72">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-71">&#182;</a>
+                <a class="pilcrow" href="#section-72">&#182;</a>
               </div>
               <p>AUTO-ADD BRACKETS</p>
 
@@ -1141,11 +1157,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-72">
+        <li id="section-73">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-72">&#182;</a>
+                <a class="pilcrow" href="#section-73">&#182;</a>
               </div>
               <p>MORE ARROW FUNCTIONS</p>
 
@@ -1160,11 +1176,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-73">
+        <li id="section-74">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-73">&#182;</a>
+                <a class="pilcrow" href="#section-74">&#182;</a>
               </div>
               <p>array shorthand</p>
 
@@ -1175,11 +1191,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-74">
+        <li id="section-75">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-74">&#182;</a>
+                <a class="pilcrow" href="#section-75">&#182;</a>
               </div>
               <p>PARENTHESES</p>
 
@@ -1195,11 +1211,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-75">
+        <li id="section-76">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-75">&#182;</a>
+                <a class="pilcrow" href="#section-76">&#182;</a>
               </div>
               <p>template string start</p>
 
@@ -1210,11 +1226,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-76">
+        <li id="section-77">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-76">&#182;</a>
+                <a class="pilcrow" href="#section-77">&#182;</a>
               </div>
               <p>SPREAD OPERATORS</p>
 
@@ -1227,11 +1243,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-77">
+        <li id="section-78">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-77">&#182;</a>
+                <a class="pilcrow" href="#section-78">&#182;</a>
               </div>
               <p>ASSIGNMENT OPERATORS</p>
 
@@ -1254,11 +1270,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-78">
+        <li id="section-79">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-78">&#182;</a>
+                <a class="pilcrow" href="#section-79">&#182;</a>
               </div>
               <p>LOGIC</p>
 
@@ -1275,11 +1291,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-79">
+        <li id="section-80">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-79">&#182;</a>
+                <a class="pilcrow" href="#section-80">&#182;</a>
               </div>
               <p>more keywords</p>
 
@@ -1292,11 +1308,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-80">
+        <li id="section-81">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-80">&#182;</a>
+                <a class="pilcrow" href="#section-81">&#182;</a>
               </div>
               <p>EXPONENTS/ROOTS</p>
 
@@ -1312,11 +1328,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-81">
+        <li id="section-82">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-81">&#182;</a>
+                <a class="pilcrow" href="#section-82">&#182;</a>
               </div>
               <p>FRACTIONS</p>
 
@@ -1344,11 +1360,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-82">
+        <li id="section-83">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-82">&#182;</a>
+                <a class="pilcrow" href="#section-83">&#182;</a>
               </div>
               <p>BINARY/HEX PREFIXES</p>
 
@@ -1360,11 +1376,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-83">
+        <li id="section-84">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-83">&#182;</a>
+                <a class="pilcrow" href="#section-84">&#182;</a>
               </div>
               <p>AUTO-FORMAT FUNCTION NAMES</p>
 
@@ -1376,11 +1392,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-84">
+        <li id="section-85">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-84">&#182;</a>
+                <a class="pilcrow" href="#section-85">&#182;</a>
               </div>
               <p>REGEX</p>
 
@@ -1406,11 +1422,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-85">
+        <li id="section-86">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-85">&#182;</a>
+                <a class="pilcrow" href="#section-86">&#182;</a>
               </div>
               <p>some more keywords</p>
 
@@ -1423,11 +1439,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-86">
+        <li id="section-87">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-86">&#182;</a>
+                <a class="pilcrow" href="#section-87">&#182;</a>
               </div>
               <p>BITSHIFTS</p>
 
@@ -1440,11 +1456,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-87">
+        <li id="section-88">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-87">&#182;</a>
+                <a class="pilcrow" href="#section-88">&#182;</a>
               </div>
               <p>bitwise rounding</p>
 
@@ -1457,11 +1473,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-88">
+        <li id="section-89">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-88">&#182;</a>
+                <a class="pilcrow" href="#section-89">&#182;</a>
               </div>
               <p>FOR LOOP (@ = end parentheses)</p>
 
@@ -1473,11 +1489,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-89">
+        <li id="section-90">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-89">&#182;</a>
+                <a class="pilcrow" href="#section-90">&#182;</a>
               </div>
               <h2 id="output">OUTPUT</h2>
 
@@ -1486,11 +1502,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-90">
+        <li id="section-91">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-90">&#182;</a>
+                <a class="pilcrow" href="#section-91">&#182;</a>
               </div>
               <ul>
 <li>implicit (stack) output</li>
@@ -1503,11 +1519,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-91">
+        <li id="section-92">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-91">&#182;</a>
+                <a class="pilcrow" href="#section-92">&#182;</a>
               </div>
               <ul>
 <li>implicit output</li>
@@ -1520,11 +1536,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
         </li>
         
         
-        <li id="section-92">
+        <li id="section-93">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-92">&#182;</a>
+                <a class="pilcrow" href="#section-93">&#182;</a>
               </div>
               <ul>
 <li>explicit output</li>

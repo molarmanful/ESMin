@@ -82,6 +82,7 @@ String.prototype.Ę=String.prototype.repeat;
 //- fixes for aliasing
 Array.prototype.ć=Array.prototype.map;
 Array.prototype.Ă=Array.prototype.filter;
+Array.prototype.Ć=Array.prototype.find;
 //- recursive replace (prefix-style)
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
@@ -154,6 +155,8 @@ var Σ=c=>{
 		.replace(/Ⓢ/g,'ĉ⇀')
 		//`.split('')`
 		.replace(/ⓢ/g,'Č⬯')
+		//`.find(($,_,ã)=>`
+		.replace(/Ⓕ/g,'Ć⬯')
 		//`[...Array(n)]`
 		.replace(eval(`/Ⓐ(([${n}]|${d})+)/g`),'⟦Ѧ($1)]')
 		//`math.sum`
