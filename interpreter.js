@@ -79,6 +79,9 @@ String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
 String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.rreplace(r,o):t};
 //- repeat
 String.prototype.Ę=String.prototype.repeat;
+//- fixes for aliasing
+Array.prototype.ć=Array.prototype.map;
+Array.prototype.Ă=Array.prototype.filter;
 //- recursive replace (prefix-style)
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
