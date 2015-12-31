@@ -171,6 +171,12 @@ var Σ=c=>{
 		.replace(/⁇/g,'МƩ')
 		//`math.pickRandom`
 		.replace(/⁉/g,'МƧ')
+		//`math.floor`
+		.replace(/⌊/g,'МŨ')
+		//`math.round`
+		.replace(/⌙/g,'МƧ')
+		//`math.ceil`
+		.replace(/⌈/g,'МƧ')
 		//function argument aliases
 		.replace(/⬮/g,'()')
 		.replace(/⬯/g,'(``)')
@@ -305,7 +311,9 @@ var Σ=c=>{
 		.replace(/»/g,'>>')
 		.replace(/⫸/g,'>>>')
 		//bitwise rounding
-		.replace(/˜/g,'~~')
+		.replace(/˜/g,'0|')
+		.replace(/⍜/g,'|0')
+		//WHILE LOOP
 		.replace(/↻/g,'while(')
 	)
 		//FOR LOOP (@ = end parentheses)
