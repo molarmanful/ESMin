@@ -86,6 +86,7 @@ Array.prototype.Ć=Array.prototype.find;
 //- recursive replace (prefix-style)
 var Մ=(i,r,o='',t)=>(t=i.replace(r,o),t!=i?Մ(t,r,o):t),
 		ë=eval,
+		ᵴ='',
 		Յ='0b',
 		փ='0x',
 		//ALPHABETS
