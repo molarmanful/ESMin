@@ -201,7 +201,7 @@ var Σ=c=>{
 		.replace(/⎝/g,`=⁽`)
 		//PARENTHETICAL ARGUMENT PARSER
 		.replace(/⎛/g,'(⁽')
-    .replace(eval(`/⁽(([${n}]|\d)+)/g`),(x,y)=>`(${y.split(/\s|/g)})`)
+    .replace(eval(`/⁽(([${n}]|\\d)+)/g`),(x,y)=>`(${y.split(/\s|/g)})`)
 		//.apply(window,
 		.replace(/ª/g,'ᶏש,')
 		//AUTO-ADD PARENTHESES
