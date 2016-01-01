@@ -260,11 +260,11 @@ var Σ=c=>{
 		.replace(/ₙ/g,'new ')
 		.replace(/ᕠ/g,'this')
 		//EXPONENTS/ROOTS
-		.replace(eval(`/(⦅.+|(([${n}]|${d})+))²/g`),'Math.pow($1,2)')
-		.replace(eval(`/(⦅.+|(([${n}]|${d})+))³/g`),'Math.pow($1,3)')
-		.replace(eval(`/(⦅.+|(([${n}]|${d})+))ⁿ(.+⦆|(([${n}]|${d}|\s)+))/g`),'Math.pow($1,$4)')
-		.replace(eval(`/√(.+⦆|(([${n}]|${d})+))/g`),'Math.sqrt($1)')
-		.replace(eval(`/∛(.+⦆|(([${n}]|${d})+))/g`),'Math.cbrt($1)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d})+))²/g`),'math.pow($1,2)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d})+))³/g`),'math.pow($1,3)')
+		.replace(eval(`/(⦅.+|(([${n}]|${d})+))ⁿ(.+⦆|(([${n}]|${d}|\s)+))/g`),'math.pow($1,$4)')
+		.replace(eval(`/√(.+⦆|(([${n}]|${d})+))/g`),'math.sqrt($1)')
+		.replace(eval(`/∛(.+⦆|(([${n}]|${d})+))/g`),'math.cbrt($1)')
 		.replace(/[⦅⦆]/g,'')
 		//FRACTIONS
 		.replace(/½/g,'.5')
