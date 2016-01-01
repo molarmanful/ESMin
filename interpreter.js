@@ -74,9 +74,11 @@ var Ξ=[],
 		//- general-purpose reverse
 		ᴙ=i=>[...''+i].reverse().join``;
 //-improved replace function
-String.prototype.ċ=function(x,y=''){return this.replace(x,y)};
+String.prototype.ċ=String.prototype.replace=function(x,y=''){return this.replace(x,y)};
 //- recursive replace
 String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.rreplace(r,o):t};
+//- global replace
+String.prototype.ę=String.prototype.greplace=function(x,y=''){return this.replace(RegExp(x,'g'),y)};
 //- repeat
 String.prototype.Ę=String.prototype.repeat;
 //- fixes for aliasing
