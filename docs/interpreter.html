@@ -409,7 +409,7 @@ This will serve as documentation for those who want to learn the language.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ċ=<span class="hljs-built_in">String</span>.prototype.replace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,y=''</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.replace(x,y)};</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.ċ=<span class="hljs-built_in">String</span>.prototype.ireplace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,y=''</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.replace(x,y)};</pre></div></div>
             
         </li>
         
@@ -1169,7 +1169,7 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
             </div>
             
             <div class="content"><div class='highlight'><pre>		.replace(<span class="hljs-regexp">/⎛/g</span>,<span class="hljs-string">'(⁽'</span>)
-    .replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⁽(([<span class="hljs-subst">${n}</span>]|<span class="hljs-subst">${d}</span>| )+)/g`</span>),(x,y)=&gt;<span class="hljs-string">`(<span class="hljs-subst">${y.split(/\s|/g)}</span>)`</span>)</pre></div></div>
+    .replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⁽(([<span class="hljs-subst">${n}</span>]|\d)+)/g`</span>),(x,y)=&gt;<span class="hljs-string">`(<span class="hljs-subst">${y.split(/\s|/g)}</span>)`</span>)</pre></div></div>
             
         </li>
         
