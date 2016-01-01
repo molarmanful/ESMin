@@ -74,7 +74,7 @@ var Ξ=[],
 		//- general-purpose reverse
 		ᴙ=i=>[...''+i].reverse().join``;
 //-improved replace function
-String.prototype.ċ=String.prototype.replace=function(x,y=''){return this.replace(x,y)};
+String.prototype.ċ=String.prototype.ireplace=function(x,y=''){return this.replace(x,y)};
 //- recursive replace
 String.prototype.ė=String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.rreplace(r,o):t};
 //- global replace
