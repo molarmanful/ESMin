@@ -120,6 +120,9 @@ var Σ=c=>{
 							.replace(/ɘ(.+)#*/g,(x,y)=>shoco.d(LZString.decompress(y)))
 							.replace(/э([^]+)#*/gm,(x,y)=>shoco.d(y))
 							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
+							//eval-paste block; evaluates code, then pastes result directly in place of block
+							.replace(/⏜(.*)⏝/g,x=>eval(x))
+							.replace(eval(`/⏖${n}/g`,x=>eval(x))
 							//alias for 10; can be used with zeroes series
 							.replace(/Ⅹ/g,'10')
 							//ZEROES
