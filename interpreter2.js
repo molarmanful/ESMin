@@ -243,7 +243,7 @@ var Σ=c=>{
 							.replace(/∧/g,'&=')
 							.replace(/⊻/g,'^=')
 							.replace(/∨/g,'|=')
-							.replace(eval(`/(\\(.+\\)|${n})⇔/g`),'$1=$1')
+							.replace(eval(`/(${n})⇔/g`),'$1=$1')
 							//LOGIC
 							.replace(/‼/g,'!!')
 							.replace(/≔/g,'==')
