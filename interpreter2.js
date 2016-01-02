@@ -14,9 +14,11 @@ String.prototype.ireplace=function(x,y=''){return this.replace(x,y)};
 //- recursive replace
 String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.rreplace(r,o):t};
 //- global replace
-String.prototype.greplace=function(x,y=''){return this.replace(RegExp(x,'g'),y)};
-//- string/number reverse
-String.prototype.reverse=function(x,y=''){return[...this].reverse().join()};
+String.prototype.greplace=function(x,f,y=''){return this.replace(RegExp(x,'g'+f),y)};
+//- string reverse
+String.prototype.reverse=function(x){return[...this].reverse().join()};
+//- matrix split
+String.prototype.msplit=function(r='\n',c=''){return this.split(r).map(x=>x.split(c))};
 
 //prototype-based function aliasing
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
