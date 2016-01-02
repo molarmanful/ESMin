@@ -86,7 +86,7 @@ This will serve as documentation for those who want to learn the language.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>[<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">RegExp</span>,<span class="hljs-built_in">Date</span>,s,_,XRegExp,<span class="hljs-built_in">Function</span>].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v).map((x,y)=&gt;v.prototype[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v.prototype[x]));</pre></div></div>
+            <div class="content"><div class='highlight'><pre>[<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">RegExp</span>,<span class="hljs-built_in">Date</span>,s,_,XRegExp,<span class="hljs-built_in">Function</span>].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v.prototype).map((x,y)=&gt;v.prototype[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v.prototype[x]));</pre></div></div>
             
         </li>
         
