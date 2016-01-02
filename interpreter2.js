@@ -80,9 +80,7 @@ var Ξ=[],
 		ᶏ='apply',
 		//- general-purpose map
 		Ɱ=(i,f,s='',j='')=>typeof i=='object'?i.map(f):typeof i=='string'?i.split(s).map(f).join(j):eval((''+i).split(s).map(f).join(j)),
-		//- general-purpose reverse
-		ᴙ=i=>[...''+i].reverse().join``;
-var ë=eval,
+		ë=eval,
 		ᵴ='',
 		Յ='0b',
 		փ='0x',
@@ -160,6 +158,8 @@ var Σ=c=>{
 							.replace(/Ⓕ/g,'ď⬯')
 							//`[...Array(n)]`
 							.replace(eval(`/Ⓐ(([${n}]|\\d)+)/g`),'⟦Ѧ($1)]')
+							//`.reverse()`
+							.replace(/ᴙ/g,'Ĩ⬮')
 							//`math.sum`
 							.replace(/⨭/g,'Мƺ')
 							//`math.prod`
