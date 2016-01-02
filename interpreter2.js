@@ -214,8 +214,9 @@ var Σ=c=>{
 							.replace(/⤤/g,'=($,_,ã)=>')
 							.replace(/→/g,'=>')
 							//array shorthand
-							.replace(eval(`/⟨(([${n}]|${d}| )+)/g`),(x,y)=>`[${y.split(/\s|/g)}]`)
+							.replace(eval(`/⟨(([${n}]|\\d)+)/g`),(x,y)=>`[${y.split(/\s|/g)}]`)
 							//PARENTHESES
+							.replace(/“/g,'(`')
 							.replace(/”/g,'`)')
 							.replace(/‘/g,'\\`')
 							.replace(/’/g,'\\`)')
