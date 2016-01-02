@@ -117,9 +117,9 @@ var Σ=c=>{
 	//fix parentheses after 1st-stage transpilation
 	c=fixParens(c
 							//COMPRESSION
-							.replace(/ɘ(.+)#/g,(x,y)=>shoco.d(LZString.decompress(y)))
-							.replace(/э([^]+)#/gm,(x,y)=>shoco.d(y))
-							.replace(/Э(.+)#/g,(x,y)=>LZString.decompress(y))
+							.replace(/ɘ(.+)#*/g,(x,y)=>shoco.d(LZString.decompress(y)))
+							.replace(/э([^]+)#*/gm,(x,y)=>shoco.d(y))
+							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
 							//alias for 10; can be used with zeroes series
 							.replace(/Ⅹ/g,'10')
 							//ZEROES
@@ -243,6 +243,7 @@ var Σ=c=>{
 							.replace(/∧/g,'&=')
 							.replace(/⊻/g,'^=')
 							.replace(/∨/g,'|=')
+							.replace(eval(`/(\\(.+\\)|${n})⇔/g`),'$1=$1')
 							//LOGIC
 							.replace(/‼/g,'!!')
 							.replace(/≔/g,'==')
