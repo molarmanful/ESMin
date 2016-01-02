@@ -16,7 +16,7 @@ String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?
 //- global replace
 String.prototype.greplace=function(x,f,y=''){return this.replace(RegExp(x,'g'+f),y)};
 //- string reverse
-String.prototype.reverse=function(x){return[...this].reverse().join()};
+String.prototype.reverse=function(){return[...this].reverse().join()};
 //- matrix split
 String.prototype.msplit=function(r='\n',c=''){return this.split(r).map(x=>x.split(c))};
 
