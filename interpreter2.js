@@ -37,7 +37,7 @@ var Ξ=[],
 		ô=i=>o.value+=i!=[]._?i:Ξ.join`\n`,
 		//---
 		//get source code
-		ℹ=i=>[i=i!=[]._?c.value[i]:c.value,Ξ.push(i)][0],
+		ℹ=(i=0,j=c.value.length)=>[c.value.slice(i,j),Ξ.push(i)][0],
 
 		//STACK FUNCTIONS
 		//---

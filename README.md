@@ -29,7 +29,7 @@ Outputs `Hello, world!`.
 Outputs the source code. NOTE: This is **not** a true quine!
 
 ```
-ⒶṤć⇀⧺_
+⩥⁽1Ṥ
 ```
 Outputs all numbers 1-100.
 ```
@@ -40,7 +40,3 @@ Does binary negation.
 ᴙï
 ```
 Outputs reverse of input.
-```
-!ïė`{}”
-```
-Checks if a string of curly brackets (ex:`{}{{}}`) is balanced.
