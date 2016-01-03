@@ -122,7 +122,7 @@ This will serve as documentation for those who want to learn the language.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.greplace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,f,y=''</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.replace(<span class="hljs-built_in">RegExp</span>(x,<span class="hljs-string">'g'</span>+f),y)};</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">String</span>.prototype.greplace=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,f='',y=''</span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.replace(<span class="hljs-built_in">RegExp</span>(x,<span class="hljs-string">'g'</span>+f),y)};</pre></div></div>
             
         </li>
         
@@ -285,7 +285,7 @@ This will serve as documentation for those who want to learn the language.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>		ℹ=i=&gt;[i=i!=[]._?c.value[i]:c.value,Ξ.push(i)][<span class="hljs-number">0</span>],</pre></div></div>
+            <div class="content"><div class='highlight'><pre>		ℹ=(i=<span class="hljs-number">0</span>,j=c.value.length)=&gt;[c.value.slice(i,j),Ξ.push(i)][<span class="hljs-number">0</span>],</pre></div></div>
             
         </li>
         
