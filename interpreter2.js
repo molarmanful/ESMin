@@ -14,7 +14,7 @@ String.prototype.ireplace=function(x,y=''){return this.replace(x,y)};
 //- recursive replace
 String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.rreplace(r,o):t};
 //- global replace
-String.prototype.greplace=function(x,f,y=''){return this.replace(RegExp(x,'g'+f),y)};
+String.prototype.greplace=function(x,f='',y=''){return this.replace(RegExp(x,'g'+f),y)};
 //- string reverse
 String.prototype.reverse=function(){return[...this].reverse().join()};
 //- matrix split
