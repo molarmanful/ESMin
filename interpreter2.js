@@ -14,11 +14,13 @@ String.prototype.ireplace=function(x,y=''){return this.replace(x,y)};
 //- recursive replace
 String.prototype.rreplace=function(r,o='',t){t=this.replace(r,o);return t!=this?t.rreplace(r,o):t};
 //- global replace
-String.prototype.greplace=function(x,f='',y=''){return this.replace(RegExp(x,'g'+f),y)};
+String.prototype.greplace=function(x,y='',f=''){return this.replace(RegExp(x,'g'+f),y)};
 //- string reverse
-String.prototype.reverse=function(){return[...this].reverse().join()};
+String.prototype.reverse=function(){return[...this].reverse().join``};
 //- matrix split
 String.prototype.msplit=function(r='\n',c=''){return this.split(r).map(x=>x.split(c))};
+//- transliterate (dictionary replace)
+String.prototype.treplace=function(x,y,z={}){[...x].map((a,b)=>z[a]=y[b]);return this.replace(/./g,x=>z[x]===[]._?x:z[x])};
 
 //prototype-based function aliasing
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
