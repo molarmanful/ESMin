@@ -22,13 +22,10 @@ String.prototype.msplit=function(r='\n',c=''){return this.split(r).map(x=>x.spli
 //- transliterate (dictionary replace)
 String.prototype.treplace=function(x,y,z={}){[...x].map((a,b)=>z[a]=y[b]);return this.replace(/./g,x=>z[x]===[]._?x:z[x])};
 
-//canvas
-var Ƈ=cv.getContext('2d');
-
 //prototype-based function aliasing
-[String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
+[String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function,Pen].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 //object-based function aliasing
-[math,String,Array,Number,Object,JSON,RegExp,XRegExp,Date,_,s,window,Function,Ƈ].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
+[math,String,Array,Number,Object,JSON,RegExp,XRegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 //function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 //char palette helper
@@ -109,6 +106,8 @@ var Ξ=[],
 		//ALPHABETS
 		ᶐ='ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 		ᶛ='abcdefghijklmnopqrstuvwxyz',
+		//CANVAS
+		Ƈ=new Pen('cv'),
 		//NUMBERS
 		//aliases for 0-256; get number alias using `nchars[NUMBER]`
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
