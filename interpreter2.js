@@ -29,7 +29,7 @@ String.prototype.treplace=function(x,y,z={}){[...x].map((a,b)=>z[a]=y[b]);return
 //function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 //char palette helper
-var chpal=_=>`InOut: ï î í ì ô ℹ
+var chpal=`InOut: ï î í ì ô ℹ
 Zeros: Ⅹ ℍ 𝕜 𝕄 𝔾 𝕋 ℙ 𝔼 ℤ 𝕐
 Stack: Ξ ᵖ ᵍ ʳ ᶜ
 Const: ị ʉ ℇ ᴉ ɸ π τ ⊨ ⊭ ᕠ
