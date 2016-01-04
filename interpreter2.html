@@ -11,7 +11,6 @@
 		<script src="http://xregexp.com/v/3.0.0/xregexp-min.js"></script>
 		<script src="https://rawgit.com/Ed-von-Schleck/shoco/master/shoco.js"></script>
 		<script src="https://rawgit.com/numbers/numbers.js/master/src/numbers.min.js"></script>
-		<script src="interpreter2.js"></script>
 		<link rel='stylesheet prefetch' href='dvsm.css'>
 		<style>
 			textarea {
@@ -19,14 +18,16 @@
 				width:100%;
 				background-color: #5a5a5a!important;
 			}
-			#cp,#c {
+			#c {
 				height:10em
-			}
-			.cp {
-				z-index:100
 			}
 			#i,#o {
 				height:5em
+			}
+			#cv {
+				height:100%;
+				width:100%;
+				background-color:white;
 			}
 		</style>
 		<script>
@@ -57,33 +58,9 @@ function utf(s) {
 			<h1>𝔼𝕊𝕄𝕚𝕟 2 Interpreter (Firefox Only)</h1>
 			<hr>
 			<div class='row'>
-				<div class='cp col-sm-4'>
-					<h2>Char Palette</h2>
-					<textarea class='form-control' id='cp' wrap='off' readonly></textarea>
-					<script>
-cp.value=`InOut: ï î í ì ô ℹ
-Zeros: Ⅹ ℍ 𝕜 𝕄 𝔾 𝕋 ℙ 𝔼 ℤ 𝕐
-Stack: Ξ ᵖ ᵍ ʳ ᶜ
-Const: ị ʉ ℇ ᴉ ɸ π τ ⊨ ⊭ ᕠ
-Built: М Ϛ Ѧ П Ø ʝ ɼ Ɽ ᶂ ᶁ ש Ѩ ß Ꝉ ᶏ ª ᶊ ε ë Ɱ Յ փ ᵴ ᶐ ᶛ ɘ э Э
-Basic: ⊕ ¤ ₙ ᶉ …
-Paren: ⸩ ⁽ ⎛ ⎝ ⎞ ⦅ ⦆ ⟨ ⟦ ⟬ ⁅ ⦌ “ ” ‘ ’ ⍘ ⬮ ⬯ ⬭ ⬬ ⦃ ⏖ ⏜ ⏝
-Funcs: ⓑ ⓧ Ⓒ ⨭ ⨴ ⸮ ⁇ ⁉ ⩥ ⓜ Ⓐ ⓢ ⓕ Ⓕ ⓡ ⓔ Ⓢ ⨝ ⌊ ⌙ ⌈ ᴙ
-Arrow: ⇏ ↛ ↪ ⤤ ⇝ ⇀ →
-Regex: ⩄ ﹩ ❛ ❜ ⑴ ⑵ ⑶ ⊙ ⎖ α 𝚨 𐄫 ᶌ ␤ ␉ ⑊ ⌿ ⍀
-Opers: ˖ ⧺ ˗ ‡ × ÷ ٪ « ≪ » ≫ ⫸ ⋙ ˜ ⍜ ⇔
-Logic: ‼ ≔ ≠ ≤ ≥ ⅋ ∧ ⋎ ∨ ⊻
-Loops: ↺ ↻
-Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ᶀ ᶍ`
-					</script>
-				</div>
-				<div class='col-sm-8'>
+				<div class='col-sm-6'>
 					<h2>Code <small id='co'></small></h2>
 					<textarea id='c' class='form-control' wrap='off' oninput='co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes = "+(c.value.length/utf(c.value)).toFixed(2);'></textarea>
-				</div>
-			</div>
-			<div class='row'>
-				<div class='col-sm-6'>
 					<h2>Input</h2>
 					<textarea id='i' class='form-control' wrap='off'></textarea>
 					<button id='r' class='btn btn-primary' onclick='o.value="",Ξ=[],ï=E.checked?eval(document.getElementById("i").value):document.getElementById("i").value,î=ï[0],í=ï[1],ì=ï[2],[...nchars].map((x,y)=>{eval(x+`=`+y)});Σ(c.value)'>Run</button>
@@ -93,8 +70,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
 				<div class='col-sm-6'>
 					<h2>Output</h2>
 					<textarea id='o' class='form-control' wrap='off' readonly></textarea>
+					<h3>Canvas</h3>
+					<canvas id='cv'></canvas>
 				</div>
 			</div>
 		</div>
+		<script src="interpreter2.js"></script>
 	</body>
 </html>
