@@ -184,11 +184,11 @@ This will serve as documentation for those who want to learn the language.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
-              <p>canvas</p>
+              <p>prototype-based function aliasing</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Ƈ=cv.getContext(<span class="hljs-string">'2d'</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>[<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">RegExp</span>,<span class="hljs-built_in">Date</span>,s,_,XRegExp,<span class="hljs-built_in">Function</span>,Pen].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v.prototype).map((x,y)=&gt;v.prototype[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v.prototype[x]));</pre></div></div>
             
         </li>
         
@@ -199,11 +199,11 @@ This will serve as documentation for those who want to learn the language.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
-              <p>prototype-based function aliasing</p>
+              <p>object-based function aliasing</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>[<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">RegExp</span>,<span class="hljs-built_in">Date</span>,s,_,XRegExp,<span class="hljs-built_in">Function</span>].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v.prototype).map((x,y)=&gt;v.prototype[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v.prototype[x]));</pre></div></div>
+            <div class="content"><div class='highlight'><pre>[math,<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">JSON</span>,<span class="hljs-built_in">RegExp</span>,XRegExp,<span class="hljs-built_in">Date</span>,_,s,<span class="hljs-built_in">window</span>,<span class="hljs-built_in">Function</span>].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v).map((x,y)=&gt;v[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v[x]));</pre></div></div>
             
         </li>
         
@@ -214,21 +214,6 @@ This will serve as documentation for those who want to learn the language.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
-              <p>object-based function aliasing</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>[math,<span class="hljs-built_in">String</span>,<span class="hljs-built_in">Array</span>,<span class="hljs-built_in">Number</span>,<span class="hljs-built_in">Object</span>,<span class="hljs-built_in">JSON</span>,<span class="hljs-built_in">RegExp</span>,XRegExp,<span class="hljs-built_in">Date</span>,_,s,<span class="hljs-built_in">window</span>,<span class="hljs-built_in">Function</span>,Ƈ].map(v=&gt;<span class="hljs-built_in">Object</span>.getOwnPropertyNames(v).map((x,y)=&gt;v[<span class="hljs-built_in">String</span>.fromCharCode(y+<span class="hljs-number">248</span>)]=v[x]));</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-14">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-14">&#182;</a>
-              </div>
               <p>function alias helper: use as <code>alias(Array,METHOD_NAME_STRING)</code></p>
 
             </div>
@@ -238,11 +223,11 @@ This will serve as documentation for those who want to learn the language.</p>
         </li>
         
         
-        <li id="section-15">
+        <li id="section-14">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+                <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
               <p>char palette helper</p>
 
@@ -266,11 +251,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-16">
+        <li id="section-15">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-16">&#182;</a>
+                <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
               <p>stack representation</p>
 
@@ -281,13 +266,26 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <h2 id="i-o-functions">I/O FUNCTIONS</h2>
+
+            </div>
+            
+        </li>
+        
+        
         <li id="section-17">
             <div class="annotation">
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <h2 id="i-o-functions">I/O FUNCTIONS</h2>
+              <p><em>not shown: <code>ï = input, î = ï[0], í = ï[1], ì = ï[2]</code></em></p>
 
             </div>
             
@@ -300,9 +298,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
-              <p><em>not shown: <code>ï = input, î = ï[0], í = ï[1], ì = ï[2]</code></em></p>
+              <p>-output</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>		ô=i=&gt;o.value+=i!=[]._?i:Ξ.join<span class="hljs-string">`\n`</span>,</pre></div></div>
             
         </li>
         
@@ -313,11 +313,9 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
-              <p>-output</p>
+              <hr>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>		ô=i=&gt;o.value+=i!=[]._?i:Ξ.join<span class="hljs-string">`\n`</span>,</pre></div></div>
             
         </li>
         
@@ -328,9 +326,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
-              <hr>
+              <p>get source code</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>		ℹ=(i=<span class="hljs-number">0</span>,j=c.value.length)=&gt;[c.value.slice(i,j),Ξ.push(i)][<span class="hljs-number">0</span>],</pre></div></div>
             
         </li>
         
@@ -341,11 +341,9 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
-              <p>get source code</p>
+              <h2 id="stack-functions">STACK FUNCTIONS</h2>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>		ℹ=(i=<span class="hljs-number">0</span>,j=c.value.length)=&gt;[c.value.slice(i,j),Ξ.push(i)][<span class="hljs-number">0</span>],</pre></div></div>
             
         </li>
         
@@ -355,19 +353,6 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-22">&#182;</a>
-              </div>
-              <h2 id="stack-functions">STACK FUNCTIONS</h2>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-23">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-23">&#182;</a>
               </div>
               <ul>
 <li>push</li>
@@ -380,11 +365,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-24">
+        <li id="section-23">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-24">&#182;</a>
+                <a class="pilcrow" href="#section-23">&#182;</a>
               </div>
               <ul>
 <li>get</li>
@@ -397,11 +382,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-25">
+        <li id="section-24">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-25">&#182;</a>
+                <a class="pilcrow" href="#section-24">&#182;</a>
               </div>
               <ul>
 <li>remove</li>
@@ -414,11 +399,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-26">
+        <li id="section-25">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-26">&#182;</a>
+                <a class="pilcrow" href="#section-25">&#182;</a>
               </div>
               <ul>
 <li>clear</li>
@@ -431,11 +416,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-27">
+        <li id="section-26">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-27">&#182;</a>
+                <a class="pilcrow" href="#section-26">&#182;</a>
               </div>
               <h2 id="more-aliases">MORE ALIASES</h2>
 
@@ -444,11 +429,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-28">
+        <li id="section-27">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-28">&#182;</a>
+                <a class="pilcrow" href="#section-27">&#182;</a>
               </div>
               <p>CONSTANTS</p>
 
@@ -466,11 +451,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-29">
+        <li id="section-28">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-29">&#182;</a>
+                <a class="pilcrow" href="#section-28">&#182;</a>
               </div>
               <p>BUILT-IN OBJECTS</p>
 
@@ -493,11 +478,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-30">
+        <li id="section-29">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-30">&#182;</a>
+                <a class="pilcrow" href="#section-29">&#182;</a>
               </div>
               <p>FUNCTIONS</p>
 
@@ -510,11 +495,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-31">
+        <li id="section-30">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-31">&#182;</a>
+                <a class="pilcrow" href="#section-30">&#182;</a>
               </div>
               <ul>
 <li>general-purpose map</li>
@@ -531,11 +516,11 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
         </li>
         
         
-        <li id="section-32">
+        <li id="section-31">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-32">&#182;</a>
+                <a class="pilcrow" href="#section-31">&#182;</a>
               </div>
               <p>ALPHABETS</p>
 
@@ -543,6 +528,21 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
             
             <div class="content"><div class='highlight'><pre>		ᶐ=<span class="hljs-string">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span>,
 		ᶛ=<span class="hljs-string">'abcdefghijklmnopqrstuvwxyz'</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <p>CANVAS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		Ƈ=<span class="hljs-keyword">new</span> Pen(<span class="hljs-string">'cv'</span>),</pre></div></div>
             
         </li>
         
