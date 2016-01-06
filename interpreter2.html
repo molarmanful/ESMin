@@ -64,7 +64,7 @@ function utf(s) {
 					<textarea id='c' class='form-control' wrap='off' oninput='co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes = "+(c.value.length/utf(c.value)).toFixed(2);'></textarea>
 					<h2>Input</h2>
 					<textarea id='i' class='form-control' wrap='off'></textarea>
-					<button id='r' class='btn btn-primary' onclick='cv.getContext("2d").clearRect(0,0,cv.width,cv.height),o.value="",Ξ=[],ï=E.checked?eval(document.getElementById("i").value):document.getElementById("i").value,î=ï[0],í=ï[1],ì=ï[2],ī=[...ï],[...nchars].map((x,y)=>{eval(x+`=`+y)});Σ(c.value)'>Run</button>
+					<button id='r' class='btn btn-primary' onclick='cv.getContext("2d").clearRect(0,0,cv.width,cv.height),o.value="",Ξ=[],ï=E.checked?eval(document.getElementById("i").value):document.getElementById("i").value,î=ï[0],í=ï[1],ì=ï[2],ᴉ=[...ï],[...nchars].map((x,y)=>{eval(x+`=`+y)});Σ(c.value)'>Run</button>
 					<button id='p' class='btn btn-success' onclick="window.location.href='?eval='+E.checked+'&input='+encodeURIComponent(document.getElementById('i').value)+'&code='+encodeURIComponent(c.value)">Permalink</button>
 					<label><input type='checkbox' id='E'> Eval input?</label>
 				</div>
