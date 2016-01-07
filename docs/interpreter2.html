@@ -760,7 +760,7 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⏜(.*)⏝/g</span>,(x,y)=&gt;<span class="hljs-built_in">eval</span>(y))
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⏜([^⏜⏝]*)⏝/g</span>,(x,y)=&gt;<span class="hljs-built_in">eval</span>(y))
 							.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⏖(<span class="hljs-subst">${n}</span>+)/g`</span>),(x,y)=&gt;<span class="hljs-built_in">eval</span>(y))</pre></div></div>
             
         </li>
@@ -776,7 +776,7 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⟮(.*)⟯/g</span>,(x,y)=&gt;(ᶈ.push(y),y))</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⟮([^⟮⟯]*)⟯/g</span>,(x,y)=&gt;(ᶈ.push(y),y))</pre></div></div>
             
         </li>
         

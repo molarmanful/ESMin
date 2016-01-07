@@ -145,11 +145,11 @@ var Σ=c=>{
 							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
 							
 							//eval-paste block; evaluates code, then pastes result directly in place of block
-							.replace(/⏜(.*)⏝/g,(x,y)=>eval(y))
+							.replace(/⏜([^⏜⏝]*)⏝/g,(x,y)=>eval(y))
 							.replace(eval(`/⏖(${n}+)/g`),(x,y)=>eval(y))
 							
 							//copy block; copies code, then pastes elsewhere when called
-							.replace(/⟮(.*)⟯/g,(x,y)=>(ᶈ.push(y),y))
+							.replace(/⟮([^⟮⟯]*)⟯/g,(x,y)=>(ᶈ.push(y),y))
 							//paste copy block 1
 							.replace(/Ⅰ/g,ᶈ[0])
 							//paste copy block 2
