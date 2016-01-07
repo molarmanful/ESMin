@@ -48,7 +48,7 @@ Num's: ² ³ ⁿ √ ∛ ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ �
 var Ξ=[],
 		//I/O FUNCTIONS
 		//---
-		//*not shown: `ï = input, î = ï[0], í = ï[1], ì = ï[2]`*
+		//*not shown: `ï = input, î = ï[0], í = ï[1], ì = ï[2], ᴉ = [...ï]`*
 
 		//-output
 		ô=i=>o.value+=i!=[]._?i:Ξ.join`\n`,
@@ -107,6 +107,8 @@ var Ξ=[],
 		ᶛ='abcdefghijklmnopqrstuvwxyz',
 		//CANVAS
 		Ƈ=new Pen('cv'),
+		//storage for copy-paste blocks
+		ᶈ=[],
 		//NUMBERS
 		//aliases for 0-256; get number alias using `nchars[NUMBER]`
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
@@ -125,10 +127,10 @@ var compress=i=>LZString.compress(shoco.c(i));
 //---
 var Σ=c=>{
 	var 
-	//- functions
-	r='ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
+			//- functions
+			r='ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
 			//- these don't need surrounding parens
-			n='A-Za-z$_ãïîíìīᶖʉℇεᴉɸπτᶐᵴᶛ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
+			n='A-Za-z$_ãïîíìᴉᶖʉℇεɸπτᶐᵴᶛ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			//- real numbers regex
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 
@@ -140,9 +142,20 @@ var Σ=c=>{
 							.replace(/ɘ(.+)#*/g,(x,y)=>shoco.d(LZString.decompress(y)))
 							.replace(/э([^]+)#*/gm,(x,y)=>shoco.d(y))
 							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
+							
 							//eval-paste block; evaluates code, then pastes result directly in place of block
 							.replace(/⏜(.*)⏝/g,(x,y)=>eval(y))
 							.replace(eval(`/⏖(${n}+)/g`),(x,y)=>eval(y))
+							
+							//copy block; copies code, then pastes elsewhere when called
+							.replace(/⏞(.*)⏟/g,(x,y)=>(paste.push(y),y))
+							//paste copy block 1
+							.replace(/Ⅰ/g,'ᶈ[0]')
+							//paste copy block 2
+							.replace(/Ⅱ/g,'ᶈ[1]')
+							//paste copy block 3
+							.replace(/Ⅲ/g,'ᶈ[2]')
+							
 							//alias for 10; can be used with zeroes series
 							.replace(/Ⅹ/g,'10')
 							//ZEROES
@@ -155,6 +168,7 @@ var Σ=c=>{
 							.replace(/𝔼/g,'000000000000000000')
 							.replace(/ℤ/g,'000000000000000000000')
 							.replace(/𝕐/g,'000000000000000000000000')
+							
 							//`('')+` - good for string coercion
 							.replace(/⊕/g,'⬯+')
 							//`.join('')`
@@ -216,6 +230,9 @@ var Σ=c=>{
 							.replace(/⌈/g,'МƧ')
 							//`new Date`
 							.replace(/Ｄ/g,'ₙᶁ')
+							//`.apply(window,`
+							.replace(/ª/g,'ᶏש,')
+							
 							//function argument aliases
 							.replace(/⬮/g,'()')
 							.replace(/⬯/g,'(``)')
@@ -227,6 +244,7 @@ var Σ=c=>{
 							.replace(/␠/g,'\s')
 							//one-char string; can be used as function argument
 							.replace(/⍘(.)/g,'(`$1`)')
+							
 							//PARENTHETICAL ARROW FUNCTIONS
 							.replace(/⇝/g,'((a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 							.replace(/⇀/g,'(($,_,ã)=>')
@@ -235,8 +253,6 @@ var Σ=c=>{
 							//PARENTHETICAL ARGUMENT PARSER
 							.replace(/⎛/g,'(⁽')
 							.replace(eval(`/⁽(([${n}]|\\d)+)/g`),(x,y)=>`(${y.split(/\s|/g)})`)
-							//.apply(window,
-							.replace(/ª/g,'ᶏש,')
 							//AUTO-ADD PARENTHESES
 							.replace(eval(`/([${r}])(([${n}]|${d})+)/g`),'$1($2)')
 							.replace(eval(`/([${r}])([^(\u00f8-\u0236ßꝈᶏ¤])/g`),'$1($2')
@@ -244,7 +260,7 @@ var Σ=c=>{
 							.replace(/¤/g,'')
 							//AUTO-ADD BRACKETS
 							.replace(eval(`/⎖(([${n}]|\\d)+)/g`),'[$1]')
-							.replace(/([ïîíì])(\d+)/g,'$1[$2]')
+							.replace(/([ïîíìᴉ])(\d+)/g,'$1[$2]')
 							//MORE ARROW FUNCTIONS
 							.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 							.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
@@ -263,10 +279,12 @@ var Σ=c=>{
 							.replace(/⦌/g,'])')
 							//template string start
 							.replace(/⦃/g,'${')
+							
 							//SPREAD OPERATORS
 							.replace(/…/g,'...')
 							.replace(eval(`/⟬([${n}]+)/g`),'[...$1]')
 							.replace(/⟦/g,'[...')
+							
 							//ASSIGNMENT OPERATORS
 							.replace(/˖/g,'+=')
 							.replace(/⧺/g,'++')
@@ -290,10 +308,12 @@ var Σ=c=>{
 							.replace(/≥/g,'>=')
 							.replace(/⅋/g,'&&')
 							.replace(/⋎/g,'||')
+							
 							//more keywords
 							.replace(/ᶉ/g,'return ')
 							.replace(/ₙ/g,'new ')
 							.replace(/ᕠ/g,'this')
+							
 							//EXPONENTS/ROOTS
 							.replace(eval(`/(⦅.+|(([${n}]|${d})+))²/g`),'math.pow($1,2)')
 							.replace(eval(`/(⦅.+|(([${n}]|${d})+))³/g`),'math.pow($1,3)')
@@ -323,9 +343,10 @@ var Σ=c=>{
 							//BINARY/HEX PREFIXES
 							.replace(/ᶀ/g,'0b')
 							.replace(/ᶍ/g,'0x')
+							
 							//AUTO-FORMAT FUNCTION NAMES
 							.replace(/([^.])([\u00f8-\u0236])/g,'$1["$2"]')
-							.replace(/([ßꝈᶏ])/g,'[$1]')
+							.replace(/[ßꝈᶏ]/g,'[$&]')
 							//REGEX
 							.replace(/⩄/g,'$$&')
 							.replace(/﹩/g,'$$$')
