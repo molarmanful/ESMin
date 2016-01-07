@@ -36,7 +36,7 @@ Const: ị ʉ ℇ ɸ π τ ⊨ ⊭ ᕠ
 Built: М Ϛ Ѧ П Ø ʝ ɼ Ɽ ᶂ ᶁ ש Ѩ ß Ꝉ ᶏ ª ᶊ ε ë Ɱ Յ փ ᵴ ᶐ ᶛ Ƈ ℹ
 Basic: ⊕ ¤ ₙ ᶉ …
 Paren: ⸩ ⁽ ⎛ ⎝ ⎞ ⦅ ⦆ ⟨ ⟦ ⟬ ⁅ ⦌ “ ” ‘ ’ ⍘ ⬮ ⬯ ⬭ ⬬ ⦃ 
-Block: ɘ э Э ⏖ ⏜ ⏝ ⏞ ⏟ Ⅰ Ⅱ Ⅲ ᶈ
+Block: ɘ э Э ⏖ ⏜ ⏝ ⟮ ⟯ Ⅰ Ⅱ Ⅲ ᶈ
 Funcs: ⓑ ⓧ Ⓒ ⒞ ⨭ ⨴ ⸮ ⁇ ⁉ ⩥ ⓜ ⒨ Ⓐ ⓢ ⓕ ⒡ Ⓕ Ｆ Ⓘ ⒤ ⓡ ⒭ ⓔ ⒠ Ⓢ ⒮ ⨝ ⌊ ⌙ ⌈ ᴙ ᴚ Ｄ
 Arrow: ⇏ ↛ ↪ ⤤ ⇝ ⇀ →
 Regex: ⩄ ﹩ ❛ ❜ ⑴ ⑵ ⑶ ⊙ ⎖ α 𝚨 𐄫 ᶌ ␤ ␉ ⑊ ⌿ ⍀
@@ -149,13 +149,13 @@ var Σ=c=>{
 							.replace(eval(`/⏖(${n}+)/g`),(x,y)=>eval(y))
 							
 							//copy block; copies code, then pastes elsewhere when called
-							.replace(/⏞(.*)⏟/g,(x,y)=>(paste.push(y),y))
+							.replace(/⟮(.*)⟯/g,(x,y)=>(ᶈ.push(y),y))
 							//paste copy block 1
-							.replace(/Ⅰ/g,'ᶈ[0]')
+							.replace(/Ⅰ/g,ᶈ[0])
 							//paste copy block 2
-							.replace(/Ⅱ/g,'ᶈ[1]')
+							.replace(/Ⅱ/g,ᶈ[1])
 							//paste copy block 3
-							.replace(/Ⅲ/g,'ᶈ[2]')
+							.replace(/Ⅲ/g,ᶈ[2])
 							
 							//alias for 10; can be used with zeroes series
 							.replace(/Ⅹ/g,'10')
