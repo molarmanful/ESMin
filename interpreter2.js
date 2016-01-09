@@ -226,9 +226,9 @@ var Σ=c=>{
 							//`math.floor`
 							.replace(/⌊/g,'МŨ')
 							//`math.round`
-							.replace(/⌙/g,'МƧ')
+							.replace(/⌙/g,'Мų')
 							//`math.ceil`
-							.replace(/⌈/g,'МƧ')
+							.replace(/⌈/g,'МŠ')
 							//`new Date`
 							.replace(/Ｄ/g,'ₙᶁ')
 							//`.apply(window,`
