@@ -23,9 +23,9 @@ String.prototype.msplit=function(r='\n',c=''){return this.split(r).map(x=>x.spli
 String.prototype.treplace=function(x,y,z={}){[...x].map((a,b)=>z[a]=y[b]);return this.replace(/./g,x=>z[x]===[]._?x:z[x])};
 
 //prototype-based function aliasing
-[String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function,Pen].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
+[String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function,Pen,numeral].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
 //object-based function aliasing
-[math,String,Array,Number,Object,JSON,RegExp,XRegExp,Date,_,s,window,Function].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
+[math,String,Array,Number,Object,JSON,RegExp,XRegExp,Date,_,s,window,Function,numeral].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 //function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 //char palette helper
@@ -93,6 +93,7 @@ var Ξ=[],
 		ᶁ=Date,
 		ש=window,
 		ᶂ=Function,
+		ɲ=numeral,
 		//FUNCTIONS
 		ß='toString',
 		Ꝉ='length',
@@ -129,7 +130,7 @@ var compress=i=>LZString.compress(shoco.c(i));
 var Σ=c=>{
 	var 
 			//- functions
-			r='ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
+			r='ᵖᵍʳôℹɘϚѦПØѨɼⱤƒᶁɲⱮᴙՄᶊëßᶏ\\u00f8-\\u0236',
 			//- these don't need surrounding parens
 			n='A-Za-z$_ãïîíìᴉᶖʉℇεɸπτᶐᵴᶛ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			//- real numbers regex
