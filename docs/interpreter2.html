@@ -757,12 +757,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
-              <p>eval-paste block; evaluates code, then pastes result directly in place of block</p>
+              <p>copy block; copies code, then pastes elsewhere when called</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⏜([^⏜⏝]*)⏝?/g</span>,(x,y)=&gt;<span class="hljs-built_in">eval</span>(y))
-							.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⏖(<span class="hljs-subst">${n}</span>+)/g`</span>),(x,y)=&gt;<span class="hljs-built_in">eval</span>(y))</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⟮([^⟮⟯]*)⟯?/g</span>,(x,y)=&gt;(ᶈ.push(y),y))</pre></div></div>
             
         </li>
         
@@ -773,11 +772,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-47">&#182;</a>
               </div>
-              <p>copy block; copies code, then pastes elsewhere when called</p>
+              <p>paste copy block 1</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⟮([^⟮⟯]*)⟯?/g</span>,(x,y)=&gt;(ᶈ.push(y),y))</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅰ/g</span>,ᶈ[<span class="hljs-number">0</span>])</pre></div></div>
             
         </li>
         
@@ -788,11 +787,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-48">&#182;</a>
               </div>
-              <p>paste copy block 1</p>
+              <p>paste copy block 2</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅰ/g</span>,ᶈ[<span class="hljs-number">0</span>])</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅱ/g</span>,ᶈ[<span class="hljs-number">1</span>])</pre></div></div>
             
         </li>
         
@@ -803,11 +802,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-49">&#182;</a>
               </div>
-              <p>paste copy block 2</p>
+              <p>paste copy block 3</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅱ/g</span>,ᶈ[<span class="hljs-number">1</span>])</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅲ/g</span>,ᶈ[<span class="hljs-number">2</span>])</pre></div></div>
             
         </li>
         
@@ -818,11 +817,12 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-50">&#182;</a>
               </div>
-              <p>paste copy block 3</p>
+              <p>eval-paste block; evaluates code, then pastes result directly in place of block</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅲ/g</span>,ᶈ[<span class="hljs-number">2</span>])</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⏜([^⏜⏝]*)⏝?/g</span>,(x,y)=&gt;<span class="hljs-built_in">eval</span>(y))
+							.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⏖(<span class="hljs-subst">${n}</span>+)/g`</span>),(x,y)=&gt;<span class="hljs-built_in">eval</span>(y))</pre></div></div>
             
         </li>
         

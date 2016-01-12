@@ -144,11 +144,7 @@ var Σ=c=>{
 							.replace(/ɘ(.+)#*/g,(x,y)=>shoco.d(LZString.decompress(y)))
 							.replace(/э([^]+)#*/gm,(x,y)=>shoco.d(y))
 							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
-							
-							//eval-paste block; evaluates code, then pastes result directly in place of block
-							.replace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))
-							.replace(eval(`/⏖(${n}+)/g`),(x,y)=>eval(y))
-							
+
 							//copy block; copies code, then pastes elsewhere when called
 							.replace(/⟮([^⟮⟯]*)⟯?/g,(x,y)=>(ᶈ.push(y),y))
 							//paste copy block 1
@@ -157,6 +153,10 @@ var Σ=c=>{
 							.replace(/Ⅱ/g,ᶈ[1])
 							//paste copy block 3
 							.replace(/Ⅲ/g,ᶈ[2])
+							
+							//eval-paste block; evaluates code, then pastes result directly in place of block
+							.replace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))
+							.replace(eval(`/⏖(${n}+)/g`),(x,y)=>eval(y))
 							
 							//alias for 10; can be used with zeroes series
 							.replace(/Ⅹ/g,'10')
