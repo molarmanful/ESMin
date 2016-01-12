@@ -389,7 +389,7 @@ var Σ=c=>{
 	//- implicit (stack) output
 	if(!c.match(/ô/g)&&c.match(/ᵖ/g)){c+=';ô()',console.log(c),eval(c);return}
 	//- implicit output
-	else if(Ξ.length<1&&!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
+	else if(!c.match(/ô/g)){console.log(c),o.value=eval(c);return}
 	//- explicit output
 	else console.log(c),eval(c);
 }
