@@ -25,19 +25,15 @@ Just go look at the [commit history](https://github.com/molarmanful/ESMin/commit
 Outputs `Hello, world!`.
 
 ```
-ℹ⬮
+ℹ)
 ```
-Outputs the source code. NOTE: This is **not** a true quine!
+Not-so-true quine.
+```
+⟮ⒸⅩ222+ᶈ0
+```
+True quine.
 
 ```
 ⩥⁽1Ṥ
 ```
 Outputs all numbers 1-100.
-```
-Ɱ(ï,⇏a^1
-```
-Does binary negation.
-```
-ᴙï
-```
-Outputs reverse of input.
