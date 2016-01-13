@@ -140,10 +140,6 @@ var Σ=c=>{
 	//
 	//fix parentheses after 1st-stage transpilation
 	c=fixParens(c
-							//COMPRESSION
-							.replace(/ɘ(.+)#*/g,(x,y)=>shoco.d(LZString.decompress(y)))
-							.replace(/э([^]+)#*/gm,(x,y)=>shoco.d(y))
-							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
 
 							//copy block; copies code, then pastes elsewhere when called
 							.replace(/⟮([^⟮⟯]*)⟯?/g,(x,y)=>(ᶈ.push(y),y))
@@ -153,6 +149,11 @@ var Σ=c=>{
 							.replace(/Ⅱ/g,ᶈ[1])
 							//paste copy block 3
 							.replace(/Ⅲ/g,ᶈ[2])
+							
+							//COMPRESSION
+							.replace(/ɘ(.+)#*/g,(x,y)=>shoco.d(LZString.decompress(y)))
+							.replace(/э([^]+)#*/gm,(x,y)=>shoco.d(y))
+							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
 							
 							//eval-paste block; evaluates code, then pastes result directly in place of block
 							.replace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))

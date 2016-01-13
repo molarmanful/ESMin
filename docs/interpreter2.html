@@ -740,13 +740,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
-              <p>COMPRESSION</p>
+              <p>copy block; copies code, then pastes elsewhere when called</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/ɘ(.+)#*/g</span>,(x,y)=&gt;shoco.d(LZString.decompress(y)))
-							.replace(<span class="hljs-regexp">/э([^]+)#*/gm</span>,(x,y)=&gt;shoco.d(y))
-							.replace(<span class="hljs-regexp">/Э(.+)#*/g</span>,(x,y)=&gt;LZString.decompress(y))</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⟮([^⟮⟯]*)⟯?/g</span>,(x,y)=&gt;(ᶈ.push(y),y))</pre></div></div>
             
         </li>
         
@@ -757,11 +755,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
-              <p>copy block; copies code, then pastes elsewhere when called</p>
+              <p>paste copy block 1</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/⟮([^⟮⟯]*)⟯?/g</span>,(x,y)=&gt;(ᶈ.push(y),y))</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅰ/g</span>,ᶈ[<span class="hljs-number">0</span>])</pre></div></div>
             
         </li>
         
@@ -772,11 +770,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-47">&#182;</a>
               </div>
-              <p>paste copy block 1</p>
+              <p>paste copy block 2</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅰ/g</span>,ᶈ[<span class="hljs-number">0</span>])</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅱ/g</span>,ᶈ[<span class="hljs-number">1</span>])</pre></div></div>
             
         </li>
         
@@ -787,11 +785,11 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-48">&#182;</a>
               </div>
-              <p>paste copy block 2</p>
+              <p>paste copy block 3</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅱ/g</span>,ᶈ[<span class="hljs-number">1</span>])</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅲ/g</span>,ᶈ[<span class="hljs-number">2</span>])</pre></div></div>
             
         </li>
         
@@ -802,11 +800,13 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-49">&#182;</a>
               </div>
-              <p>paste copy block 3</p>
+              <p>COMPRESSION</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/Ⅲ/g</span>,ᶈ[<span class="hljs-number">2</span>])</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/ɘ(.+)#*/g</span>,(x,y)=&gt;shoco.d(LZString.decompress(y)))
+							.replace(<span class="hljs-regexp">/э([^]+)#*/gm</span>,(x,y)=&gt;shoco.d(y))
+							.replace(<span class="hljs-regexp">/Э(.+)#*/g</span>,(x,y)=&gt;LZString.decompress(y))</pre></div></div>
             
         </li>
         
