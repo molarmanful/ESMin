@@ -711,7 +711,7 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			n=<span class="hljs-string">'A-Za-z$_ãïîíìᴉᶖʉℇεɸπτᶐᵴᶛ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff'</span>,</pre></div></div>
+            <div class="content"><div class='highlight'><pre>			n=<span class="hljs-string">'A-Za-z$_ãïîíìᴉɕᶖʉℇεɸπτᶐᵴᶛ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff'</span>,</pre></div></div>
             
         </li>
         
@@ -1335,9 +1335,9 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/␤/g</span>,<span class="hljs-string">'\n'</span>)
-							.replace(<span class="hljs-regexp">/␉/g</span>,<span class="hljs-string">'\t'</span>)
-							.replace(<span class="hljs-regexp">/␠/g</span>,<span class="hljs-string">'\s'</span>)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-regexp">/␤/g</span>,<span class="hljs-string">'\\n'</span>)
+							.replace(<span class="hljs-regexp">/␉/g</span>,<span class="hljs-string">'\\t'</span>)
+							.replace(<span class="hljs-regexp">/␠/g</span>,<span class="hljs-string">'\\s'</span>)</pre></div></div>
             
         </li>
         
@@ -1446,7 +1446,7 @@ shoco.d=i=&gt;shoco.decompress(<span class="hljs-keyword">new</span> <span class
             </div>
             
             <div class="content"><div class='highlight'><pre>							.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/⎖(([<span class="hljs-subst">${n}</span>]|\\d)+)/g`</span>),<span class="hljs-string">'[$1]'</span>)
-							.replace(<span class="hljs-regexp">/([ïîíìᴉᶈɕ])(\d+)/g</span>,<span class="hljs-string">'$1[$2]'</span>)</pre></div></div>
+							.replace(<span class="hljs-built_in">eval</span>(<span class="hljs-string">`/([ïîíìᴉᶈɕ])(([<span class="hljs-subst">${n}</span>]|\\d)+)/g`</span>),<span class="hljs-string">'$1[$2]'</span>)</pre></div></div>
             
         </li>
         
