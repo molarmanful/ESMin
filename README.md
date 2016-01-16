@@ -29,7 +29,7 @@ Outputs `Hello, world!`.
 ```
 Not-so-true quine.
 ```
-⟮ⒸⅩ222+ᶈ0
+⟮ɕṡ+ᶈ0
 ```
 True quine.
 
