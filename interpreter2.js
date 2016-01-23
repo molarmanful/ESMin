@@ -145,7 +145,7 @@ var Σ=c=>{
 	c=fixParens(c
 
 							//copy block; copies code, then pastes elsewhere when called
-							.replace(/⟮([^⟮⟯]*)⟯?/g,(x,y)=>(ᶈ.push(y),y))
+							.rreplace(/⟮([^⟮⟯]*)⟯?/g,(x,y)=>(ᶈ.push(y),y))
 							//paste copy block 1
 							.replace(/Ⅰ/g,ᶈ[0])
 							//paste copy block 2
@@ -159,8 +159,8 @@ var Σ=c=>{
 							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
 							
 							//eval-paste block; evaluates code, then pastes result directly in place of block
-							.replace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))
-							.replace(eval(`/⏖(${n}+)/g`),(x,y)=>eval(y))
+							.replace(eval(`/⏖(${n}+)/g`),'⏜$1⏝')
+							.rreplace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))
 							
 							//alias for 10; can be used with zeroes series
 							.replace(/Ⅹ/g,'10')
