@@ -159,7 +159,7 @@ var Σ=c=>{
 							.replace(/Э(.+)#*/g,(x,y)=>LZString.decompress(y))
 							
 							//eval-paste block; evaluates code, then pastes result directly in place of block
-							.replace(eval(`/⏖(${n}+)/g`),'⏜$1⏝')
+							.replace(eval(`/⏖([${n}]+)/g`),'⏜$1⏝')
 							.rreplace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))
 							
 							//alias for 10; can be used with zeroes series
@@ -305,7 +305,7 @@ var Σ=c=>{
 							.replace(/∧/g,'&=')
 							.replace(/⊻/g,'^=')
 							.replace(/∨/g,'|=')
-							.replace(eval(`/(${n})⇔/g`),'$1=$1')
+							.replace(eval(`/([${n}])⇔/g`),'$1=$1')
 							//LOGIC
 							.replace(/‼/g,'!!')
 							.replace(/≔/g,'==')
