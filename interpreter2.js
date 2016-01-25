@@ -24,9 +24,9 @@ Array.prototype.mjoin=function(r='\n',c=''){return this.map(x=>x.join(r)).join(c
 //- transliterate (dictionary replace)
 String.prototype.treplace=function(x,y,z={}){[...x].map((a,b)=>z[a]=y[b]);return this.replace(/./g,x=>z[x]===[]._?x:z[x])};
 //- square
-Number.prototype.square=function(){return math.pow(this,2)};
+Number.prototype.square=function(){return math.pow(+this,2)};
 //- cube
-Number.prototype.cube=function(){return math.pow(this,3)};
+Number.prototype.cube=function(){return math.pow(+this,3)};
 
 //prototype-based function aliasing
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function,Pen,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
