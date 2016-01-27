@@ -41,7 +41,7 @@ Stack: Ξ ᵖ ᵍ ʳ ᶜ
 Const: ị ʉ ℇ ɸ π τ ⊨ ⊭ ᕠ
 Built: ש М Ϛ ᶊ Ѧ Ѩ П ɲ Ø ʝ ɟ ɼ Ɽ ᶂ ᶁ ß Ꝉ ᶏ ª ε ë Ɱ Յ փ ᵴ ᶐ ᶛ Ƈ ℹ
 Basic: ⊕ ¤ ₙ ᶉ …
-Paren: ⸩ ⁽ ⎛ ⎝ ⎞ ⟨ ⟦ ⟬ ⁅ ⦌ “ ” ‘ ’ ⍘ ⬮ ⬯ ⬭ ⬬ ⦃ 
+Paren: ⸩ ⁽ ⎛ ⎝ ⎞ ⟨ ⟦ ⟬ ⁅ ⦌ “ ” ‘ ’ ⍘ ⬮ ⬯ ⬭ ⬬ ⦃ ⦄
 Block: ɘ э Э ⏖ ⏜ ⏝ ⟮ ⟯ Ⅰ Ⅱ Ⅲ ᶈ
 Funcs: ⓑ ⓧ Ⓒ ⒞ ⨭ ⨴ ⸮ ⁇ ⁉ ⩥ ⓜ ⒨ Ⓐ ⓢ ⓕ ⒡ Ⓕ Ｆ Ⓘ ⒤ ⓡ ⒭ ⓔ ⒠ Ⓢ ⒮ ⨝ ⌊ ⌙ ⌈ ᴙ ᴚ Ｄ ² ³ ⁿ √ ∛ ¡
 Arrow: ⇏ ↛ ↪ ⤤ ⇝ ⇀ →
@@ -51,7 +51,7 @@ Logic: ‼ ≔ ≠ ≤ ≥ ⅋ ∧ ⋎ ∨ ⊻
 Loops: ↺ ↻
 Num's: ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ᶀ ᶍ`,
 //all the chars
-		ɕ=`ïîíìᴉôⅩℍ𝕜𝕄𝔾𝕋ℙ𝔼ℤ𝕐Ξᵖᵍʳᶜịʉℇɸπτ⊨⊭ᕠשМϚᶊѦѨПɲØʝɼⱤᶂᶁßꝈᶏªεëⱮՅփᵴᶐᶛƇℹ⊕¤ₙᶉ…⸩⁽⎛⎝⎞  ⟨⟦⟬⁅⦌“”‘’⍘⬮⬯⬭⬬⦃ɘэЭ⏖⏜⏝⟮⟯ⅠⅡⅢᶈⓑⓧⒸ⒞⨭⨴⸮⁇⁉⩥ⓜ⒨Ⓐⓢⓕ⒡ⒻＦⒾ⒤ⓡ⒭ⓔ⒠Ⓢ⒮⨝⌊⌙⌈ᴙᴚＤ⇏↛↪⤤⇝⇀→⩄﹩❛❜⑴⑵⑶⊙⎖α𝚨𐄫ᶌ␤␉⑊⌿⍀˖⧺˗‡×÷٪«≪»≫⫸⋙˜⍜⇔‼≔≠≤≥⅋∧⋎∨⊻↺↻²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍɟ¡`;
+		ɕ=`ïîíìᴉôⅩℍ𝕜𝕄𝔾𝕋ℙ𝔼ℤ𝕐Ξᵖᵍʳᶜịʉℇɸπτ⊨⊭ᕠשМϚᶊѦѨПɲØʝɼⱤᶂᶁßꝈᶏªεëⱮՅփᵴᶐᶛƇℹ⊕¤ₙᶉ…⸩⁽⎛⎝⎞⦃⦄ ⟨⟦⟬⁅⦌“”‘’⍘⬮⬯⬭⬬ɘэЭ⏖⏜⏝⟮⟯ⅠⅡⅢᶈⓑⓧⒸ⒞⨭⨴⸮⁇⁉⩥ⓜ⒨Ⓐⓢⓕ⒡ⒻＦⒾ⒤ⓡ⒭ⓔ⒠Ⓢ⒮⨝⌊⌙⌈ᴙᴚＤ⇏↛↪⤤⇝⇀→⩄﹩❛❜⑴⑵⑶⊙⎖α𝚨𐄫ᶌ␤␉⑊⌿⍀˖⧺˗‡×÷٪«≪»≫⫸⋙˜⍜⇔‼≔≠≤≥⅋∧⋎∨⊻↺↻²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍɟ¡`;
 
 //stack representation
 var Ξ=[],
@@ -126,8 +126,43 @@ var Ξ=[],
 ;
 //---
 //fix parentheses functions - borrowed from Japt (Thanks!)
-var subparen=e=>{for(var r=0,n=0,t=0;t<e.length;t++)"("==e[t]&&r++,")"==e[t]&&(r--,n=Math.min(n,r));return 0>n&&(e="(".repeat(-n)+e,r-=n),r>0&&(e+=")".repeat(r)),e},
-		fixParens=e=>{for(var a="",r="next",n="",s="",t="",c=0,b=0;b<e.length;b++)switch(n=e[b],r){case"next":";"==n?(a+=subparen(s)+n,s=""):"["==n?(r="array",c=0):"{"==n?(r="brackets",c=0):s+=n;break;case"array":"["==n?c++:"]"==n&&c--,0>c?(s+="["+fixParens(t)+"]",t="",r="next"):t+=n;break;case"brackets":"{"==n?c++:"}"==n&&c--,0>c?(s+="{"+t+"}",t="",r="next"):t+=n}return a+=subparen(s)}
+var fix=i=>{
+	var c=[''],I=[];
+	[...i].map((x,y)=>{
+		I.push(x)
+			!c[c.length-1].match`["'\`]`?
+			I[I.length-1].match`["'\`]`?c.push(I[I.length-1]):
+		I[I.length-1]=='('?c.push(`)`):
+		I[I.length-1]=='['?c.push(`]`):
+		I[I.length-1]=='{'?c.push(`}`):
+		I[I.length-1].match`;`?(I.splice(-1,0,...c.reverse()),c=[]):
+		I[I.length-1].match`[)\\]}]`&&~c.lastIndexOf(I[I.length-1])&&I.splice(-1,1,...c.splice(c.lastIndexOf(I[I.length-1])).reverse())
+
+		:I[I.length-1].match(c[c.length-1])&&I[I.length-2]!='\\'&&I[I.length-3]!='\\'&&c.pop()
+	})
+	I.push(...c.reverse())
+	console.log(c.join``+` , `+I.join``+` `)
+	return I.join``
+},
+		Fix=i=>{
+	var c=[''],I=[];
+	[...i].reverse().map((x,y)=>{
+		I.push(x)
+			!c[c.length-1].match`["'\`]`?
+			I[I.length-1].match`["'\`]`?c.push(I[I.length-1]):
+		I[I.length-1]==')'?c.push(`(`):
+		I[I.length-1]==']'?c.push(`[`):
+		I[I.length-1]=='}'?c.push(`{`):
+		I[I.length-1].match`;`?(I.splice(-1,0,...c.reverse()),c=[]):
+		I[I.length-1].match`[([{]`&&I.splice(-1,1,...c.splice(c.lastIndexOf(I[I.length-1])).reverse())
+
+		:I[I.length-1].match(c[c.length-1])&&I[I.length-2]!='\\'&&I[I.length-3]!='\\'&&c.pop()
+		console.log(c.join``+` , `+I.join``+` `)
+	})
+	I.push(...c.reverse())
+	console.log(c.join``+` , `+I.join``+` `)
+	return I.reverse().join``
+}
 //---
 //compression functions
 shoco.c=i=>Array.prototype.map.call(shoco.compress(i),x=>String.fromCharCode(x)).join``;
@@ -148,7 +183,7 @@ var Σ=c=>{
 	//TRANSPILE 𝔼𝕊𝕄𝕚𝕟 => ES6
 	//
 	//fix parentheses after 1st-stage transpilation
-	c=fixParens(c
+	c=Fix(fix(c
 
 							//copy block; copies code, then pastes elsewhere when called
 							.rreplace(/⟮([^⟮⟯]*)⟯?/g,(x,y)=>(ᶈ.push(y),y))
@@ -301,9 +336,9 @@ var Σ=c=>{
 							.replace(/⸩/g,'))')
 							.replace(/⎞/g,'/)')
 							.replace(/⦌/g,'])')
-							//template string start
-							.replace(/⦃/g,'${')
-							
+							//template-string-ish stuff
+							.replace(/⦃/g,'`+(')
+							.replace(/⦄/g,')+`')
 							//SPREAD OPERATORS
 							.replace(/…/g,'...')
 							.replace(eval(`/⟬([${n}]+)/g`),'[...$1]')
@@ -397,7 +432,7 @@ var Σ=c=>{
 							.replace(/⍜/g,'|0')
 							//WHILE LOOP
 							.replace(/↻/g,'while(')
-						 )
+						 ))
 	//FOR LOOP (@ = end parentheses)
 		.replace(/↺/g,'for(')
 		.replace(/([^\\])@/g,'$1)');
