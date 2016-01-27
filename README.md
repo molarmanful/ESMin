@@ -20,7 +20,7 @@ Just go look at the [commit history](https://github.com/molarmanful/ESMin/commit
 
 ## Quick Examples
 ```
-`Hello, world!`
+`Hello, world!
 ```
 Outputs `Hello, world!`.
 
