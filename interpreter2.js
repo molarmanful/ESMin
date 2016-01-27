@@ -125,7 +125,7 @@ var Ξ=[],
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 ;
 //---
-//fix parentheses functions - borrowed from Japt (Thanks!)
+//fix parentheses functions
 var fix=i=>{
 	var c=[''],I=[];
 	[...i].map((x,y)=>{
@@ -141,7 +141,6 @@ var fix=i=>{
 		:I[I.length-1].match(c[c.length-1])&&I[I.length-2]!='\\'&&I[I.length-3]!='\\'&&c.pop()
 	})
 	I.push(...c.reverse())
-	console.log(c.join``+` , `+I.join``+` `)
 	return I.join``
 },
 		Fix=i=>{
@@ -157,10 +156,8 @@ var fix=i=>{
 		I[I.length-1].match`[([{]`&&I.splice(-1,1,...c.splice(c.lastIndexOf(I[I.length-1])).reverse())
 
 		:I[I.length-1].match(c[c.length-1])&&I[I.length-2]!='\\'&&I[I.length-3]!='\\'&&c.pop()
-		console.log(c.join``+` , `+I.join``+` `)
 	})
 	I.push(...c.reverse())
-	console.log(c.join``+` , `+I.join``+` `)
 	return I.reverse().join``
 }
 //---

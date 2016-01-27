@@ -666,7 +666,7 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-40">&#182;</a>
               </div>
-              <p>fix parentheses functions - borrowed from Japt (Thanks!)</p>
+              <p>fix parentheses functions</p>
 
             </div>
             
@@ -685,7 +685,6 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
 		:I[I.length<span class="hljs-number">-1</span>].match(c[c.length<span class="hljs-number">-1</span>])&amp;&amp;I[I.length<span class="hljs-number">-2</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;I[I.length<span class="hljs-number">-3</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;c.pop()
 	})
 	I.push(...c.reverse())
-	<span class="hljs-built_in">console</span>.log(c.join<span class="hljs-string">``</span>+<span class="hljs-string">` , `</span>+I.join<span class="hljs-string">``</span>+<span class="hljs-string">` `</span>)
 	<span class="hljs-keyword">return</span> I.join<span class="hljs-string">``</span>
 },
 		Fix=i=&gt;{
@@ -701,10 +700,8 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
 		I[I.length<span class="hljs-number">-1</span>].match<span class="hljs-string">`[([{]`</span>&amp;&amp;I.splice(<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>,...c.splice(c.lastIndexOf(I[I.length<span class="hljs-number">-1</span>])).reverse())
 
 		:I[I.length<span class="hljs-number">-1</span>].match(c[c.length<span class="hljs-number">-1</span>])&amp;&amp;I[I.length<span class="hljs-number">-2</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;I[I.length<span class="hljs-number">-3</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;c.pop()
-		<span class="hljs-built_in">console</span>.log(c.join<span class="hljs-string">``</span>+<span class="hljs-string">` , `</span>+I.join<span class="hljs-string">``</span>+<span class="hljs-string">` `</span>)
 	})
 	I.push(...c.reverse())
-	<span class="hljs-built_in">console</span>.log(c.join<span class="hljs-string">``</span>+<span class="hljs-string">` , `</span>+I.join<span class="hljs-string">``</span>+<span class="hljs-string">` `</span>)
 	<span class="hljs-keyword">return</span> I.reverse().join<span class="hljs-string">``</span>
 }</pre></div></div>
             
