@@ -263,7 +263,7 @@ var Σ=c=>{
 							//`_.range`
 							.replace(/⩥/g,'ѨŃ')
 							//`_.irange`
-							.replace(/⩤/g,'Ѩ')
+							.replace(/⩤/g,'ѨǙ')
 							//`math.random`
 							.replace(/⸮/g,'Мƨ')
 							//`math.randomInt`
