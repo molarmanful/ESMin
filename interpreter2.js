@@ -29,8 +29,6 @@ Number.prototype.square=function(){return math.pow(+this,2)};
 Number.prototype.cube=function(){return math.pow(+this,3)};
 //- inclusive range
 _.irange=(x,y)=>_.range(y!=[]._?x:0,(y!=[]._?y:x)+1);
-//- prime factor
-math.pfactor=function(f,r,t,h=[],i=f>1){for(;i;){if(r=Math.sqrt(f),t=2,f%t)for(t=3;f%t&&(t+=2)<r;);h.push(t=t>r?f:t),i=t!=f,f/=t}return h};
 
 //prototype-based function aliasing
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function,Pen,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
