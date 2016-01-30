@@ -126,8 +126,8 @@ var Ξ=[],
 		//aliases for 0-256; get number alias using `nchars[NUMBER]`
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 ;jQuery.noConflict();
-//dictionary
-jQuery.get('https://molarmanful.github.io/ESMin/scrabbledict.txt',x=>ɖ=x.split`\n`);
+//dictionary stuff
+var client=new XMLHttpRequest();client.open('GET','scrabbledict.txt');client.onreadystatechange=_=>ɖ=client.responseText.split`\n`;client.send();
 //---
 //fix parentheses functions
 var fix=i=>{
@@ -177,7 +177,7 @@ var Σ=c=>{
 			//- functions
 			r='ᵖᵍʳôℹɘϚѦПØѨɼⱤᶁɲɟⱮᶊëßᶏ\\u00f8-\\u024f',
 			//- these don't need surrounding parens
-			n='A-Za-z$_ãïîíìᴉɕᶖʉℇεɸπτᶐᵴᶛ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
+			n='A-Za-z$_ãïîíìᴉɕᶖʉℇεɸπτᶐɖᵴᶛ²³ⁿ√∛¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			//- real numbers regex
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 
@@ -323,7 +323,7 @@ var Σ=c=>{
 							.replace(/¤/g,'')
 							//AUTO-ADD BRACKETS
 							.replace(eval(`/⎖(([${n}]|\\d)+)/g`),'[$1]')
-							.replace(eval(`/([ïîíìᴉᶈɕ])(([${n}]|\\d)+)/g`),'$1[$2]')
+						.replace(eval(`/([ïîíìᴉᶈɕɖ])(([${n}]|\\d)+)/g`),'$1[$2]')
 							//MORE ARROW FUNCTIONS
 							.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 							.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
