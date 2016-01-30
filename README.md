@@ -34,6 +34,6 @@ Not-so-true quine.
 True quine.
 
 ```
-⩥⁽1Ṥ
+⩤⁽1Ṥ
 ```
 Outputs all numbers 1-100.
