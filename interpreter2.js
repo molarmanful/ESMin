@@ -122,11 +122,12 @@ var Ξ=[],
 		ʗ=new Pen('cv'),
 		//storage for copy-paste blocks
 		ᶈ=[],
-		ɖ=$.get('scrabbledict.txt',x=>x.split`\n`),
 		//NUMBERS
 		//aliases for 0-256; get number alias using `nchars[NUMBER]`
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 ;jQuery.noConflict();
+//dictionary
+jQuery.get('https://molarmanful.github.io/ESMin/scrabbledict.txt',x=>ɖ=x.split`\n`);
 //---
 //fix parentheses functions
 var fix=i=>{
