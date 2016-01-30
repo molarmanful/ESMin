@@ -44,7 +44,7 @@ Const: ị ʉ ℇ ɸ π τ ⊨ ⊭ ᕠ
 Built: ש М Ϛ ᶊ Ѧ Ѩ П ɲ Ø ʝ ɟ ɼ Ɽ ᶂ ᶁ ß Ꝉ ᶏ ª ε ë Ɱ Յ փ ᵴ ᶐ ᶛ ʗ ℹ ɖ
 Basic: ⊕ ¤ ₙ ᶉ … ⍪
 Paren: ⸩ ⁽ ⎛ ⎝ ⎞ ⟨ ⟦ ⟬ ⁅ ⦌ “ ” ‘ ’ ⍘ ⬮ ⬯ ⬭ ⬬ ⦃ ⦄
-Block: ɘ э Э ⏖ ⏜ ⏝ ⟮ ⟯ Ⅰ Ⅱ Ⅲ ᶈ
+Block: ɘ э Э ⏖ ⏜ ⏝ ⟮ ⟯ Ⅰ Ⅱ Ⅲ ᶈ Ꞓ
 Funcs: ⓑ ⓧ Ⓒ ⒞ ⨭ ⨴ ⸮ ⁇ ⁉ ⩤ ⩥ ⓜ ⒨ Ⓐ ⓢ ⓕ ⒡ Ⓕ Ｆ Ⓘ ⒤ ⓡ ⒭ ⓔ ⒠ Ⓢ ⒮ ⨝ ⌊ ⌙ ⌈ ᴙ ᴚ Ｄ ² ³ ⁿ √ ∛ ¡
 Arrow: ⇏ ↛ ↪ ⤤ ⇝ ⇀ →
 Regex: ⩄ ﹩ ❛ ❜ ⑴ ⑵ ⑶ ⊙ ⎖ α 𝚨 𐄫 ᶌ ␤ ␉ ⑊ ⌿ ⍀
@@ -185,7 +185,7 @@ var Σ=c=>{
 	//
 	//fix parentheses after 1st-stage transpilation
 	c=Fix(fix(c
-
+							
 							//copy block; copies code, then pastes elsewhere when called
 							.rreplace(/⟮([^⟮⟯]*)⟯?/g,(x,y)=>(ᶈ.push(y),y))
 							//paste copy block 1
@@ -203,6 +203,9 @@ var Σ=c=>{
 							//eval-paste block; evaluates code, then pastes result directly in place of block
 							.replace(eval(`/⏖([${n}]+)/g`),'⏜$1⏝')
 							.rreplace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))
+							
+							//charcode block
+							.replace(/Ꞓ(.)/g,(x,y)=>y.charCodeAt())
 							
 							//alias for 10; can be used with zeroes series
 							.replace(/Ⅹ/g,'10')
