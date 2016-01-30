@@ -139,7 +139,7 @@ var fix=i=>{
 		I[I.length-1]=='('?c.push(`)`):
 		I[I.length-1]=='['?c.push(`]`):
 		I[I.length-1]=='{'?c.push(`}`):
-		I[I.length-1].match`;`?(I.splice(-1,0,...c.reverse()),c=[]):
+		I[I.length-1].match`;`?(I.splice(-1,0,...c.reverse()),c=['']):
 		I[I.length-1].match`[)\\]}]`&&~c.lastIndexOf(I[I.length-1])&&I.splice(-1,1,...c.splice(c.lastIndexOf(I[I.length-1])).reverse())
 
 		:I[I.length-1].match(c[c.length-1])&&I[I.length-2]!='\\'&&I[I.length-3]!='\\'&&c.pop()
@@ -156,7 +156,7 @@ var fix=i=>{
 		I[I.length-1]==')'?c.push(`(`):
 		I[I.length-1]==']'?c.push(`[`):
 		I[I.length-1]=='}'?c.push(`{`):
-		I[I.length-1].match`;`?(I.splice(-1,0,...c.reverse()),c=[]):
+		I[I.length-1].match`;`?(I.splice(-1,0,...c.reverse()),c=['']):
 		I[I.length-1].match`[([{]`&&I.splice(-1,1,...c.splice(c.lastIndexOf(I[I.length-1])).reverse())
 
 		:I[I.length-1].match(c[c.length-1])&&I[I.length-2]!='\\'&&I[I.length-3]!='\\'&&c.pop()

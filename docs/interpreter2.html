@@ -711,7 +711,7 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
 		I[I.length<span class="hljs-number">-1</span>]==<span class="hljs-string">'('</span>?c.push(<span class="hljs-string">`)`</span>):
 		I[I.length<span class="hljs-number">-1</span>]==<span class="hljs-string">'['</span>?c.push(<span class="hljs-string">`]`</span>):
 		I[I.length<span class="hljs-number">-1</span>]==<span class="hljs-string">'{'</span>?c.push(<span class="hljs-string">`}`</span>):
-		I[I.length<span class="hljs-number">-1</span>].match<span class="hljs-string">`;`</span>?(I.splice(<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>,...c.reverse()),c=[]):
+		I[I.length<span class="hljs-number">-1</span>].match<span class="hljs-string">`;`</span>?(I.splice(<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>,...c.reverse()),c=[<span class="hljs-string">''</span>]):
 		I[I.length<span class="hljs-number">-1</span>].match<span class="hljs-string">`[)\\]}]`</span>&amp;&amp;~c.lastIndexOf(I[I.length<span class="hljs-number">-1</span>])&amp;&amp;I.splice(<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>,...c.splice(c.lastIndexOf(I[I.length<span class="hljs-number">-1</span>])).reverse())
 
 		:I[I.length<span class="hljs-number">-1</span>].match(c[c.length<span class="hljs-number">-1</span>])&amp;&amp;I[I.length<span class="hljs-number">-2</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;I[I.length<span class="hljs-number">-3</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;c.pop()
@@ -728,7 +728,7 @@ aliases for 0-256; get number alias using <code>nchars[NUMBER]</code></p>
 		I[I.length<span class="hljs-number">-1</span>]==<span class="hljs-string">')'</span>?c.push(<span class="hljs-string">`(`</span>):
 		I[I.length<span class="hljs-number">-1</span>]==<span class="hljs-string">']'</span>?c.push(<span class="hljs-string">`[`</span>):
 		I[I.length<span class="hljs-number">-1</span>]==<span class="hljs-string">'}'</span>?c.push(<span class="hljs-string">`{`</span>):
-		I[I.length<span class="hljs-number">-1</span>].match<span class="hljs-string">`;`</span>?(I.splice(<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>,...c.reverse()),c=[]):
+		I[I.length<span class="hljs-number">-1</span>].match<span class="hljs-string">`;`</span>?(I.splice(<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>,...c.reverse()),c=[<span class="hljs-string">''</span>]):
 		I[I.length<span class="hljs-number">-1</span>].match<span class="hljs-string">`[([{]`</span>&amp;&amp;I.splice(<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>,...c.splice(c.lastIndexOf(I[I.length<span class="hljs-number">-1</span>])).reverse())
 
 		:I[I.length<span class="hljs-number">-1</span>].match(c[c.length<span class="hljs-number">-1</span>])&amp;&amp;I[I.length<span class="hljs-number">-2</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;I[I.length<span class="hljs-number">-3</span>]!=<span class="hljs-string">'\\'</span>&amp;&amp;c.pop()
