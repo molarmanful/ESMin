@@ -22,7 +22,7 @@ String.prototype.msplit=function(r='\n',c=''){return this.split(r).map(x=>x.spli
 //- matrix join
 Array.prototype.mjoin=function(r='\n',c=''){return this.map(x=>x.join(r)).join(c)};
 //- transliterate (dictionary replace)
-String.prototype.treplace=function(x,y=x.reverse(),a=Math.max(x.length,y.length),b=Math.min(x.length,y.length),i=0,t=this){for(;i<a;i++)t=t.replace(RegExp(x[i],"g"),y[i%b]);return t};
+String.prototype.treplace=function(x,y,z={}){[...x].map((a,b)=>z[a]=y[b]);return this.replace(/./g,x=>z[x]===[]._?x:z[x])};
 //- square
 Number.prototype.square=function(){return math.pow(+this,2)};
 //- cube
