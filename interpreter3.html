@@ -41,7 +41,7 @@
 			<div class='row'>
 				<div class='col-sm-6'>
 					<h2>Code <small id='co'></small></h2>
-					<textarea id='c' class='form-control' wrap='off' oninput='co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes = "+(c.value.length/utf(c.value)).toFixed(2);'></textarea>
+					<textarea id='c' class='form-control' wrap='off' oninput='co.innerHTML=c.value.length+" chars, "+encode(c.value).length+" bytes, chars to bytes = "+(c.value.length/encode(c.value).length).toFixed(2);'></textarea>
 					<h2>Input</h2>
 					<textarea id='i' class='form-control' wrap='off'></textarea>
 					<button id='r' class='btn btn-primary' onclick='cv.getContext("2d").clearRect(0,0,cv.width,cv.height),o.value="",Ξ=[],ᶈ=[],ï=E.checked?eval(document.getElementById("i").value):document.getElementById("i").value,î=ï[0],í=ï[1],ì=ï[2],ᴉ=[...``+ï],paste=[],[...nchars].map((x,y)=>{eval(x+`=`+y)});Σ(c.value)'>Run</button>
