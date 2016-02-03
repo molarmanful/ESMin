@@ -264,37 +264,37 @@ var Σ=c=>{
 						//`.reverse()` (array)
 						.replace(/ᴚ/g,alias(Array.prototype,'reverse')[0]+'⬮')
 						//`math.sum`
-						.replace(/⨭/g,'М'+alias(Math,'sum')[0])
+						.replace(/⨭/g,'М'+alias(math,'sum')[0])
 						//`math.prod`
-						.replace(/⨴/g,'М'+alias(Math,'prod')[0])
+						.replace(/⨴/g,'М'+alias(math,'prod')[0])
 						//`_.range`
 						.replace(/⩥/g,'Ѩ'+alias(_,'range')[0])
 						//`_.irange`
 						.replace(/⩤/g,'Ѩ'+alias(_,'irange')[0])
 						//`math.random`
-						.replace(/⸮/g,'М'+alias(Math,'random')[0])
+						.replace(/⸮/g,'М'+alias(math,'random')[0])
 						//`math.randomInt`
-						.replace(/⁇/g,'М'+alias(Math,'randomInt')[0])
+						.replace(/⁇/g,'М'+alias(math,'randomInt')[0])
 						//`math.pickRandom`
-						.replace(/⁉/g,'М'+alias(Math,'pickRandom')[0])
+						.replace(/⁉/g,'М'+alias(math,'pickRandom')[0])
 						//`math.floor`
-						.replace(/⌊/g,'М'+alias(Math,'floor')[0])
+						.replace(/⌊/g,'М'+alias(math,'floor')[0])
 						//`math.round`
-						.replace(/⌙/g,'М'+alias(Math,'round')[0])
+						.replace(/⌙/g,'М'+alias(math,'round')[0])
 						//`math.ceil`
-						.replace(/⌈/g,'М'+alias(Math,'ceil')[0])
+						.replace(/⌈/g,'М'+alias(math,'ceil')[0])
 						//`math.sqrt`
-						.replace(/√/g,'М'+alias(Math,'sqrt')[0])
+						.replace(/√/g,'М'+alias(math,'sqrt')[0])
 						//`math.cbrt`
-						.replace(/∛/g,'М'+alias(Math,'cbrt')[0])
+						.replace(/∛/g,'М'+alias(math,'cbrt')[0])
 						//`math.pow`
-						.replace(/ⁿ/g,'М'+alias(Math,'pow')[0])
+						.replace(/ⁿ/g,'М'+alias(math,'pow')[0])
 						//`.square()`
 						.replace(/²/g,alias(Number.prototype,'square')[0]+'⬮')
 						//`.cube()`
 						.replace(/³/g,alias(Number.prototype,'cube')[0]+'⬮')
 						//`math.factorial`
-						.replace(/¡/g,'М'+alias(Math,'factorial')[0])
+						.replace(/¡/g,'М'+alias(math,'factorial')[0])
 						//`new Date`
 						.replace(/Ｄ/g,'ₙᶁ')
 						//`.apply(window,`
