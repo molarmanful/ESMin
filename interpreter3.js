@@ -87,7 +87,6 @@ function decode(string) {
 	});
 }
 
-document.body.innerHTML=decode(encode(`ℹ)`))
 //stack representation
 var Ξ=[],
 		//I/O FUNCTIONS
