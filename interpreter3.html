@@ -33,30 +33,8 @@
 				background-color:white;
 			}
 		</style>
-		<script>
-function utf(s) {
-	var len = 0;
-	for (var i = 0; i < s.length; i++) {
-		var code = s.charCodeAt(i);
-		if (code <= 0x7f) {
-			len += 1;
-		} else if (code <= 0x7ff) {
-			len += 2;
-		} else if (code >= 0xd800 && code <= 0xdfff) {
-			// Surrogate pair: These take 4 bytes in UTF-8 and 2 chars in UCS-2
-			// (Assume next char is the other [valid] half and just skip it)
-			len += 4; i++;
-		} else if (code < 0xffff) {
-			len += 3;
-		} else {
-			len += 4;
-		}
-	}
-	return len;
-}
-		</script>
 	</head>
-	<body onload='c.value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);document.getElementById("i").value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);E.checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]));co.innerHTML=c.value.length+" chars, "+utf(c.value)+" bytes, chars to bytes ratio = "+(c.value.length/utf(c.value)).toFixed(2);' >
+	<body onload='c.value=decodeURIComponent((/code=(.+)/.exec(location.search)||[,""])[1]);document.getElementById("i").value=decodeURIComponent((/input=([^&]+)/.exec(location.search)||[,""])[1]);E.checked=eval(decodeURIComponent((/eval=([^&]+)/.exec(location.search)||[,""])[1]));co.innerHTML=c.value.length+" chars, "+encode(c.value).length+" bytes, chars to bytes ratio = "+(c.value.length/utf(c.value)).toFixed(2);' >
 		<div class='container'>
 			<h1>𝔼𝕊𝕄𝕚𝕟 3 Interpreter (Firefox Only)</h1>
 			<hr>
