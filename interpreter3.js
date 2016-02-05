@@ -211,7 +211,7 @@ var Σ=c=>{
 	//- functions
 	r='ᵖᵍʳôℹɘϚѦПØѨɼⱤᶁɲɟⱮᶊëßᶏꝒ\\u00f8-\\u024f',
 			//- these don't need surrounding parens
-			n='A-Za-z$_ãïîíìᴉɕᶖʉℇεɸπτᶐɖᵴᶛɐ¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
+			n='A-Za-z$_ãïîíìΞᴉɕᶖʉℇεɸπτᶐɖᵴᶛɐ¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			//- real numbers regex
 			d='-?\\d+(?:\\.\\d*)?(?:e[+\\-]?\\d+)?';
 
@@ -360,7 +360,7 @@ var Σ=c=>{
 						.replace(/¤/g,'')
 						//AUTO-ADD BRACKETS
 						.replace(eval(`/⎖(([${n}]|\\d)+)/g`),'[$1]')
-						.replace(eval(`/([ïîíìᴉᶈɕɖ])(([${n}]|\\d)+)/g`),'$1[$2]')
+						.replace(eval(`/([ïîíìᴉᶈɕɖΞ])(([${n}]|\\d)+)/g`),'$1[$2]')
 						//MORE ARROW FUNCTIONS
 						.replace(/⇏/g,'(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
 						.replace(/↛/g,'=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)=>')
