@@ -199,7 +199,7 @@ var fix=i=>{
 		}
 //---
 //compression functions
-shoco.c=i=>Array.prototype.map.call(shoco.compress(i),x=>String.fromCharCode(x)).join``;
+shoco.c=i=>Array.prototype.map.call(shoco.compress(i),x=>charTable[x]).join``;
 shoco.d=i=>shoco.decompress(new Uint8Array((i.constructor==Array?i[0]:i).split``.map(x=>charTable.indexOf(x[0]))));
 var compress=i=>LZString.compress(shoco.c(i));
 
