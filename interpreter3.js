@@ -229,9 +229,9 @@ var Σ=c=>{
 						.replace(/Ⅲ/g,ᶈ[2])
 
 						//COMPRESSION
-						.replace(/э([^#]+)#?/g,(x,y)=>shoco.d(LZString.decompress(y)))
+						.replace(/ɘ([^#]+)#?/g,(x,y)=>shoco.d(LZString.decompress(y)))
 						.replace(/э([^#]+)#?/gm,(x,y)=>shoco.d(y))
-						.replace(/э([^#]+)#?/g,(x,y)=>LZString.decompress(y))
+						.replace(/Э([^#]+)#?/g,(x,y)=>LZString.decompress(y))
 
 						//eval-paste block; evaluates code, then pastes result directly in place of block
 						.replace(eval(`/⏖([${n}]+)/g`),'⏜$1⏝')
