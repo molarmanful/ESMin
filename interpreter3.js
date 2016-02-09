@@ -459,7 +459,7 @@ var Σ=c=>{
 						.replace(/ᶌ/g,'aeiou')
 						.replace(/⌿/g,'/g')
 						.replace(/⍀/g,'/ig')
-						.replace(/⑊/g,'\\')
+						.replace(/⑊/g,'\\\\')
 						//some more keywords
 						.replace(/⊨/g,'true')
 						.replace(/⊭/g,'false')
