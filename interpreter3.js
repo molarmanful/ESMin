@@ -161,10 +161,7 @@ var Ξ=[],
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 ;jQuery.noConflict();
 //dictionary stuff
-var client=new XMLHttpRequest();client.open('GET','scrabbledict.txt');client.onreadystatechange=_=>ɖ=client.responseText.split`\n`;client.send();
-var ᶑ=ɖ.map(_.lowerCase),
-		ᵭ=ɖ.map(_.capitalize)
-;
+var client=new XMLHttpRequest();client.open('GET','scrabbledict.txt');client.onreadystatechange=_=>(ɖ=client.responseText.split`\n`,ᶑ=ɖ.map(_.lowerCase),ᵭ=ɖ.map(_.capitalize));client.send();
 
 //---
 //fix parentheses functions
