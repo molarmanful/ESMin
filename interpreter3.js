@@ -239,7 +239,7 @@ var Σ=c=>{
 						.rreplace(/⏜([^⏜⏝]*)⏝?/g,(x,y)=>eval(y))
 
 						//charcode block
-						.replace(/Ꞓ(.)/g,(x,y)=>y.charCodeAt())
+						.replace(/Ꞓ(.)/g,(x,y)=>y.codePointAt())
 
 						//alias for 10; can be used with zeroes series
 						.replace(/Ⅹ/g,'10')
