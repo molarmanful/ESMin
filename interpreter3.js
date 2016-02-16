@@ -354,6 +354,7 @@ var Σ=c=>{
 						.replace(/⎛/g,'(⁽')
 						.replace(eval(`/⁽(([${n}]|\\d)+)/g`),(x,y)=>`(${y.split(/\s|/g)})`)
 						//AUTO-ADD PARENTHESES
+						.replace(/^(\u00f8-\u0236)/,'ï$1')
 						.replace(eval(`/([${r}])(([${n}]|${d})+)/g`),'$1($2)')
 						.replace(eval(`/([${r}])([^(\u00f8-\u0236ßꝈ¤])/g`),'$1($2')
 						//prevents object from turning into a function
