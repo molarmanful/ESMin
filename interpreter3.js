@@ -241,6 +241,9 @@ var Σ=c=>{
 
 						//charcode block
 						.replace(/Ꞓ(.)/g,(x,y)=>y.codePointAt())
+						
+						//implicit input
+						.replace(/^(\\u00f8-\\u024f)/,'ï$1')
 
 						//alias for 10; can be used with zeroes series
 						.replace(/Ⅹ/g,'10')
