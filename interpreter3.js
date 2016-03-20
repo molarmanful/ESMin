@@ -244,6 +244,7 @@ var Σ=c=>{
 						
 						//implicit input
 						.replace(/^(\\u00f8-\\u024f)/,'ï$1')
+						.replace(/^(\\u00f8-\\u024f)?$/,'ï$1')
 
 						//alias for 10; can be used with zeroes series
 						.replace(/Ⅹ/g,'10')
