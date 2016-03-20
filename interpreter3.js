@@ -31,6 +31,12 @@ Number.prototype.cube=function(){return math.pow(+this,3)};
 math.solve=(x,y)=>algebra.parse(x).solveFor(y).toString();
 //- inclusive range
 _.irange=(x,y)=>_.range(y!=[]._?x:0,(y!=[]._?y:x)+1);
+//- combinatorics
+math.pwst=x=>Combinatorics.power(x).toArray();
+math.comb=(x,y=x.length)=>Combinatorics.combination(x,y).toArray();
+math.perm=(x,y=x.length)=>Combinatorics.permutation(x,y).toArray();
+math.peco=(i,...x)=>Combinatorics.permutationCombination(i,...x).toArray();
+math.bn=(x,y=x.length)=>Combinatorics.baseN(x,y).toArray();
 
 //prototype-based function aliasing
 [String,Array,Number,Object,RegExp,Date,s,_,XRegExp,Function,Pen,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>v.prototype[String.fromCharCode(y+248)]=v.prototype[x]));
