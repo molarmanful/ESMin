@@ -36,6 +36,7 @@ math.pwst=x=>Combinatorics.power(x).toArray();
 math.comb=(x,y=x.length)=>Combinatorics.combination(x,y).toArray();
 math.perm=(x,y=x.length)=>Combinatorics.permutation(x,y).toArray();
 math.peco=(i,...x)=>Combinatorics.permutationCombination(i,...x).toArray();
+math.cp=(i,...x)=>Combinatorics.cartesianProduct(x,y).toArray();
 math.bn=(x,y=x.length)=>Combinatorics.baseN(x,y).toArray();
 
 //prototype-based function aliasing
