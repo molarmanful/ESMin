@@ -29,6 +29,8 @@ Number.prototype.square=function(){return math.pow(+this,2)};
 Number.prototype.cube=function(){return math.pow(+this,3)};
 //- equation solver!
 Math.solve=(x,y)=>new algebra.Equation(algebra.parse(x.split`=`[0]),algebra.parse(x.split`=`[1])).solveFor(y).toString();
+//- parsing
+Math.parse=(x)=>algebra.parse(x).toString();
 //- inclusive range
 _.irange=(x,y)=>_.range(y!=[]._?x:0,(y!=[]._?y:x)+1);
 //- combinatorics
