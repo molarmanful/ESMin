@@ -317,7 +317,7 @@ var Σ=c=>{
 						//`_.range`
 						.replace(/⩥/g,'Ѩ'+alias(_,'range')[0])
 						//`_.irange`
-						.replace(/⩤/g,'Ѩ'+alias(Array,'irange')[0])
+						.replace(/⩤/g,'Ѧ'+alias(Array,'irange')[0])
 						//`math.random`
 						.replace(/⸮/g,'М'+alias(math,'random')[0])
 						//`math.randomInt`
