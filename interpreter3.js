@@ -32,7 +32,7 @@ Math.solve=(x,y)=>new algebra.Equation(algebra.parse(x.split`=`[0]),algebra.pars
 //- parsing
 Math.parse=(x)=>algebra.parse(x).toString();
 //- inclusive range
-_.irange=(x,y)=>_.range(y!=[]._?x:0,(y!=[]._?y:x)+1);
+Array.irange=(x,y)=>_.range(y!=[]._?x:0,(y!=[]._?y:x)+1);
 //- combinatorics
 Math.pwst=x=>Combinatorics.power(x).toArray();
 Math.comb=(x,y=x.length)=>Combinatorics.combination(x,y).toArray();
