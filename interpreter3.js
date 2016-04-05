@@ -20,7 +20,7 @@ String.prototype.reverse=function(){return[...this].reverse().join``};
 //- matrix split
 String.prototype.msplit=function(r='\n',c=''){return this.split(r).map(x=>x.split(c))};
 //- matrix join
-Array.prototype.mjoin=function(r='\n',c=''){return this.map(x=>x.join(r)).join(c)};
+Array.prototype.mjoin=function(r='',c='\n'){return this.map(x=>x.join(r)).join(c)};
 //- transliterate (dictionary replace)
 String.prototype.treplace=function(x,y=x.reverse(),a=Math.max(x.length,y.length),b=Math.min(x.length,y.length),i=0,t=this){for(;i<a;i++)t=t.replace(RegExp(x[i],"g"),y[i%b]);return t};
 //- square
