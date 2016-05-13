@@ -1,4 +1,4 @@
-//Welcome to the annotated source code of the interpreter for [𝔼𝕊𝕄𝕚𝕟 2](https://github.com/molarmanful/ESMin), a wonderful JavaScript ES6 golfing language created by [@molarmanful](https://github.com/molarmanful)!
+//Welcome to the annotated source code of the interpreter for [𝔼𝕊𝕄𝕚𝕟 3](https://github.com/molarmanful/ESMin), a wonderful JavaScript ES6 golfing language created by [@molarmanful](https://github.com/molarmanful)!
 //This will serve as documentation for those who want to learn the language.
 // 
 //---
