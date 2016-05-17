@@ -46,9 +46,9 @@ Math.bn=(x,y=x.length)=>Combinatorics.baseN(x,y).toArray();
 //object-based function aliasing
 [math,Math,String,Array,Number,Object,JSON,RegExp,Date,_,window,Function,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 //function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
-alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
+var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 //char palette helper
-chpal=`InOut: ï î í ì ᴉ ô
+var chpal=`InOut: ï î í ì ᴉ ô
 Zeros: Ⅹ ℍ 𝕜 𝕄 𝔾 𝕋 ℙ 𝔼 ℤ 𝕐
 Stack: Ξ ᵖ ᵍ ʳ ᶜ
 Const: ị ʉ ℇ ɸ π τ ⊨ ⊭ ᕠ
@@ -69,7 +69,7 @@ Num's: ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ᶀ 
 ;
 
 //Custom encoding thanks to @Dennis! This encoding can hold up to 1024 chars by storing each character in 1.25 bytes, or 10 bits.
-charTable=`\t\n !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_\`abcdefghijklmnopqrstuvwxyz{|}~¡¤«²³»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɕɖɘɟɱɲɸɼʉʗʝʳʾ˖˗˜ΞΣαεπτϚМПЭэѦѨՅփש٪ᕠᴉᴙᴚᵍᵖᵭᵮᵴᶀᶁᶂᶈᶉᶌᶍᶐᶑᶛᶜḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ‘’“”‡…‼⁅⁇⁉⁽ⁿₙℇℍℙℤℹ⅋⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ⅠⅡⅢⅩ→↛↪↺↻⇀⇏⇔⇝√∛∧∨≔≠≤≥≪≫⊕⊙⊨⊭⊻⋎⋙⌈⌊⌙⌿⍀⍘⍜⍞⍪⎖⎛⎝⎞⏖⏜⏝␉␤⑊⑴⑵⑶⒞⒠⒡⒤⒨⒭⒮ⒶⒸⒻⒾⓈⓑⓔⓕⓜⓡⓢⓧ❛❜⟦⟨⟬⟮⟯⤤⦃⦄⦌⧺⨝⨭⨴⩄⩤⩥⫸⬬⬭⬮⬯Ɱ⸩⸮ꝈꝒꞒ𐄫𝔼𝔾𝕄𝕋𝕐𝕜𝚨﹩ＤＦ`
+var charTable=`\t\n !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_\`abcdefghijklmnopqrstuvwxyz{|}~¡¤«²³»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɕɖɘɟɱɲɸɼʉʗʝʳʾ˖˗˜ΞΣαεπτϚМПЭэѦѨՅփש٪ᕠᴉᴙᴚᵍᵖᵭᵮᵴᶀᶁᶂᶈᶉᶌᶍᶐᶑᶛᶜḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ‘’“”‡…‼⁅⁇⁉⁽ⁿₙℇℍℙℤℹ⅋⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ⅠⅡⅢⅩ→↛↪↺↻⇀⇏⇔⇝√∛∧∨≔≠≤≥≪≫⊕⊙⊨⊭⊻⋎⋙⌈⌊⌙⌿⍀⍘⍜⍞⍪⎖⎛⎝⎞⏖⏜⏝␉␤⑊⑴⑵⑶⒞⒠⒡⒤⒨⒭⒮ⒶⒸⒻⒾⓈⓑⓔⓕⓜⓡⓢⓧ❛❜⟦⟨⟬⟮⟯⤤⦃⦄⦌⧺⨝⨭⨴⩄⩤⩥⫸⬬⬭⬮⬯Ɱ⸩⸮ꝈꝒꞒ𐄫𝔼𝔾𝕄𝕋𝕐𝕜𝚨﹩ＤＦ`
 function encode(string) {
 	return string.replace(/[\s\S]{1,4}/g, function(chunk){
 		var asNumber = 0;
@@ -98,7 +98,7 @@ function decode(string) {
 }
 
 //stack representation
-Ξ=[],
+var Ξ=[],
 		//I/O FUNCTIONS
 		//---
 		//*not shown: `ï = input, î = ï[0], í = ï[1], ì = ï[2], ᴉ = [...ï]`*
@@ -169,11 +169,11 @@ function decode(string) {
 		nchars=`ḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙaʾẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ`
 ;jQuery.noConflict();
 //dictionary stuff
-client=new XMLHttpRequest();client.open('GET','scrabbledict.txt');client.onreadystatechange=_=>(ɖ=client.responseText.split`\n`,ᶑ=ɖ.map(x=>x.toLowerCase()),ᵭ=ɖ.map(a=>a[0]+a.slice(1).toLowerCase()));client.send();
+var client=new XMLHttpRequest();client.open('GET','scrabbledict.txt');client.onreadystatechange=_=>(ɖ=client.responseText.split`\n`,ᶑ=ɖ.map(x=>x.toLowerCase()),ᵭ=ɖ.map(a=>a[0]+a.slice(1).toLowerCase()));client.send();
 
 //---
 //fix parentheses functions
-fix=i=>{
+var fix=i=>{
 	var c=[''],I=[];
 	[...i].map((x,y)=>{
 		I.push(x)
@@ -211,11 +211,11 @@ Fix=i=>{
 //compression functions
 shoco.c=i=>Array.prototype.map.call(shoco.compress(i),x=>charTable[x]).join``;
 shoco.d=i=>shoco.decompress(new Uint8Array((i.constructor==Array?i[0]:i).split``.map(x=>charTable.indexOf(x[0]))));
-compress=i=>LZString.compress(shoco.c(i));
+var compress=i=>LZString.compress(shoco.c(i));
 
 //TIME TO INTERPRET!
 //---
-Σ=c=>{
+var Σ=c=>{
 	var 
 	//- functions
 	r='ᵖᵍʳôℹɘϚѦПØѨɼᶁɲɟⱮëßꝒ\\u00f8-\\u024f',
