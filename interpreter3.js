@@ -42,9 +42,9 @@ Math.cp=(i,...x)=>Combinatorics.cartesianProduct(i,...x).toArray();
 Math.bn=(x,y=x.length)=>Combinatorics.baseN(x,y).toArray();
 
 //prototype-based function aliasing
-[String,Array,Number,RegExp,Date,_,Function,Pen,numeral,jQuery,Set].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>x!='caller'&&x!='arguments'&&(v.prototype[String.fromCharCode(y+248)]=v.prototype[x])));
+[String,Array,Number,RegExp,Date,_,Function,Pen,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>x!='caller'&&x!='arguments'&&(v.prototype[String.fromCharCode(y+248)]=v.prototype[x])));
 //object-based function aliasing
-[math,Math,String,Array,Number,Object,JSON,RegExp,Date,_,window,Function,numeral,jQuery,Set].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
+[math,Math,String,Array,Number,Object,JSON,RegExp,Date,_,window,Function,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 //function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 //char palette helper
