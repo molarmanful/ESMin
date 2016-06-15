@@ -219,7 +219,7 @@ var compress=i=>LZString.compress(shoco.c(i));
 var Σ=c=>{
 	var 
 	//- functions
-	r='ᵖᵍʳôℹɘϚѦПØѨɼᶁɲɟⱮëßꝒ\\u00f8-\\u024f',
+  r='ᵖᵍʳôℹɘϚѦПØѨɼᶁɲɟⱮëßꝒꞨ\\u00f8-\\u024f',
 			//- these don't need surrounding parens
 			n='A-Za-z$_ãïîíìΞᴉɕᶖʉℇεɸπτᶐɖᵭᶑᵴᶛɐ¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			//- real numbers regex
