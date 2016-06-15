@@ -42,9 +42,9 @@ Math.cp=(i,...x)=>Combinatorics.cartesianProduct(i,...x).toArray();
 Math.bn=(x,y=x.length)=>Combinatorics.baseN(x,y).toArray();
 
 //prototype-based function aliasing
-[String,Array,Number,RegExp,Date,_,Function,Pen,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>x!='caller'&&x!='arguments'&&(v.prototype[String.fromCharCode(y+248)]=v.prototype[x])));
+[String,Array,Number,RegExp,Date,_,Function,Pen,numeral,jQuery,Set].map(v=>Object.getOwnPropertyNames(v.prototype).map((x,y)=>x!='caller'&&x!='arguments'&&(v.prototype[String.fromCharCode(y+248)]=v.prototype[x])));
 //object-based function aliasing
-[math,Math,String,Array,Number,Object,JSON,RegExp,Date,_,window,Function,numeral,jQuery].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
+[math,Math,String,Array,Number,Object,JSON,RegExp,Date,_,window,Function,numeral,jQuery,Set].map(v=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]=v[x]));
 //function alias helper: use as `alias(Array,METHOD_NAME_STRING)`
 var alias=(v,w)=>Object.getOwnPropertyNames(v).map((x,y)=>v[String.fromCharCode(y+248)]==v[w]?String.fromCharCode(y+248):0).join``.replace(/0/g,'');
 //char palette helper
@@ -52,7 +52,7 @@ var chpal=`InOut: ï î í ì ᴉ ô
 Zeros: Ⅹ ℍ 𝕜 𝕄 𝔾 𝕋 ℙ 𝔼 ℤ 𝕐
 Stack: Ξ ᵖ ᵍ ʳ ᶜ
 Const: ị ʉ ℇ ɸ π τ ⊨ ⊭ ᕠ
-Built: ש М ɱ Ϛ Ѧ Ѩ П ɲ Ø ʝ ɟ ɼ ᶂ ᶁ ß Ꝉ ε ë Ɱ Յ փ ᵴ ᶐ ᶛ ʗ ℹ ɖ Ꝓ ɐ
+Built: ש М ɱ Ϛ Ѧ Ѩ Ꞩ П ɲ Ø ʝ ɟ ɼ ᶂ ᶁ ß Ꝉ ε ë Ɱ Յ փ ᵴ ᶐ ᶛ ʗ ℹ ɖ Ꝓ ɐ
 Basic: ⊕ ¤ ₙ ᶉ … ⍪
 Paren: ⸩ ⁽ ⎛ ⎝ ⎞ ⟨ ⟦ ⟬ ⁅ ⦌ “ ” ‘ ’ ⍘ ⍞ ⬮ ⬯ ⬭ ⬬ ⦃ ⦄
 Block: ɘ э Э ⏖ ⏜ ⏝ ⟮ ⟯ Ⅰ Ⅱ Ⅲ ᶈ Ꞓ
@@ -69,7 +69,7 @@ Num's: ¼ ½ ¾ ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ᶀ 
 ;
 
 //Custom encoding thanks to @Dennis! This encoding can hold up to 1024 chars by storing each character in 1.25 bytes, or 10 bits.
-var charTable=`\t\n !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_\`abcdefghijklmnopqrstuvwxyz{|}~¡¤«²³»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɕɖɘɟɱɲɸɼʉʗʝʳʾ˖˗˜ΞΣαεπτϚМПЭэѦѨՅփש٪ᕠᴉᴙᴚᵍᵖᵭᵮᵴᶀᶁᶂᶈᶉᶌᶍᶐᶑᶛᶜḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ‘’“”‡…‼⁅⁇⁉⁽ⁿₙℇℍℙℤℹ⅋⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ⅠⅡⅢⅩ→↛↪↺↻⇀⇏⇔⇝√∛∧∨≔≠≤≥≪≫⊕⊙⊨⊭⊻⋎⋙⌈⌊⌙⌿⍀⍘⍜⍞⍪⎖⎛⎝⎞⏖⏜⏝␉␤⑊⑴⑵⑶⒞⒠⒡⒤⒨⒭⒮ⒶⒸⒻⒾⓈⓑⓔⓕⓜⓡⓢⓧ❛❜⟦⟨⟬⟮⟯⤤⦃⦄⦌⧺⨝⨭⨴⩄⩤⩥⫸⬬⬭⬮⬯Ɱ⸩⸮ꝈꝒꞒ𐄫𝔼𝔾𝕄𝕋𝕐𝕜𝚨﹩ＤＦ`
+var charTable=`\t\n !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_\`abcdefghijklmnopqrstuvwxyz{|}~¡¤«²³»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȪȫȬȭȮȯȰȱȲȳȴȵȶȷȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɕɖɘɟɱɲɸɼʉʗʝʳʾ˖˗˜ΞΣαεπτϚМПЭэѦѨՅփש٪ᕠᴉᴙᴚᵍᵖᵭᵮᵴᶀᶁᶂᶈᶉᶌᶍᶐᶑᶛᶜḀḁḂḃḄḅḆḇḈḉḊḋḌḍḎḏḐḑḒḓḔḕḖḗḘḙḚḛḜḝḞḟḠḡḢḣḤḥḦḧḨḩḪḫḬḭḮḯḰḱḲḳḴḵḶḷḸḹḺḻḼḽḾḿṀṁṂṃṄṅṆṇṈṉṊṋṌṍṎṏṐṑṒṓṔṕṖṗṘṙṚṛṜṝṞṟṠṡṢṣṤṥṦṧṨṩṪṫṬṭṮṯṰṱṲṳṴṵṶṷṸṹṺṻṼṽṾṿẀẁẂẃẄẅẆẇẈẉẊẋẌẍẎẏẐẑẒẓẔẕẖẗẘẙẛẜẝẞẟẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹỺỻỼỽỾỿ‘’“”‡…‼⁅⁇⁉⁽ⁿₙℇℍℙℤℹ⅋⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ⅠⅡⅢⅩ→↛↪↺↻⇀⇏⇔⇝√∛∧∨≔≠≤≥≪≫⊕⊙⊨⊭⊻⋎⋙⌈⌊⌙⌿⍀⍘⍜⍞⍪⎖⎛⎝⎞⏖⏜⏝␉␤⑊⑴⑵⑶⒞⒠⒡⒤⒨⒭⒮ⒶⒸⒻⒾⓈⓑⓔⓕⓜⓡⓢⓧ❛❜⟦⟨⟬⟮⟯⤤⦃⦄⦌⧺⨝⨭⨴⩄⩤⩥⫸⬬⬭⬮⬯Ɱ⸩⸮ꝈꝒꞒ𐄫𝔼𝔾𝕄𝕋𝕐𝕜𝚨﹩ＤＦꞨ`
 function encode(string) {
 	return string.replace(/[\s\S]{1,4}/g, function(chunk){
 		var asNumber = 0;
@@ -146,6 +146,7 @@ var Ξ=[],
 		ᶂ=Function,
 		ɲ=numeral,
 		ɟ=jQuery,
+    Ꞩ=Set,
 		//FUNCTIONS
 		ß='toString',
 		Ꝉ='length',
@@ -268,7 +269,8 @@ var Σ=c=>{
 						.replace(/𝕐/g,'000000000000000000000000')
 
 						//`('')+` - good for string coercion
-						.replace(/⊕/g,'⬯+')
+            .replace(/⊕/g,'⬯+')
+            .replace(/Ꞩ/g,'ₙꞨ')
 						//`.join('')`
 						.replace(/⨝/g,alias(Array.prototype,'join')[0]+'⬯')
 						//`.toString(2)`
