@@ -1,8 +1,8 @@
 //Welcome to the annotated source code of the interpreter for [𝔼𝕊𝕄𝕚𝕟 3](https://github.com/molarmanful/ESMin), a wonderful JavaScript ES6 golfing language created by [@molarmanful](https://github.com/molarmanful)!
 //This will serve as documentation for those who want to learn the language.
-// 
+//
 //---
-// 
+//
 //Let's get started!
 //---
 
@@ -122,7 +122,7 @@ var Ξ=[],
 
 		//MORE ALIASES
 		//---
-		// 
+		//
 		//CONSTANTS
 		ᶖ=Infinity,
 		ʉ=[]._,
@@ -217,9 +217,9 @@ var compress=i=>LZString.compress(shoco.c(i));
 //TIME TO INTERPRET!
 //---
 var Σ=c=>{
-	var 
+	var
 	//- functions
-  r='ᵖᵍʳôℹɘϚѦПØѨɼᶁɲɟⱮëßꝒꞨ\\u00f8-\\u024f',
+  r='ᵖᵍʳôℹΣɘϚѦПØѨɼᶁɲɟⱮëßꝒꞨ\\u00f8-\\u024f',
 			//- these don't need surrounding parens
 			n='A-Za-z$_ãïîíìΞᴉɕᶖʉℇεɸπτᶐɖᵭᶑᵴᶛɐ¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ᶀᶍ\\u1e00-\\u1eff',
 			//- real numbers regex
@@ -250,7 +250,7 @@ var Σ=c=>{
 
 						//charcode block
 						.replace(/Ꞓ(.)/g,(x,y)=>y.codePointAt())
-						
+
 						//implicit input
 						.replace(/^(\\u00f8-\\u024f)/,'ï$1')
 						.replace(/^(\\u00f8-\\u024f)?$/,'ï$1')
